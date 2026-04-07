@@ -1,0 +1,3060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>QuietStaff - AI Agent Teams for Your Operations</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Deploy custom-trained AI agent teams into your business operations. Fine-tuned to your workflows, powered by multi-model AI on AWS, managed end-to-end.">
+    <meta name="keywords" content="AI agents, business automation, managed AI operations, AGaaS, multi-model AI, WhatsApp automation, serverless AI, AWS AI agents, QuietStaff">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="QuietStaff">
+    <link rel="canonical" href="https://quietstaff.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quietstaff.com/">
+    <meta property="og:title" content="QuietStaff - AI Agent Teams for Your Operations">
+    <meta property="og:description" content="Custom-trained AI agents that handle your WhatsApp, email, sales, invoicing, and documents — managed end-to-end.">
+    <meta property="og:image" content="https://quietstaff.com/og-image.png">
+    <meta property="og:site_name" content="QuietStaff">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QuietStaff - AI Agent Teams for Your Operations">
+    <meta name="twitter:description" content="Custom-trained AI agents that handle your WhatsApp, email, sales, invoicing, and documents — managed end-to-end.">
+    <meta name="twitter:image" content="https://quietstaff.com/og-image.png">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="brand/logo-package/svg/quietstaff-favicon.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="brand/logo-package/png/quietstaff-icon-color-64x64.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="brand/logo-package/png/quietstaff-icon-color-512x512.png">
+    <meta name="theme-color" content="#030710">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "QuietStaff",
+      "url": "https://quietstaff.com",
+      "logo": "https://quietstaff.com/brand/logo-package/svg/quietstaff-horizontal-color-dark.svg",
+      "description": "AI Agent Teams for Business Operations — Multi-Model AGaaS, Managed AI Ops",
+      "founder": {
+        "@type": "Person",
+        "name": "Mohan Raj Dhanapal",
+        "url": "https://www.linkedin.com/in/mohan-technical-leadership/"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohan-technical-leadership/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@quietstaff.com",
+        "contactType": "sales"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #030710;
+            --bg-secondary: #0f172a;
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --border-card: rgba(99, 102, 241, 0.12);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-primary: #6366f1;
+            --accent-secondary: #22d3ee;
+            --accent-tertiary: #7c3aed;
+            --aws-orange: #FF9900;
+            --error-red: #ef4444;
+            --gradient-accent: linear-gradient(135deg, #6366f1, #7c3aed, #22d3ee);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1 { font-weight: 800; font-size: clamp(2.5rem, 8vw, 4.5rem); letter-spacing: -0.03em; }
+        h2 { font-weight: 800; font-size: 2.5rem; letter-spacing: -0.02em; }
+        h3 { font-weight: 700; font-size: 1.5rem; }
+        h4 { font-weight: 600; font-size: 1.125rem; }
+
+        a { color: inherit; text-decoration: none; }
+
+        .text-secondary { color: var(--text-secondary); }
+        .text-muted { color: var(--text-muted); }
+        .text-gradient { background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        /* Layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        /* Gradient Bar */
+        .gradient-bar {
+            height: 1px;
+            background: var(--gradient-accent);
+            margin: 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            -webkit-backdrop-filter:  blur(0px);
+            backdrop-filter: blur(0px);
+            background-color: rgba(3, 7, 16, 0);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav.scrolled {
+            -webkit-backdrop-filter:  blur(20px);
+            backdrop-filter: blur(20px);
+            background-color: rgba(3, 7, 16, 0.8);
+            border-bottom: 1px solid var(--border-card);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Legacy text-logo classes removed — using inline SVG logo now */
+        .nav-logo-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-center a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .nav-center a:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-button {
+            padding: 0.625rem 1.5rem;
+            background-color: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 0.375rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 0.625rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+            line-height: 1.1;
+        }
+
+        .hero-subheadline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--text-secondary);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .hero-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+        }
+
+        .capability-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .capability-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+        }
+
+        .capability-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .capability-card h2 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .capability-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .hero-footer {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+        }
+
+        .hero-footer span {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .hero-footer span:not(:last-child)::after {
+            content: '·';
+            color: var(--text-muted);
+            margin-left: 0.5rem;
+        }
+
+        /* Why QuietStaff */
+        .why-section {
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, transparent 100%);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: stretch;
+        }
+
+        .why-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            background: var(--bg-card);
+            border-left: 4px solid;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .why-problem {
+            border-left-color: var(--error-red);
+        }
+
+        .why-solution {
+            border-left-color: var(--accent-primary);
+        }
+
+        .why-item:hover {
+            transform: translateX(8px);
+        }
+
+        .why-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .why-problem .why-icon { color: var(--error-red); }
+        .why-solution .why-icon { color: var(--accent-primary); }
+
+        .why-text h4 {
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .why-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .why-quote {
+            margin-top: 3rem;
+            padding: 2rem;
+            border: 1px solid var(--border-card);
+            background: var(--bg-card);
+            border-radius: 1rem;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            font-style: italic;
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1s backwards;
+        }
+
+        /* How It Works */
+        .how-section {
+            background: linear-gradient(180deg, transparent 0%, rgba(34, 211, 238, 0.05) 100%);
+        }
+
+        .flow-container {
+            position: relative;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 1.5rem;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .orchestrator-banner {
+            display: inline-block;
+            background: rgba(34, 211, 238, 0.15);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: nowrap;
+            position: relative;
+            padding: 2rem 1rem;
+            overflow-x: auto;
+        }
+
+        .flow-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 0 0 auto;
+            min-width: 110px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flow-node-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(34, 211, 238, 0.2));
+            border: 2px solid var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+        }
+
+        .flow-node-circle svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .flow-node-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .flow-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            flex-shrink: 0;
+            width: 40px;
+            height: 60px;
+            position: relative;
+            z-index: 2;
+            margin-top: -1.5rem;
+        }
+
+        .flow-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-secondary);
+            border-radius: 50%;
+            top: 26px;
+            animation: moveDot 4s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+        }
+
+        @keyframes moveDot {
+            0% { left: 0; opacity: 1; }
+            50% { opacity: 1; }
+            100% { left: 100%; opacity: 0; }
+        }
+
+        .whatsapp-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .whatsapp-chat {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 1rem;
+            overflow: hidden;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .whatsapp-header {
+            background: #25d366;
+            padding: 1rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .whatsapp-messages {
+            flex: 1;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            overflow-y: auto;
+        }
+
+        .message {
+            display: flex;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .message.customer {
+            justify-content: flex-end;
+            margin-left: auto;
+        }
+
+        .message-bubble {
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+        }
+
+        .message.customer .message-bubble {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .message.agent .message-bubble {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-card);
+        }
+
+        .behind-scenes {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .behind-scenes h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .behind-step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .behind-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .behind-step-num {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .behind-step-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .behind-step-text p:first-child {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .behind-step-text p:last-child {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Platform Section */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .platform-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .platform-card.highlighted {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+
+        .platform-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .platform-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .platform-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .feature-check {
+            color: var(--accent-secondary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Agents Section */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .agent-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .agent-card.cta-card {
+            border: 2px dashed var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 200px;
+        }
+
+        .agent-card.cta-card:hover {
+            border-color: var(--accent-primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .agent-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .agent-role {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .agent-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .agent-type {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+        }
+
+        .agent-card.cta-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .agent-card.cta-card p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Technology Section */
+        .tech-section {
+            background: linear-gradient(180deg, rgba(255, 153, 0, 0.05) 0%, transparent 100%);
+        }
+
+        .tech-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tech-tagline {
+            font-size: 1rem;
+            color: var(--aws-orange);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .arch-diagram {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            margin-bottom: 3rem;
+        }
+
+        .arch-layer {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: start;
+        }
+
+        .arch-layer:last-child {
+            margin-bottom: 0;
+        }
+
+        .arch-label {
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .arch-label-border {
+            width: 4px;
+            height: 100%;
+            background: var(--aws-orange);
+            border-radius: 2px;
+            margin-right: 0;
+        }
+
+        .arch-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .arch-item {
+            background: rgba(255, 153, 0, 0.1);
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tech-quote {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(34, 211, 238, 0.15));
+            border: 1px solid var(--border-card);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--accent-secondary);
+            font-style: italic;
+            margin: 2rem 0;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .tech-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .tech-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 153, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(255, 153, 0, 0.1);
+        }
+
+        .tech-card h3 {
+            color: var(--aws-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .founder-note {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(34, 211, 238, 0.1));
+            border: 1px solid var(--border-card);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .founder-note strong {
+            color: var(--aws-orange);
+        }
+
+        /* Global Reach Section */
+        .global-section {
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, transparent 100%);
+        }
+
+        .reach-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .reach-stat {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin: 1rem 0;
+        }
+
+        .regions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .region-chip {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+        }
+
+        .region-chip:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .region-flag {
+            margin-right: 0.5rem;
+        }
+
+        .reach-tagline {
+            text-align: center;
+            color: var(--text-secondary);
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing-intro {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .pricing-subheadline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin: 1rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--accent-primary);
+            box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2);
+            transform: scale(1.02);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--accent-primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .pricing-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .pricing-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .pricing-benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-benefit-check {
+            color: var(--accent-secondary);
+            font-weight: 700;
+        }
+
+        .pricing-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        .aws-badge {
+            display: inline-block;
+            background: rgba(255, 153, 0, 0.15);
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: var(--aws-orange);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: linear-gradient(180deg, rgba(34, 211, 238, 0.05) 0%, transparent 100%);
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .founder-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .founder-bio {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .founder-header h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-title {
+            font-size: 1.1rem;
+            color: var(--accent-secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .founder-quals {
+            display: flex;
+            gap: 2rem;
+            margin: 0.75rem 0;
+            flex-wrap: wrap;
+        }
+
+        .founder-qual {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .founder-qual-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .founder-qual-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .founder-description {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin: 1.5rem 0;
+        }
+
+        .founder-quote {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: 0.5rem;
+            font-size: 1.05rem;
+            color: var(--accent-secondary);
+            font-style: italic;
+            -webkit-backdrop-filter:  blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .founder-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .founder-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 0.5rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .founder-link:hover {
+            border-color: var(--accent-primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-accent);
+            padding: 5rem 2rem !important;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--accent-primary);
+        }
+
+        .cta-section .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-card);
+            padding: 3rem 0;
+            color: var(--text-secondary);
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-link-soon {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        .footer-link-soon em {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 0;
+            border-top: 1px solid var(--border-card);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Intersection Observer Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-center {
+                gap: 1.5rem;
+            }
+
+            .platform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .agents-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-demo {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 0;
+            }
+
+            .nav-center {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-right {
+                gap: 1rem;
+            }
+
+            .nav-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            h1 {
+                font-size: clamp(1.75rem, 6vw, 3rem);
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero {
+                margin-top: 60px;
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .agents-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .founder-content {
+                grid-template-columns: 1fr;
+                align-items: center;
+            }
+
+            .founder-avatar {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto;
+            }
+
+            .founder-quals {
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            h1 {
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .hero-subheadline {
+                font-size: 1rem;
+            }
+
+            .hero-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-footer {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-footer span:not(:last-child)::after {
+                display: none;
+            }
+
+            .why-item {
+                padding: 1rem;
+            }
+
+            .flow-node {
+                min-width: 100px;
+            }
+
+            .flow-node-circle {
+                width: 50px;
+                height: 50px;
+            }
+
+            .flow-node-label {
+                font-size: 0.75rem;
+            }
+
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-links {
+                flex-direction: column;
+            }
+
+            .founder-link {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Monospace font for code sections */
+        .monospace {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ─── Contact Modal ─────────────────────────────────── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 16, 0.85);
+            -webkit-backdrop-filter:  blur(8px);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-card);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 520px;
+            position: relative;
+            box-shadow: 0 24px 80px rgba(99, 102, 241, 0.15);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+        .modal-close:hover { color: var(--text-primary); }
+
+        .modal h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .modal-context {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba(99, 102, 241, 0.08);
+            border-radius: 0.5rem;
+            display: inline-block;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-card);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 0.85rem;
+            background: var(--accent-primary);
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        .form-submit:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .form-success.active { display: block; }
+        .form-success .check-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(34, 197, 94, 0.15);
+            border: 2px solid #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.8rem;
+            color: #22c55e;
+        }
+
+        /* ─── Very small phones (375px) ─────────────────── */
+        @media (max-width: 375px) {
+            h1 { font-size: 1.6rem !important; }
+            h2 { font-size: 1.3rem !important; }
+            .container { padding: 0 0.75rem; }
+            .hero-subheadline { font-size: 0.85rem; }
+            .flow { flex-direction: column; gap: 0.5rem; }
+            .flow-connector { transform: rotate(90deg); margin-top: 0; height: 30px; }
+            .flow-node { min-width: unset; }
+            .pricing-grid { gap: 1rem; }
+            .modal { padding: 1.5rem; width: 95%; }
+        }
+
+        /* ─── Mobile flow: stack vertically under 768px ── */
+        @media (max-width: 768px) {
+            .flow {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+            .flow-connector {
+                transform: rotate(90deg);
+                margin-top: 0;
+                height: 30px;
+                width: 30px;
+            }
+            .flow-node { min-width: unset; width: 100%; max-width: 200px; }
+
+            /* Mobile nav overlay */
+            .nav-center.active {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(3, 7, 16, 0.97);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 999;
+            }
+            .nav-center.active a { font-size: 1.3rem; }
+        }
+
+        /* ─── Focus states for keyboard nav ─────────────── */
+        .btn:focus-visible,
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid var(--accent-secondary);
+            outline-offset: 2px;
+        }
+
+        /* ─── Skip to content ───────────────────────────── */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            z-index: 10000;
+            font-weight: 600;
+            border-radius: 0 0 0.5rem 0;
+            transition: top 0.2s;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* ─── Reduced motion ────────────────────────────── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .flow-dot { display: none; }
+        }
+
+        /* ─── Print styles ──────────────────────────────── */
+        @media print {
+            nav, .modal-overlay, .flow-dot, canvas, .hamburger,
+            .btn, .nav-button, .founder-links, .cta-section { display: none !important; }
+            body { background: #fff !important; color: #000 !important; }
+            section { page-break-inside: avoid; }
+            h1, h2, h3 { color: #000 !important; }
+            .text-gradient { background: none !important; -webkit-text-fill-color: #000 !important; color: #000 !important; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" height="56" style="display:block;">
+                  <defs>
+                    <linearGradient id="gi" x1="0" y1="0" x2="55" y2="55" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#818CF8"/><stop offset="50%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#06B6D4"/>
+                    </linearGradient>
+                    <linearGradient id="gw" x1="64" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#818CF8"/><stop offset="55%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#06B6D4"/>
+                    </linearGradient>
+                    <filter id="fg"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <filter id="fs"><feGaussianBlur stdDeviation="1.1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <filter id="ft"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  </defs>
+                  <g transform="translate(4,5) scale(0.52)">
+                    <path d="M 50 10 L 84.6 30 L 84.6 70 L 50 90 L 15.4 70 L 15.4 30 Z" fill="none" stroke="url(#gi)" stroke-width="5.5" stroke-linejoin="round"/>
+                    <line x1="84.6" y1="70" x2="95.9" y2="81.3" stroke="url(#gi)" stroke-width="5.5" stroke-linecap="round"/>
+                    <circle cx="97.8" cy="83.2" r="6.5" fill="url(#gi)" filter="url(#ft)"/>
+                    <circle cx="96" cy="81.4" r="2" fill="white" opacity="0.45"/>
+                    <line x1="50" y1="34" x2="34" y2="60" stroke="url(#gi)" stroke-width="2" opacity="0.5"/>
+                    <line x1="50" y1="34" x2="66" y2="60" stroke="url(#gi)" stroke-width="2" opacity="0.5"/>
+                    <line x1="34" y1="60" x2="66" y2="60" stroke="url(#gi)" stroke-width="1.4" opacity="0.28"/>
+                    <circle cx="50" cy="34" r="8.5" fill="url(#gi)" filter="url(#fg)"/>
+                    <circle cx="47.5" cy="31.5" r="2.8" fill="white" opacity="0.4"/>
+                    <circle cx="34" cy="60" r="5.5" fill="url(#gi)" filter="url(#fs)"/>
+                    <circle cx="66" cy="60" r="5.5" fill="url(#gi)" filter="url(#fs)"/>
+                  </g>
+                  <text x="62" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="300" letter-spacing="0.5" fill="url(#gw)">Quiet</text>
+                  <text x="146" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.3" fill="#ffffff">Staff</text>
+                  <text x="63" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="9.5" letter-spacing="1.6" fill="#94a3b8">Multi-model AGaaS &middot; Managed AI Ops</text>
+                </svg>
+            </div>
+            <div class="nav-center">
+                <a href="#platform">Platform</a>
+                <a href="#agents">Agents</a>
+                <a href="#technology">Technology</a>
+                <a href="#founder">Founder</a>
+            </div>
+            <div class="nav-right">
+                <a href="javascript:void(0)" onclick="openContactModal('demo')" class="nav-button" style="text-decoration:none;">Request a Demo &rarr;</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Multi-Model AGaaS · Managed AI Operations</div>
+                <h1>We Deploy <span class="text-gradient">AI Agent Teams</span> Into Your <span class="text-gradient">Business Operations</span></h1>
+                <p class="hero-subheadline">Custom-trained agents that handle your WhatsApp, email, sales, invoicing, and documents — fine-tuned to your business, powered by multi-model intelligence, managed end-to-end.</p>
+                <div class="hero-buttons">
+                    <a href="javascript:void(0)" onclick="openContactModal('demo')" class="btn btn-primary" style="text-decoration:none;">Request a Demo &rarr;</a>
+                    <a href="#how" class="btn btn-outline" style="text-decoration:none;">See How It Works &darr;</a>
+                </div>
+
+                <div class="hero-cards">
+                    <div class="capability-card fade-in">
+                        <div class="capability-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M12 5V3M12 21v-2M5 12H3M21 12h-2M8 8l-1.41-1.41M17.41 17.41L16 16M16 8l1.41-1.41M8.59 17.41L8 16" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="6" y="6" width="12" height="12" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h2>Multi-Model AI</h2>
+                        <p>Claude, GPT-4, Mistral & more</p>
+                    </div>
+                    <div class="capability-card fade-in">
+                        <div class="capability-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0010.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12h6M9 16h6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h2>Custom Skills Engine</h2>
+                        <p>Define, encode & execute</p>
+                    </div>
+                    <div class="capability-card fade-in">
+                        <div class="capability-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h2>24/7 Ops Coverage</h2>
+                        <p>Always-on agent teams</p>
+                    </div>
+                    <div class="capability-card fade-in">
+                        <div class="capability-icon">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7h2v2h-2v-2zm0-8h2v6h-2V7z" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h2>Enterprise Guardrails</h2>
+                        <p>Safety, compliance, audit</p>
+                    </div>
+                </div>
+
+                <div class="hero-footer">
+                    <span>Built on AWS</span>
+                    <span>Multi-Model Intelligence</span>
+                    <span>Managed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-bar"></div>
+
+    <!-- Why QuietStaff -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <p style="text-align:center; font-size:0.75rem; font-weight:700; letter-spacing:0.15em; color:var(--accent-primary); text-transform:uppercase; margin-bottom:1rem;">Why QuietStaff</p>
+            <h2 style="text-align: center; margin-bottom: 3rem;">Your Team Is Stuck on Work That Doesn't Need a Human</h2>
+            <div class="why-grid">
+                <div class="why-column">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--error-red);">The Problem</h3>
+                    <div class="why-item why-problem">
+                        <div class="why-icon">×</div>
+                        <div class="why-text">
+                            <h4>Teams stretched thin</h4>
+                            <p>Manual ops eating 60-70% of time</p>
+                        </div>
+                    </div>
+                    <div class="why-item why-problem">
+                        <div class="why-icon">×</div>
+                        <div class="why-text">
+                            <h4>Generic AI, generic results</h4>
+                            <p>Off-the-shelf bots, no domain expertise</p>
+                        </div>
+                    </div>
+                    <div class="why-item why-problem">
+                        <div class="why-icon">×</div>
+                        <div class="why-text">
+                            <h4>High cost, high risk</h4>
+                            <p>Building teams is expensive and slow</p>
+                        </div>
+                    </div>
+                    <div class="why-item why-problem">
+                        <div class="why-icon">×</div>
+                        <div class="why-text">
+                            <h4>No 24/7 coverage</h4>
+                            <p>Humans can't operate 24/7</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-column">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--accent-primary);">The Solution</h3>
+                    <div class="why-item why-solution">
+                        <div class="why-icon">✓</div>
+                        <div class="why-text">
+                            <h4>AI agent teams</h4>
+                            <p>Deploy specialist agents for every workflow</p>
+                        </div>
+                    </div>
+                    <div class="why-item why-solution">
+                        <div class="why-icon">✓</div>
+                        <div class="why-text">
+                            <h4>Custom-trained, fine-tuned</h4>
+                            <p>Domain expertise baked in from day one</p>
+                        </div>
+                    </div>
+                    <div class="why-item why-solution">
+                        <div class="why-icon">✓</div>
+                        <div class="why-text">
+                            <h4>Managed end-to-end</h4>
+                            <p>We handle training, deployment, ops</p>
+                        </div>
+                    </div>
+                    <div class="why-item why-solution">
+                        <div class="why-icon">✓</div>
+                        <div class="why-text">
+                            <h4>Always-on intelligence</h4>
+                            <p>24/7 ops coverage without burnout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why-quote">"Intelligence as Skills. Agents as Your Team."</div>
+        </div>
+    </section>
+
+    <div class="gradient-bar"></div>
+
+    <!-- How It Works -->
+    <section class="how-section" id="how">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">How It Works</h2>
+
+            <div class="flow-container">
+                <div class="orchestrator-banner">
+                    Powered by QuietMind Orchestrator
+                </div>
+                <div class="flow">
+                    <div class="flow-node">
+                        <div class="flow-node-circle">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="flow-node-label">Customer Sends Message</div>
+                    </div>
+                    <div class="flow-connector">&#8594;</div>
+                    <div class="flow-node">
+                        <div class="flow-node-circle">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M7 7l5 5m0-5l-5 5M7 7h10a5 5 0 015 5v5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="flow-node-label">QuietGate Classifies &amp; Routes</div>
+                    </div>
+                    <div class="flow-connector">&#8594;</div>
+                    <div class="flow-node">
+                        <div class="flow-node-circle">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M12 9v2m0 4v2m0 4v2M6 15h2m4 0h2m4 0h2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="flow-node-label">Model Router Selects LLM</div>
+                    </div>
+                    <div class="flow-connector">&#8594;</div>
+                    <div class="flow-node">
+                        <div class="flow-node-circle">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M12 6V4m0 16v-2m6-6h2m-2 0h-2m-8 0H4m2 0h-2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="flow-node-label">Specialist Executes Skill</div>
+                    </div>
+                    <div class="flow-connector">&#8594;</div>
+                    <div class="flow-node">
+                        <div class="flow-node-circle">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                <path d="M13 7l5 5m0-5l-5 5M6 12l5-5m0 10l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="flow-node-label">Delivery Responds</div>
+                    </div>
+                    <div class="flow-dot"></div>
+                </div>
+            </div>
+
+            <div class="whatsapp-demo">
+                <div class="whatsapp-chat">
+                    <div class="whatsapp-header">QuietStaff Agent</div>
+                    <div class="whatsapp-messages">
+                        <div class="message customer">
+                            <div class="message-bubble">Hi, I need the status of my order #4521</div>
+                        </div>
+                        <div class="message agent">
+                            <div class="message-bubble">Hello! Your order #4521 is ready for delivery tomorrow between 2-5 PM. Would you like to proceed?</div>
+                        </div>
+                        <div class="message customer">
+                            <div class="message-bubble">Can I change the delivery address?</div>
+                        </div>
+                        <div class="message agent">
+                            <div class="message-bubble">Of course! Please share the new address and I'll update it immediately in our system.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="behind-scenes">
+                    <h3>Behind the Scenes</h3>
+                    <div class="behind-step">
+                        <div class="behind-step-num">1</div>
+                        <div class="behind-step-text">
+                            <p>Classify & Route</p>
+                            <p>Message routed to QuietOps</p>
+                        </div>
+                    </div>
+                    <div class="behind-step">
+                        <div class="behind-step-num">2</div>
+                        <div class="behind-step-text">
+                            <p>Select Model</p>
+                            <p>Claude 3.5 Sonnet selected</p>
+                        </div>
+                    </div>
+                    <div class="behind-step">
+                        <div class="behind-step-num">3</div>
+                        <div class="behind-step-text">
+                            <p>Execute Skills</p>
+                            <p>Query DB, update order, confirm</p>
+                        </div>
+                    </div>
+                    <div class="behind-step">
+                        <div class="behind-step-num">4</div>
+                        <div class="behind-step-text">
+                            <p>Deliver Response</p>
+                            <p>Real-time answer to customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-bar"></div>
+
+    <!-- Platform Section -->
+    <section id="platform">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">The QuietStaff Platform</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">Everything you need to deploy, manage, and scale AI agent teams.</p>
+
+            <div class="platform-grid">
+                <div class="platform-card fade-in">
+                    <h3>Multi-Model Intelligence</h3>
+                    <p>Deploy agents powered by the best models.</p>
+                    <div class="platform-features">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Claude 3.5 Sonnet</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>GPT-4 / GPT-4o</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Mistral AI</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Powered by AWS Bedrock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-card highlighted fade-in">
+                    <h3>Skills Engine</h3>
+                    <p>Build custom workflows, not rigid bots.</p>
+                    <div class="platform-features">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Define custom skills</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Encode domain logic</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Assign to agents</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Fine-tune on data</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <h3>Guardrails & Safety</h3>
+                    <p>Enterprise-grade safety controls.</p>
+                    <div class="platform-features">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Confidence thresholds</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Automatic escalation</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Audit trail</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Permissions & controls</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <h3>Integrations Hub</h3>
+                    <p>Connect to your entire stack.</p>
+                    <div class="platform-features">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>WhatsApp, Slack, Email</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>CRM, ERP, HRM systems</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Databases & APIs</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>REST, webhooks, events</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <h3>Fine-Tuning & Customization</h3>
+                    <p>Make agents truly yours.</p>
+                    <div class="platform-features">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Domain-specific training</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Custom prompts</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Brand voice & tone</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Continuous improvement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <h3>Enterprise Controls</h3>
+                    <p>Governance at scale.</p>
+                    <div class="platform-features">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>SSO / SAML / RBAC</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Compliance audit logs</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Data residency options</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>SLA & observability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section id="agents">
+        <div class="container">
+            <p style="text-align:center; font-size:0.75rem; font-weight:700; letter-spacing:0.15em; color:var(--accent-primary); text-transform:uppercase; margin-bottom:1rem;">Your Agents</p>
+            <h2 style="text-align: center; margin-bottom: 1rem;">Every Business Gets a Custom Agent Team</h2>
+            <p style="text-align:center; color:var(--text-secondary); max-width:600px; margin:0 auto 3rem;">Not a generic chatbot. A full team of specialist agents — fine-tuned to your workflows, your tone, your business.</p>
+
+            <div class="agents-grid">
+                <div class="agent-card fade-in">
+                    <h3>QuietGate</h3>
+                    <div class="agent-role">Gatekeeper</div>
+                    <p class="agent-description">Classifies inbound messages, routes to specialist agents, manages conversation flow.</p>
+                    <span class="agent-type">Skill-based</span>
+                </div>
+
+                <div class="agent-card fade-in">
+                    <h3>QuietSell</h3>
+                    <div class="agent-role">Sales</div>
+                    <p class="agent-description">Handles lead follow-ups, pipeline updates, CRM sync, closing assistance.</p>
+                    <span class="agent-type">Skill-based</span>
+                </div>
+
+                <div class="agent-card fade-in">
+                    <h3>QuietBooks</h3>
+                    <div class="agent-role">Finance</div>
+                    <p class="agent-description">Processes invoices, expenses, reconciliation, reporting automation.</p>
+                    <span class="agent-type">Skill-based</span>
+                </div>
+
+                <div class="agent-card fade-in">
+                    <h3>QuietCare</h3>
+                    <div class="agent-role">Customer Service</div>
+                    <p class="agent-description">Multi-lingual support, sentiment routing, issue resolution, escalation.</p>
+                    <span class="agent-type">Skill-based</span>
+                </div>
+
+                <div class="agent-card fade-in">
+                    <h3>QuietOps</h3>
+                    <div class="agent-role">Operations</div>
+                    <p class="agent-description">Task dispatch, follow-ups, scheduling, workflow orchestration.</p>
+                    <span class="agent-type">Skill-based</span>
+                </div>
+
+                <div class="agent-card fade-in">
+                    <h3>QuietWatch</h3>
+                    <div class="agent-role">Reputation</div>
+                    <p class="agent-description">Brand monitoring, reputation management, HR workflows, alerts.</p>
+                    <span class="agent-type">Skill-based</span>
+                </div>
+
+                <div class="agent-card fade-in">
+                    <h3>QuietMind</h3>
+                    <div class="agent-role">Orchestrator</div>
+                    <p class="agent-description">Manages entire agent team, coordinates workflows, handles complexity.</p>
+                    <span class="agent-type">Core</span>
+                </div>
+
+                <div class="agent-card cta-card fade-in">
+                    <h3>Quiet[You]</h3>
+                    <p>Your workflow. Your skills. Your Quiet agent.</p>
+                    <a href="javascript:void(0)" onclick="openContactModal('custom')" class="btn btn-primary" style="width:100%;text-decoration:none;text-align:center;">Build Custom Agent</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="tech-section" id="technology">
+        <div class="container">
+            <div class="tech-intro">
+                <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; color:var(--accent-primary); text-transform:uppercase; margin-bottom:1rem;">Technology</p>
+                <h2>Built on AWS. Multi-Model by Design.</h2>
+                <div class="tech-tagline">Multi-Model AGaaS &mdash; Serverless Agent Infrastructure on AWS</div>
+            </div>
+
+            <div class="arch-diagram">
+                <div class="arch-layer">
+                    <div class="arch-label">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="arch-label-border"></div>
+                            <span>Integration</span>
+                        </div>
+                    </div>
+                    <div class="arch-items">
+                        <div class="arch-item">WhatsApp API</div>
+                        <div class="arch-item">Slack Bot</div>
+                        <div class="arch-item">Email/SMTP</div>
+                        <div class="arch-item">Telegram</div>
+                        <div class="arch-item">REST API</div>
+                        <div class="arch-item">Voice/IVR</div>
+                        <div class="arch-item">Teams</div>
+                        <div class="arch-item">Web Chat</div>
+                    </div>
+                </div>
+
+                <div class="arch-layer">
+                    <div class="arch-label">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="arch-label-border"></div>
+                            <span>Orchestration</span>
+                        </div>
+                    </div>
+                    <div class="arch-items">
+                        <div class="arch-item">QuietGate</div>
+                        <div class="arch-item">Model Router</div>
+                        <div class="arch-item">Skills Engine</div>
+                        <div class="arch-item">Guardrails</div>
+                        <div class="arch-item">QuietMind</div>
+                    </div>
+                </div>
+
+                <div class="arch-layer">
+                    <div class="arch-label">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="arch-label-border"></div>
+                            <span>Models</span>
+                        </div>
+                    </div>
+                    <div class="arch-items">
+                        <div class="arch-item">Amazon Bedrock</div>
+                        <div class="arch-item">Claude 3.5</div>
+                        <div class="arch-item">GPT-4 / 4o</div>
+                        <div class="arch-item">Mistral</div>
+                        <div class="arch-item">Llama</div>
+                        <div class="arch-item">Sarvam</div>
+                        <div class="arch-item">Qwen</div>
+                    </div>
+                </div>
+
+                <div class="arch-layer">
+                    <div class="arch-label">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div class="arch-label-border"></div>
+                            <span>Infrastructure</span>
+                        </div>
+                    </div>
+                    <div class="arch-items">
+                        <div class="arch-item">Lambda</div>
+                        <div class="arch-item">S3 + FSx</div>
+                        <div class="arch-item">DynamoDB</div>
+                        <div class="arch-item">API Gateway</div>
+                        <div class="arch-item">ECS Fargate</div>
+                        <div class="arch-item">CloudFront</div>
+                        <div class="arch-item">IAM/KMS</div>
+                        <div class="arch-item">CloudWatch</div>
+                        <div class="arch-item">Step Functions</div>
+                        <div class="arch-item">SageMaker</div>
+                        <div class="arch-item">Route 53</div>
+                        <div class="arch-item">EventBridge</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-quote">
+                "Serverless-first. Event-driven. No idle compute. Scales to zero. Scales to millions."
+            </div>
+
+            <div class="tech-cards">
+                <div class="tech-card fade-in">
+                    <h3>AWS Bedrock Integration</h3>
+                    <p>Multi-model routing through Bedrock. Unified API for Claude, Mistral, Llama, and more. No vendor lock-in.</p>
+                </div>
+                <div class="tech-card fade-in">
+                    <h3>Serverless Architecture</h3>
+                    <p>Lambda-first orchestration. Auto-scaling. Pay for what you use. Zero infrastructure overhead.</p>
+                </div>
+                <div class="tech-card fade-in">
+                    <h3>Event-Driven Workflows</h3>
+                    <p>EventBridge coordination. Async execution. Real-time processing. Decoupled services.</p>
+                </div>
+                <div class="tech-card fade-in">
+                    <h3>Data & Security</h3>
+                    <p>DynamoDB consistency. S3 encryption. KMS key management. HIPAA/SOC2 ready. Data residency controls.</p>
+                </div>
+            </div>
+
+            <div class="founder-note">
+                <strong>From the Founder:</strong> 15 years building on AWS across NAM, APAC, and EMEA. QuietStaff infrastructure is designed for intelligence at scale — event-driven, serverless, and purpose-built for AI operations. Every decision reflects deep AWS expertise and operational maturity.
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-bar"></div>
+
+    <!-- Global Reach & Pricing -->
+    <section id="global">
+        <div class="container">
+            <div class="reach-intro">
+                <h2>India-First. Built for the World.</h2>
+                <div class="reach-stat"><strong>63M+</strong> SMBs across our regions</div>
+            </div>
+
+            <div class="regions">
+                <div class="region-chip">
+                    <span class="region-flag">🇮🇳</span> India
+                </div>
+                <div class="region-chip">
+                    <span class="region-flag">🇬🇧</span> UK
+                </div>
+                <div class="region-chip">
+                    <span class="region-flag">🇺🇸</span> US
+                </div>
+                <div class="region-chip">
+                    <span class="region-flag">🇸🇬</span> Singapore
+                </div>
+                <div class="region-chip">
+                    <span class="region-flag">🌍</span> Middle East
+                </div>
+            </div>
+
+            <div class="reach-tagline">Regional channels. Regional languages. Same platform.</div>
+
+            <!-- Pricing -->
+            <div class="pricing-intro">
+                <h2>Pay for Intelligence, Not Headcount.</h2>
+                <div class="pricing-subheadline">Simple, usage-based billing. No long-term contracts.</div>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <h3>Pilot</h3>
+                    <p class="pricing-desc">Start small. Prove value. No risk.</p>
+                    <div class="pricing-benefits">
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>1-3 agent team</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>Basic integrations</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>Email support</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>Monitoring & logs</span>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openContactModal('pilot')" class="btn btn-outline" style="width:100%;margin-top:1rem;text-decoration:none;text-align:center;">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured fade-in">
+                    <div class="pricing-badge">RECOMMENDED</div>
+                    <h3>Growth</h3>
+                    <p class="pricing-desc">Scale intelligence across teams.</p>
+                    <div class="pricing-benefits">
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>4-8 agent team</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>All integrations</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>Priority support</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>Fine-tuning included</span>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openContactModal('growth')" class="btn btn-primary" style="width:100%;margin-top:1rem;text-decoration:none;text-align:center;">Request Demo</a>
+                </div>
+
+                <div class="pricing-card fade-in">
+                    <h3>Enterprise</h3>
+                    <p class="pricing-desc">Unlimited agent teams and scale.</p>
+                    <div class="pricing-benefits">
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>Unlimited agents</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>Custom integrations</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>Dedicated support</span>
+                        </div>
+                        <div class="pricing-benefit">
+                            <span class="pricing-benefit-check">✓</span>
+                            <span>SLA & compliance</span>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openContactModal('enterprise')" class="btn btn-outline" style="width:100%;margin-top:1rem;text-decoration:none;text-align:center;">Contact Sales</a>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                Credit-based billing. Scale up or down as needed. Unused credits roll over. No surprise charges.
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <span class="aws-badge">AWS Activate Partner</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Meet the Founder</h2>
+
+            <div class="founder-content">
+                <div class="founder-avatar">MRD</div>
+                <div class="founder-bio">
+                    <div class="founder-header">
+                        <h2>Mohan Raj Dhanapal</h2>
+                        <div class="founder-title">Founder & Chief AI Architect, QuietStaff</div>
+                    </div>
+
+                    <div class="founder-quals">
+                        <div class="founder-qual">
+                            <div class="founder-qual-label">Education</div>
+                            <div class="founder-qual-value">IIM Executive Management</div>
+                        </div>
+                        <div class="founder-qual">
+                            <div class="founder-qual-label">Research</div>
+                            <div class="founder-qual-value">DBA (Pursuing)</div>
+                        </div>
+                    </div>
+
+                    <div class="founder-quals">
+                        <div class="founder-qual">
+                            <div class="founder-qual-label">Experience</div>
+                            <div class="founder-qual-value">21 Years in Tech</div>
+                        </div>
+                        <div class="founder-qual">
+                            <div class="founder-qual-label">AWS Expertise</div>
+                            <div class="founder-qual-value">15+ Years</div>
+                        </div>
+                        <div class="founder-qual">
+                            <div class="founder-qual-label">Global Footprint</div>
+                            <div class="founder-qual-value">NAM · APAC · EMEA</div>
+                        </div>
+                    </div>
+
+                    <p class="founder-description">
+                        21 years of building and scaling SaaS platforms, high-performing engineering teams, and operational systems across MNCs, startups, and product companies. Deep domain expertise spanning Fintech, Healthcare, BFSI, and Utility sectors — with a proven track record in data analytics, AI engineering, and cloud-native architecture on AWS. An IIM-trained strategist and doctoral researcher, with 15+ years on AWS driving infrastructure decisions at scale across North America, Asia-Pacific, and EMEA. Now applying that leadership and technical depth to build the next generation of intelligent agent teams.
+                    </p>
+
+                    <div class="founder-quote">
+                        "The future isn't AI replacing people. It's AI multiplying what people can do. QuietStaff brings that vision to operations."
+                    </div>
+
+                    <div class="founder-links">
+                        <a href="https://www.linkedin.com/in/mohan-technical-leadership/" target="_blank" class="founder-link">LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+                        <a href="https://www.linkedin.com/pulse/when-grace-met-rocky-architecture-ai-agent-emergent-trust-dhanapal-c6kfc/" target="_blank" class="founder-link">Articles <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+                        <a href="javascript:void(0)" onclick="openContactModal('general')" class="founder-link">Email &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-bar"></div>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2>Ready to see what an AI agent team can do for your operations?</h2>
+            <div class="cta-buttons">
+                <a href="javascript:void(0)" onclick="openContactModal('demo')" class="btn" style="text-decoration:none;">Request a Demo &rarr;</a>
+                <a href="javascript:void(0)" onclick="openContactModal('call')" class="btn" style="text-decoration:none;">Schedule a Call &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Brand</h4>
+                <a href="#hero">Home</a>
+                <a href="#why">Why QuietStaff</a>
+                <a href="#how">How It Works</a>
+                <a href="#founder">Founder</a>
+            </div>
+            <div class="footer-column">
+                <h4>Platform</h4>
+                <a href="#platform">Features</a>
+                <a href="#agents">Agents</a>
+                <a href="#technology">Technology</a>
+                <a href="#global">Global Reach</a>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <span class="footer-link-soon">Blog <em>(coming soon)</em></span>
+                <span class="footer-link-soon">Careers <em>(coming soon)</em></span>
+                <span class="footer-link-soon">Press <em>(coming soon)</em></span>
+                <a href="javascript:void(0)" onclick="openContactModal('general')">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <span class="footer-link-soon">Privacy Policy <em>(coming soon)</em></span>
+                <span class="footer-link-soon">Terms of Service <em>(coming soon)</em></span>
+                <span class="footer-link-soon">Security <em>(coming soon)</em></span>
+                <span class="footer-link-soon">Compliance <em>(coming soon)</em></span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 QuietStaff. Built on AWS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Particle Canvas
+        function createHeroCanvas() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = Math.min(window.innerHeight, 800);
+            }
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 1;
+                    this.vy = (Math.random() - 0.5) * 1;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.color = Math.random() > 0.5 ? 'rgba(99, 102, 241, 0.6)' : 'rgba(34, 211, 238, 0.4)';
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.x < 0) this.x = canvas.width;
+                    if (this.y > canvas.height) this.y = 0;
+                    if (this.y < 0) this.y = canvas.height;
+                }
+
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < 60; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function drawConnections() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 150) {
+                            ctx.strokeStyle = `rgba(99, 102, 241, ${0.1 * (1 - distance / 150)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            let animId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+
+                drawConnections();
+                animId = requestAnimationFrame(animate);
+            }
+
+            resizeCanvas();
+            initParticles();
+            animate();
+
+            // Pause animation when tab is hidden (saves battery)
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    cancelAnimationFrame(animId);
+                } else {
+                    animate();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                initParticles();
+            });
+        }
+
+        // Scroll Event Listeners
+        function setupScrollEffects() {
+            const nav = document.querySelector('nav');
+            const hamburger = document.getElementById('hamburger');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Hamburger Menu
+            let menuOpen = false;
+            hamburger?.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                const navCenter = document.querySelector('.nav-center');
+                hamburger.setAttribute('aria-expanded', String(menuOpen));
+                if (menuOpen) {
+                    navCenter.style.display = 'flex';
+                    hamburger.style.position = 'fixed';
+                } else {
+                    navCenter.style.display = 'none';
+                    hamburger.style.position = '';
+                }
+            });
+        }
+
+        // Intersection Observer for fade-in animations
+        function setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Stagger animations
+        function setupStaggerAnimations() {
+            document.querySelectorAll('.why-item').forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            document.querySelectorAll('.platform-card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            document.querySelectorAll('.agent-card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            document.querySelectorAll('.tech-card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            document.querySelectorAll('.pricing-card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        }
+
+        // Smooth scroll for buttons
+        function setupButtonListeners() {
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.textContent.includes('See How It Works')) {
+                        e.preventDefault();
+                        document.getElementById('how').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        // ─── Modal Logic ────────────────────────────────────────
+        function setupContactModal() {
+            const overlay = document.getElementById('contactModal');
+            if (!overlay) return;
+            const closeBtn = document.getElementById('modalClose');
+            const contextEl = document.getElementById('modalContext');
+            const subjectEl = document.getElementById('formSubject');
+            const inquiryEl = document.getElementById('formInquiry');
+            const formEl = document.getElementById('qsForm');
+            const formDiv = document.getElementById('contactForm');
+            const successDiv = document.getElementById('formSuccess');
+            const selectEl = formEl.querySelector('select[name="Interest"]');
+
+            const contextMap = {
+                'demo': { label: 'Request a Demo', subject: 'Demo Request - QuietStaff', interest: 'Demo' },
+                'pilot': { label: 'Pilot Plan Inquiry', subject: 'Pilot Plan Inquiry - QuietStaff', interest: 'Pilot Plan' },
+                'growth': { label: 'Growth Plan - Demo', subject: 'Growth Plan Demo - QuietStaff', interest: 'Growth Plan' },
+                'enterprise': { label: 'Enterprise Inquiry', subject: 'Enterprise Plan Inquiry - QuietStaff', interest: 'Enterprise' },
+                'custom': { label: 'Custom Agent Inquiry', subject: 'Custom Agent Build - QuietStaff', interest: 'Custom Agent' },
+                'call': { label: 'Schedule a Call', subject: 'Schedule a Call - QuietStaff', interest: 'General' },
+                'general': { label: 'Get in Touch', subject: 'General Inquiry - QuietStaff', interest: 'General' },
+            };
+
+            window.openContactModal = function(type) {
+                const ctx = contextMap[type] || contextMap['demo'];
+                contextEl.textContent = ctx.label;
+                subjectEl.value = ctx.subject;
+                inquiryEl.value = ctx.interest;
+                selectEl.value = ctx.interest;
+                formDiv.style.display = 'block';
+                successDiv.classList.remove('active');
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            };
+
+            function closeModal() {
+                overlay.classList.remove('active');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) closeModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
+
+            // Handle form submit
+            formEl.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(formEl);
+
+                fetch(formEl.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                }).then(function(res) {
+                    if (res.ok) {
+                        formDiv.style.display = 'none';
+                        successDiv.classList.add('active');
+                        formEl.reset();
+                    }
+                }).catch(function() {
+                    formDiv.style.display = 'none';
+                    successDiv.classList.add('active');
+                    formEl.reset();
+                });
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createHeroCanvas();
+            setupScrollEffects();
+            setupIntersectionObserver();
+            setupStaggerAnimations();
+            setupButtonListeners();
+            setupContactModal();
+        });
+    </script>
+
+    <!-- ─── Contact Modal ─────────────────────────────────── -->
+    <div class="modal-overlay" id="contactModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal">
+            <button class="modal-close" id="modalClose" aria-label="Close contact form">&times;</button>
+
+            <!-- Form -->
+            <div id="contactForm">
+                <h3 id="modalTitle">Get in Touch</h3>
+                <div class="modal-context" id="modalContext">Request a Demo</div>
+
+                <form action="https://formsubmit.co/contact@quietstaff.com" method="POST" id="qsForm">
+                    <!-- FormSubmit config -->
+                    <input type="hidden" name="_subject" id="formSubject" value="New Inquiry - QuietStaff">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_next" value="#">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Leave empty">
+                    <input type="hidden" name="Inquiry Type" id="formInquiry" value="Demo Request">
+
+                    <div class="form-group">
+                        <label for="qs-name">Full Name *</label>
+                        <input type="text" id="qs-name" name="Name" placeholder="John Doe" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qs-email">Work Email *</label>
+                        <input type="email" id="qs-email" name="Email" placeholder="john@company.com" required autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qs-company">Company</label>
+                        <input type="text" id="qs-company" name="Company" placeholder="Company name" autocomplete="organization">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qs-interest">What are you looking for?</label>
+                        <select id="qs-interest" name="Interest">
+                            <option value="Demo">Product Demo</option>
+                            <option value="Pilot Plan">Pilot Plan</option>
+                            <option value="Growth Plan">Growth Plan</option>
+                            <option value="Enterprise">Enterprise Plan</option>
+                            <option value="Custom Agent">Custom Agent Build</option>
+                            <option value="General">General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qs-message">Message</label>
+                        <textarea id="qs-message" name="Message" placeholder="Tell us about your use case, team size, or any questions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send Request &rarr;</button>
+                </form>
+            </div>
+
+            <!-- Success state -->
+            <div class="form-success" id="formSuccess">
+                <div class="check-icon">&check;</div>
+                <h3>Request Sent!</h3>
+                <p style="color:var(--text-secondary); margin-top:0.75rem;">We'll get back to you within 24 hours at the email you provided.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
