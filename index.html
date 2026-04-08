@@ -227,7 +227,23 @@
             height: 2px;
             background-color: var(--text-primary);
             transition: all 0.3s ease;
+            transform-origin: center;
         }
+
+        /* Hamburger → X when active */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile-only element (hidden on desktop) */
+        .mobile-only { display: none; }
 
         /* Hero Section */
         .hero {
@@ -1450,11 +1466,16 @@
 
             .hamburger {
                 display: flex;
+                z-index: 1001; /* stays above the overlay */
             }
 
+            /* Hide desktop Request Demo button on mobile */
             .nav-right {
-                gap: 1rem;
+                display: none;
             }
+
+            /* Show mobile-only items */
+            .mobile-only { display: block; }
 
             .nav-button {
                 padding: 0.5rem 1rem;
@@ -1807,9 +1828,27 @@
                 justify-content: center;
                 align-items: center;
                 gap: 2rem;
-                z-index: 999;
+                z-index: 1000;
+                display: flex !important;
             }
-            .nav-center.active a { font-size: 1.3rem; }
+            .nav-center.active a {
+                font-size: 1.3rem;
+                border-bottom: 1px solid rgba(51,65,85,0.4);
+                width: 80%;
+                text-align: center;
+                padding-bottom: 1rem;
+            }
+            .nav-center.active .mobile-cta-btn {
+                margin-top: 0.5rem;
+                padding: 0.875rem 2.5rem;
+                font-size: 1.05rem;
+                background: var(--accent-primary);
+                color: white;
+                border-radius: 0.5rem;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
         }
 
         /* ─── Focus states for keyboard nav ─────────────── */
@@ -1897,11 +1936,13 @@
                   <text x="63" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="9.5" letter-spacing="1.6" fill="#94a3b8">Multi-model AGaaS &middot; Managed AI Ops</text>
                 </svg>
             </div>
-            <div class="nav-center">
+            <div class="nav-center" id="navCenter">
                 <a href="#platform">Platform</a>
                 <a href="#agents">Agents</a>
                 <a href="#technology">Technology</a>
                 <a href="#founder">Founder</a>
+                <!-- Request Demo shown only inside mobile overlay -->
+                <a href="javascript:void(0)" onclick="openContactModal('demo')" class="mobile-only mobile-cta-btn" style="text-decoration:none;">Request a Demo &rarr;</a>
             </div>
             <div class="nav-right">
                 <a href="javascript:void(0)" onclick="openContactModal('demo')" class="nav-button" style="text-decoration:none;">Request a Demo &rarr;</a>
@@ -2843,18 +2884,23 @@
             });
 
             // Hamburger Menu
+            const navCenter = document.getElementById('navCenter');
             let menuOpen = false;
-            hamburger?.addEventListener('click', () => {
-                menuOpen = !menuOpen;
-                const navCenter = document.querySelector('.nav-center');
+
+            function toggleMenu(open) {
+                menuOpen = (typeof open === 'boolean') ? open : !menuOpen;
                 hamburger.setAttribute('aria-expanded', String(menuOpen));
-                if (menuOpen) {
-                    navCenter.style.display = 'flex';
-                    hamburger.style.position = 'fixed';
-                } else {
-                    navCenter.style.display = 'none';
-                    hamburger.style.position = '';
-                }
+                hamburger.classList.toggle('active', menuOpen);
+                navCenter.classList.toggle('active', menuOpen);
+                // Prevent background scroll when overlay is open
+                document.body.style.overflow = menuOpen ? 'hidden' : '';
+            }
+
+            hamburger?.addEventListener('click', () => toggleMenu());
+
+            // Close menu when any nav link (including mobile CTA) is clicked
+            navCenter?.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => toggleMenu(false));
             });
         }
 
