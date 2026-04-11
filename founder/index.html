@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Founder — QuietStaff</title>
+    <meta name="description" content="About the Founder of QuietStaff — building the next generation of multi-model AI agent teams for business operations.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://quietstaff.com/founder/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About the Founder — QuietStaff">
+    <meta property="og:description" content="Building the next generation of multi-model AI agent teams for business operations.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://quietstaff.com/founder/">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/brand/logo-package/svg/quietstaff-favicon.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="/brand/logo-package/png/quietstaff-icon-color-64x64.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/brand/logo-package/png/quietstaff-icon-color-512x512.png">
+    <meta name="theme-color" content="#030710">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #030710;
+            --bg-secondary: #0f172a;
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --border-card: rgba(99, 102, 241, 0.12);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-primary: #6366f1;
+            --accent-secondary: #22d3ee;
+            --accent-tertiary: #7c3aed;
+            --gradient-accent: linear-gradient(135deg, #6366f1, #7c3aed, #22d3ee);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(3, 7, 16, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-logo svg { display: block; height: 56px; width: auto; }
+
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-center a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-center a:hover { color: var(--text-primary); }
+
+        .nav-button {
+            padding: 0.6rem 1.3rem;
+            background: var(--gradient-accent);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Hero */
+        .founder-hero {
+            padding: 5rem 0 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 500px;
+            background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .founder-hero > * { position: relative; z-index: 1; }
+
+        .founder-badge {
+            display: inline-block;
+            padding: 0.5rem 1.1rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent-secondary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .founder-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .text-gradient {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .founder-hero .tagline {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        /* Content sections */
+        .founder-body {
+            padding: 3rem 0 5rem;
+        }
+
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .content-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .content-card p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .content-card p:last-child { margin-bottom: 0; }
+
+        /* Highlights grid */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-card {
+            background: rgba(99, 102, 241, 0.06);
+            border: 1px solid rgba(99, 102, 241, 0.18);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.35);
+        }
+
+        .highlight-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        /* Quote */
+        .founder-quote {
+            border-left: 3px solid var(--accent-primary);
+            padding: 1.25rem 0 1.25rem 1.75rem;
+            font-style: italic;
+            color: var(--text-primary);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin: 1.5rem 0;
+        }
+
+        /* CTA */
+        .founder-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 1.8rem;
+            background: var(--gradient-accent);
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 0 0.5rem 0.75rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(99, 102, 241, 0.1);
+            box-shadow: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid rgba(99, 102, 241, 0.1);
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-content a {
+            color: var(--text-secondary);
+            margin: 0 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .footer-content a:hover { color: var(--text-primary); }
+
+        .footer-bottom {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(99, 102, 241, 0.08);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-content { padding: 0.85rem 1.25rem; gap: 1rem; }
+            .nav-center { display: none; }
+            .container { padding: 0 1.25rem; }
+            .founder-hero { padding: 3rem 0 2rem; }
+            .content-card { padding: 1.75rem 1.5rem; }
+            .highlights-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="nav-logo">
+                <a href="/" aria-label="QuietStaff Home">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" height="56" role="img" aria-label="QuietStaff">
+                      <defs>
+                        <linearGradient id="gw2" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0%" stop-color="#6366f1"/>
+                          <stop offset="50%" stop-color="#7c3aed"/>
+                          <stop offset="100%" stop-color="#22d3ee"/>
+                        </linearGradient>
+                      </defs>
+                      <g transform="translate(14,12)">
+                        <circle cx="18" cy="20" r="18" fill="url(#gw2)" opacity="0.95"/>
+                        <circle cx="18" cy="20" r="6" fill="#030710"/>
+                      </g>
+                      <text x="62" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="300" letter-spacing="0.5" fill="url(#gw2)">Quiet</text>
+                      <text x="146" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.3" fill="#ffffff">Staff</text>
+                      <text x="63" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="9.5" letter-spacing="1.6" fill="#94a3b8">Multi-model AGaaS &middot; Managed AI Ops</text>
+                    </svg>
+                </a>
+            </div>
+            <div class="nav-center">
+                <a href="/#platform">Platform</a>
+                <a href="/#agents">Agents</a>
+                <a href="/#technology">Technology</a>
+                <a href="/founder/">Founder</a>
+            </div>
+            <div class="nav-right">
+                <a href="/" class="nav-button">&larr; Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="founder-hero">
+        <div class="container">
+            <div class="founder-badge">About the Founder</div>
+            <h1>Meet <span class="text-gradient">Mohan</span></h1>
+            <p class="tagline">Technology leader, doctoral researcher, and builder of the multi-model AI future.</p>
+        </div>
+    </section>
+
+    <!-- Body -->
+    <section class="founder-body">
+        <div class="container">
+
+            <div class="content-card">
+                <h2>Background</h2>
+                <p>
+                    Mohan is a technology leader and doctoral researcher in Business Administration with 21 years of experience building on cloud platforms and AWS. His work spans enterprise SaaS, data engineering, and cloud-native architecture — with a focus on how intelligent systems can transform the way businesses operate.
+                </p>
+                <p>
+                    He founded QuietStaff to bring the next generation of AI agent teams into business operations — agents that don't just automate tasks, but learn, adapt, and work alongside people.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2>At a Glance</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <div class="highlight-label">Experience</div>
+                        <div class="highlight-value">21 Years on Cloud &amp; AWS</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-label">Research</div>
+                        <div class="highlight-value">Doctoral Researcher, Business Administration</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-label">Focus</div>
+                        <div class="highlight-value">Multi-Model AI &amp; Agent Architectures</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>Passion for Multi-Model AI</h2>
+                <p>
+                    Mohan believes the future of AI isn't any single model — it's the orchestration of many. Different models have different strengths: some reason better, some write better, some see better, some are faster or cheaper. The real unlock comes from composing them into systems that pick the right model for the right moment.
+                </p>
+                <p>
+                    This conviction drives QuietStaff's core architecture. Every agent is built on a multi-model foundation — routed, observed, and continuously improved. It's how a small business can get enterprise-grade intelligence without enterprise-grade complexity.
+                </p>
+                <div class="founder-quote">
+                    "The future isn't AI replacing people. It's AI multiplying what people can do. QuietStaff brings that vision to operations."
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>Why QuietStaff</h2>
+                <p>
+                    Most AI tools today give you a chatbot and call it a product. QuietStaff is different — it deploys full agent teams that live inside your operations: handling WhatsApp, email, sales, invoicing, documents, and more. Custom-trained to your business, powered by multi-model intelligence, and managed end-to-end.
+                </p>
+                <p>
+                    The mission is simple: AI that quietly runs your operations, so you can focus on growing your business.
+                </p>
+            </div>
+
+            <div class="founder-cta">
+                <a href="/" class="btn btn-outline">&larr; Back to QuietStaff</a>
+                <a href="/#cta" class="btn">Request a Demo &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <a href="/">Home</a>
+                <a href="/#platform">Platform</a>
+                <a href="/#agents">Agents</a>
+                <a href="/#technology">Technology</a>
+                <a href="/founder/">Founder</a>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 QuietStaff &middot; AI, Quietly Running Your Operations
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

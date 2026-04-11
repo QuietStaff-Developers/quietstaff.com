@@ -42,14 +42,6 @@
       "url": "https://quietstaff.com",
       "logo": "https://quietstaff.com/brand/logo-package/svg/quietstaff-horizontal-color-dark.svg",
       "description": "AI Agent Teams for Business Operations — Multi-Model AGaaS, Managed AI Ops",
-      "founder": {
-        "@type": "Person",
-        "name": "Mohan Raj Dhanapal",
-        "url": "https://www.linkedin.com/in/mohan-technical-leadership/"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/mohan-technical-leadership/"
-      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "contact@quietstaff.com",
@@ -1160,117 +1152,6 @@
             margin-top: 1rem;
         }
 
-        /* Founder Section */
-        .founder-section {
-            background: linear-gradient(180deg, rgba(34, 211, 238, 0.05) 0%, transparent 100%);
-        }
-
-        .founder-content {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .founder-avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: var(--gradient-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 2.5rem;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .founder-bio {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .founder-header h2 {
-            margin-bottom: 0.5rem;
-        }
-
-        .founder-title {
-            font-size: 1.1rem;
-            color: var(--accent-secondary);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .founder-quals {
-            display: flex;
-            gap: 2rem;
-            margin: 0.75rem 0;
-            flex-wrap: wrap;
-        }
-
-        .founder-qual {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .founder-qual-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .founder-qual-value {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .founder-description {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin: 1.5rem 0;
-        }
-
-        .founder-quote {
-            padding: 1.5rem;
-            background: var(--bg-card);
-            border-left: 4px solid var(--accent-secondary);
-            border-radius: 0.5rem;
-            font-size: 1.05rem;
-            color: var(--accent-secondary);
-            font-style: italic;
-            -webkit-backdrop-filter:  blur(16px);
-            backdrop-filter: blur(16px);
-        }
-
-        .founder-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .founder-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 0.5rem;
-            color: var(--accent-primary);
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .founder-link:hover {
-            border-color: var(--accent-primary);
-            background: rgba(99, 102, 241, 0.1);
-        }
-
         /* CTA Section */
         .cta-section {
             background: var(--gradient-accent);
@@ -1445,11 +1326,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .founder-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1534,21 +1410,6 @@
                 transform: scale(1);
             }
 
-            .founder-content {
-                grid-template-columns: 1fr;
-                align-items: center;
-            }
-
-            .founder-avatar {
-                width: 120px;
-                height: 120px;
-                margin: 0 auto;
-            }
-
-            .founder-quals {
-                gap: 1.5rem;
-            }
-
             .footer-content {
                 grid-template-columns: 1fr;
             }
@@ -1620,15 +1481,6 @@
 
             .pricing-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .founder-links {
-                flex-direction: column;
-            }
-
-            .founder-link {
-                width: 100%;
-                justify-content: center;
             }
 
             .cta-buttons {
@@ -1891,7 +1743,7 @@
         /* ─── Print styles ──────────────────────────────── */
         @media print {
             nav, .modal-overlay, .flow-dot, canvas, .hamburger,
-            .btn, .nav-button, .founder-links, .cta-section { display: none !important; }
+            .btn, .nav-button, .cta-section { display: none !important; }
             body { background: #fff !important; color: #000 !important; }
             section { page-break-inside: avoid; }
             h1, h2, h3 { color: #000 !important; }
@@ -1940,7 +1792,7 @@
                 <a href="#platform">Platform</a>
                 <a href="#agents">Agents</a>
                 <a href="#technology">Technology</a>
-                <a href="#founder">Founder</a>
+                <a href="/founder/">Founder</a>
                 <!-- Request Demo shown only inside mobile overlay -->
                 <a href="javascript:void(0)" onclick="openContactModal('demo')" class="mobile-only mobile-cta-btn" style="text-decoration:none;">Request a Demo &rarr;</a>
             </div>
@@ -2535,7 +2387,7 @@
             </div>
 
             <div class="founder-note">
-                <strong>From the Founder:</strong> 15 years building on AWS across NAM, APAC, and EMEA. QuietStaff infrastructure is designed for intelligence at scale — event-driven, serverless, and purpose-built for AI operations. Every decision reflects deep AWS expertise and operational maturity.
+                <strong>From the Founder:</strong> 21 years building on cloud platforms and AWS. QuietStaff infrastructure is designed for intelligence at scale — event-driven, serverless, and purpose-built for AI operations. Every decision reflects deep cloud expertise and operational maturity.
             </div>
         </div>
     </section>
@@ -2664,56 +2516,12 @@
     <!-- Founder Section -->
     <section id="founder">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3rem;">Meet the Founder</h2>
-
-            <div class="founder-content">
-                <div class="founder-avatar">MRD</div>
-                <div class="founder-bio">
-                    <div class="founder-header">
-                        <h2>Mohan Raj Dhanapal</h2>
-                        <div class="founder-title">Founder & Chief AI Architect, QuietStaff</div>
-                    </div>
-
-                    <div class="founder-quals">
-                        <div class="founder-qual">
-                            <div class="founder-qual-label">Education</div>
-                            <div class="founder-qual-value">IIM Executive Management</div>
-                        </div>
-                        <div class="founder-qual">
-                            <div class="founder-qual-label">Research</div>
-                            <div class="founder-qual-value">DBA (Pursuing)</div>
-                        </div>
-                    </div>
-
-                    <div class="founder-quals">
-                        <div class="founder-qual">
-                            <div class="founder-qual-label">Experience</div>
-                            <div class="founder-qual-value">21 Years in Tech</div>
-                        </div>
-                        <div class="founder-qual">
-                            <div class="founder-qual-label">AWS Expertise</div>
-                            <div class="founder-qual-value">15+ Years</div>
-                        </div>
-                        <div class="founder-qual">
-                            <div class="founder-qual-label">Global Footprint</div>
-                            <div class="founder-qual-value">NAM · APAC · EMEA</div>
-                        </div>
-                    </div>
-
-                    <p class="founder-description">
-                        21 years of building and scaling SaaS platforms, high-performing engineering teams, and operational systems across MNCs, startups, and product companies. Deep domain expertise spanning Fintech, Healthcare, BFSI, and Utility sectors — with a proven track record in data analytics, AI engineering, and cloud-native architecture on AWS. An IIM-trained strategist and doctoral researcher, with 15+ years on AWS driving infrastructure decisions at scale across North America, Asia-Pacific, and EMEA. Now applying that leadership and technical depth to build the next generation of intelligent agent teams.
-                    </p>
-
-                    <div class="founder-quote">
-                        "The future isn't AI replacing people. It's AI multiplying what people can do. QuietStaff brings that vision to operations."
-                    </div>
-
-                    <div class="founder-links">
-                        <a href="https://www.linkedin.com/in/mohan-technical-leadership/" target="_blank" class="founder-link">LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
-                        <a href="https://www.linkedin.com/pulse/when-grace-met-rocky-architecture-ai-agent-emergent-trust-dhanapal-c6kfc/" target="_blank" class="founder-link">Articles <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
-                        <a href="javascript:void(0)" onclick="openContactModal('general')" class="founder-link">Email &rarr;</a>
-                    </div>
-                </div>
+            <h2 style="text-align: center; margin-bottom: 1.5rem;">Meet the Founder</h2>
+            <p style="text-align: center; max-width: 680px; margin: 0 auto 2rem; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">
+                Mohan is a technology leader and doctoral researcher in Business Administration with 21 years of experience building on cloud platforms and AWS. His passion for multi-model AI and agent architectures drives the vision behind QuietStaff.
+            </p>
+            <div style="text-align: center;">
+                <a href="/founder/" class="btn" style="text-decoration:none;">About the Founder &rarr;</a>
             </div>
         </div>
     </section>
@@ -2741,7 +2549,7 @@
                 <a href="#hero">Home</a>
                 <a href="#why">Why QuietStaff</a>
                 <a href="#how">How It Works</a>
-                <a href="#founder">Founder</a>
+                <a href="/founder/">Founder</a>
             </div>
             <div class="footer-column">
                 <h4>Platform</h4>
