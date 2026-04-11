@@ -257,6 +257,43 @@
             letter-spacing: -0.02em;
         }
 
+        /* Dual title block under the name */
+        .founder-title-block {
+            margin: 0 auto 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .founder-title-primary {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 1rem;
+            background: var(--highlight-bg);
+            border: 1px solid var(--highlight-border);
+            border-radius: 999px;
+        }
+        .founder-title-primary::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+        }
+        .founder-title-secondary {
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-secondary);
+        }
+
         .text-gradient {
             background: var(--gradient-accent);
             -webkit-background-clip: text;
@@ -338,7 +375,7 @@
             line-height: 1.4;
         }
 
-        /* Quote */
+        /* Inline quote inside cards */
         .founder-quote {
             border-left: 3px solid var(--accent-primary);
             padding: 1.25rem 0 1.25rem 1.75rem;
@@ -349,11 +386,175 @@
             margin: 1.5rem 0;
         }
 
+        /* Pull-quote section (Point of View) */
+        .pull-quote-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(124, 58, 237, 0.06), rgba(34, 211, 238, 0.08));
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 3rem 2.75rem 2.75rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+        .pull-quote-card::before {
+            content: '\201C';
+            position: absolute;
+            top: -1.25rem;
+            left: 1.5rem;
+            font-family: 'Inter', serif;
+            font-size: 8rem;
+            line-height: 1;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.65;
+            pointer-events: none;
+        }
+        .pull-quote-card .pq-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--accent-secondary);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .pull-quote-card p {
+            font-size: 1.25rem;
+            line-height: 1.75;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin: 0;
+            position: relative;
+        }
+
+        /* Focus Areas — chip grid */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .focus-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.85rem 1.1rem;
+            background: var(--highlight-bg);
+            border: 1px solid var(--highlight-border);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: transform 0.2s, border-color 0.2s, background 0.2s;
+        }
+        .focus-chip:hover {
+            transform: translateY(-1px);
+            border-color: var(--card-border-hover);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        .focus-chip .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            flex-shrink: 0;
+        }
+
+        /* 30-Day Promise callout */
+        .promise-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(34, 211, 238, 0.1));
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        .promise-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.18), transparent 70%);
+            pointer-events: none;
+        }
+        .promise-card > * { position: relative; }
+        .promise-label {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--accent-secondary);
+            margin-bottom: 1rem;
+            padding: 0.35rem 0.9rem;
+            border: 1px solid var(--highlight-border);
+            background: var(--highlight-bg);
+            border-radius: 999px;
+        }
+        .promise-card h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--text-primary);
+            max-width: 620px;
+            margin: 0 auto;
+            letter-spacing: -0.01em;
+        }
+        .promise-card .promise-sub {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
         /* CTA */
         .founder-cta {
             text-align: center;
             margin-top: 3rem;
         }
+
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .btn-kira {
+            background: var(--gradient-accent);
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            box-shadow: 0 10px 28px rgba(99, 102, 241, 0.28);
+        }
+        .btn-kira svg { width: 20px; height: 20px; flex-shrink: 0; }
+        .btn-kira:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .cta-email {
+            display: inline-block;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            margin-top: 0.25rem;
+        }
+        .cta-email a {
+            color: var(--accent-primary);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .cta-email a:hover { border-bottom-color: var(--accent-primary); }
 
         .btn {
             display: inline-block;
@@ -419,9 +620,20 @@
             .nav-content { padding: 0.85rem 1.25rem; gap: 1rem; }
             .nav-center { display: none; }
             .container { padding: 0 1.25rem; }
-            .founder-hero { padding: 3rem 0 2rem; }
+            .founder-hero { padding: 3rem 0 2rem; min-height: 360px; }
+            .founder-hero h1 { font-size: 2rem; }
+            .founder-title-primary { font-size: 0.95rem; padding: 0.4rem 0.85rem; }
+            .founder-title-secondary { font-size: 0.8rem; }
             .content-card { padding: 1.75rem 1.5rem; }
             .highlights-grid { grid-template-columns: 1fr; }
+            .pull-quote-card { padding: 2.25rem 1.5rem 1.75rem; }
+            .pull-quote-card::before { font-size: 5.5rem; top: -0.75rem; left: 0.75rem; }
+            .pull-quote-card p { font-size: 1.05rem; line-height: 1.65; }
+            .focus-grid { grid-template-columns: 1fr; }
+            .promise-card { padding: 1.75rem 1.25rem; }
+            .promise-card h2 { font-size: 1.25rem; }
+            .cta-actions { flex-direction: column; gap: 0.75rem; }
+            .btn-kira { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -453,7 +665,7 @@
                 <a href="/#platform">Platform</a>
                 <a href="/#agents">Agents</a>
                 <a href="/#technology">Technology</a>
-                <a href="/founder/">Founder</a>
+                <a href="/founder/">Founder &amp; CEO</a>
             </div>
             <div class="nav-right">
                 <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
@@ -470,8 +682,12 @@
         <canvas id="hero-canvas" class="hero-canvas"></canvas>
         <div class="container">
             <div class="founder-badge">About the Founder</div>
-            <h1>Meet <span class="text-gradient">Mohan</span></h1>
-            <p class="tagline">Technology leader, doctoral researcher, and builder of the multi-model AI future.</p>
+            <h1>Meet <span class="text-gradient">Raj</span></h1>
+            <div class="founder-title-block">
+                <div class="founder-title-primary">Founder &amp; CEO, QuietStaff</div>
+                <div class="founder-title-secondary">Chief AI Architect</div>
+            </div>
+            <p class="tagline">Two decades building technology operations &mdash; now deploying AI agents that work like staff.</p>
         </div>
     </section>
 
@@ -479,22 +695,31 @@
     <section class="founder-body">
         <div class="container">
 
+            <!-- Background -->
             <div class="content-card">
                 <h2>Background</h2>
                 <p>
-                    Mohan is a technology leader and doctoral researcher in Business Administration with 21 years of experience building on cloud platforms and AWS. His work spans enterprise SaaS, data engineering, and cloud-native architecture — with a focus on how intelligent systems can transform the way businesses operate.
+                    Raj has spent two decades building and scaling technology operations at enterprise organisations &mdash; leading distributed engineering teams, architecting cloud-native platforms, and delivering operational systems at scale.
                 </p>
                 <p>
-                    He founded QuietStaff to bring the next generation of AI agent teams into business operations — agents that don't just automate tasks, but learn, adapt, and work alongside people.
+                    Across every role, the same story kept repeating: capable businesses weighed down by operational overhead, talent gaps, and the hidden cost of manual coordination. When AI began outperforming those workflows, the path forward became obvious.
+                </p>
+                <p>
+                    QuietStaff is what he built next &mdash; a managed AI agent service that gives businesses the operational power of a skilled team, without the hiring cost, overhead, or delay.
                 </p>
             </div>
 
+            <!-- At a Glance -->
             <div class="content-card">
                 <h2>At a Glance</h2>
                 <div class="highlights-grid">
                     <div class="highlight-card">
                         <div class="highlight-label">Experience</div>
-                        <div class="highlight-value">21 Years on Cloud &amp; AWS</div>
+                        <div class="highlight-value">21 Years in Tech</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-label">Platform</div>
+                        <div class="highlight-value">Cloud-Native on AWS</div>
                     </div>
                     <div class="highlight-card">
                         <div class="highlight-label">Research</div>
@@ -507,32 +732,73 @@
                 </div>
             </div>
 
+            <!-- Point of View -->
+            <div class="pull-quote-card">
+                <div class="pq-label">Point of View</div>
+                <p>
+                    The future isn't AI replacing people. It's the right minds, equipped with the right agents &mdash; solving problems neither could tackle alone. Most businesses don't need more staff. They need smarter systems with a human at the wheel. That's what QuietStaff builds.
+                </p>
+            </div>
+
+            <!-- Focus Areas -->
             <div class="content-card">
-                <h2>Passion for Multi-Model AI</h2>
+                <h2>What Raj Brings to QuietStaff</h2>
                 <p>
-                    Mohan believes the future of AI isn't any single model — it's the orchestration of many. Different models have different strengths: some reason better, some write better, some see better, some are faster or cheaper. The real unlock comes from composing them into systems that pick the right model for the right moment.
+                    A builder's mindset sharpened over two decades of enterprise delivery, now focused entirely on making AI agent teams practical, reliable, and safe for real operations.
                 </p>
-                <p>
-                    This conviction drives QuietStaff's core architecture. Every agent is built on a multi-model foundation — routed, observed, and continuously improved. It's how a small business can get enterprise-grade intelligence without enterprise-grade complexity.
-                </p>
-                <div class="founder-quote">
-                    "The future isn't AI replacing people. It's AI multiplying what people can do. QuietStaff brings that vision to operations."
+                <div class="focus-grid">
+                    <div class="focus-chip"><span class="dot"></span>Generative AI &amp; Agentic Systems</div>
+                    <div class="focus-chip"><span class="dot"></span>Multi-Agent Architecture</div>
+                    <div class="focus-chip"><span class="dot"></span>AI Strategy &amp; Governance</div>
+                    <div class="focus-chip"><span class="dot"></span>Cloud-Native Platform Engineering</div>
+                    <div class="focus-chip"><span class="dot"></span>Distributed Engineering Leadership</div>
+                    <div class="focus-chip"><span class="dot"></span>Enterprise Operations at Scale</div>
+                    <div class="focus-chip"><span class="dot"></span>Product Support Engineering</div>
+                    <div class="focus-chip"><span class="dot"></span>Technical Programme Delivery</div>
                 </div>
             </div>
 
+            <!-- Passion for Multi-Model AI -->
             <div class="content-card">
-                <h2>Why QuietStaff</h2>
+                <h2>Why Multi-Model</h2>
                 <p>
-                    Most AI tools today give you a chatbot and call it a product. QuietStaff is different — it deploys full agent teams that live inside your operations: handling WhatsApp, email, sales, invoicing, documents, and more. Custom-trained to your business, powered by multi-model intelligence, and managed end-to-end.
+                    No single model wins at everything. Some reason better, some write better, some see better, some are simply faster or cheaper. The real unlock comes from composing them into systems that pick the right model for the right moment &mdash; and know when to hand control back to a human.
                 </p>
                 <p>
-                    The mission is simple: AI that quietly runs your operations, so you can focus on growing your business.
+                    That conviction shapes QuietStaff's core architecture. Every agent is built on a multi-model foundation &mdash; routed, observed, governed, and continuously improved. It's how a small business gets enterprise-grade intelligence without enterprise-grade complexity.
                 </p>
             </div>
 
+            <!-- What QuietStaff Does -->
+            <div class="content-card">
+                <h2>What QuietStaff Does</h2>
+                <p>
+                    QuietStaff deploys custom-trained AI agents that handle the operational work your team doesn't have time for &mdash; WhatsApp and email management, scheduling, document handling, invoicing follow-up, sales outreach, and more.
+                </p>
+                <p>
+                    Every agent is fine-tuned to your business using the Skills Engine. We manage the entire setup, training, and ongoing operations. You get the output of a skilled team member at a fraction of the cost.
+                </p>
+            </div>
+
+            <!-- 30-Day Promise -->
+            <div class="promise-card">
+                <span class="promise-label">The 30-Day Promise</span>
+                <h2>Your AI agent is live, trained on your workflows, and handling real tasks within 30 days &mdash; or we don't charge.</h2>
+                <p class="promise-sub">No long contracts. No endless discovery. Real output, or real money back.</p>
+            </div>
+
+            <!-- CTA -->
             <div class="founder-cta">
-                <a href="/" class="btn btn-outline">&larr; Back to QuietStaff</a>
-                <a href="/#cta" class="btn">Request a Demo &rarr;</a>
+                <div class="cta-actions">
+                    <a href="https://t.me/kira_quietstaff_bot" target="_blank" rel="noopener" class="btn btn-kira">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.05 2.41L1.86 10.3c-1.38.55-1.37 1.32-.25 1.67l5.18 1.62 12-7.57c.57-.34 1.08-.16.66.22L9.75 15.1 9.4 20.2c.55 0 .79-.25 1.1-.55l2.64-2.57 5.48 4.05c1 .55 1.72.27 1.97-.93L23.95 4.2c.36-1.46-.55-2.13-1.9-1.79z"/></svg>
+                        Talk to Kira
+                    </a>
+                    <a href="/" class="btn btn-outline">&larr; Back to QuietStaff</a>
+                </div>
+                <div class="cta-email">
+                    Or email <a href="mailto:contact@quietstaff.com">contact@quietstaff.com</a>
+                </div>
             </div>
 
         </div>
@@ -546,7 +812,7 @@
                 <a href="/#platform">Platform</a>
                 <a href="/#agents">Agents</a>
                 <a href="/#technology">Technology</a>
-                <a href="/founder/">Founder</a>
+                <a href="/founder/">Founder &amp; CEO</a>
             </div>
             <div class="footer-bottom">
                 &copy; 2026 QuietStaff &middot; AI, Quietly Running Your Operations
