@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
     <title>About the Founder — QuietStaff</title>
+
+    <!-- Theme: read preference before paint -->
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('quietstaff-theme');
+                var theme = saved === 'light' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <meta name="description" content="About the Founder of QuietStaff — building the next generation of multi-model AI agent teams for business operations.">
     <meta name="robots" content="index, follow">
 
@@ -30,7 +44,8 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
+        :root,
+        [data-theme="dark"] {
             --bg-primary: #030710;
             --bg-secondary: #0f172a;
             --bg-card: rgba(15, 23, 42, 0.6);
@@ -42,6 +57,40 @@
             --accent-secondary: #22d3ee;
             --accent-tertiary: #7c3aed;
             --gradient-accent: linear-gradient(135deg, #6366f1, #7c3aed, #22d3ee);
+
+            --nav-bg: rgba(3, 7, 16, 0.85);
+            --hero-glow: rgba(99, 102, 241, 0.15);
+            --card-border-hover: rgba(99, 102, 241, 0.35);
+            --highlight-bg: rgba(99, 102, 241, 0.06);
+            --highlight-border: rgba(99, 102, 241, 0.18);
+            --particle-color-a: rgba(99, 102, 241, 0.6);
+            --particle-color-b: rgba(34, 211, 238, 0.4);
+            --particle-line: 99, 102, 241;
+            --particle-line-opacity: 0.1;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-card: rgba(255, 255, 255, 0.78);
+            --border-card: rgba(99, 102, 241, 0.18);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent-primary: #6366f1;
+            --accent-secondary: #0891b2;
+            --accent-tertiary: #7c3aed;
+            --gradient-accent: linear-gradient(135deg, #6366f1, #7c3aed, #0891b2);
+
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --hero-glow: rgba(99, 102, 241, 0.12);
+            --card-border-hover: rgba(99, 102, 241, 0.45);
+            --highlight-bg: rgba(99, 102, 241, 0.05);
+            --highlight-border: rgba(99, 102, 241, 0.2);
+            --particle-color-a: rgba(99, 102, 241, 0.55);
+            --particle-color-b: rgba(8, 145, 178, 0.5);
+            --particle-line: 99, 102, 241;
+            --particle-line-opacity: 0.18;
         }
 
         html { scroll-behavior: smooth; }
@@ -69,11 +118,45 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(3, 7, 16, 0.85);
+            background: var(--nav-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+            border-bottom: 1px solid var(--border-card);
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
+
+        /* Theme-aware SVG logo text */
+        .logo-staff-text { fill: var(--text-primary); }
+        .logo-tagline-text { fill: var(--text-muted); }
+
+        /* Theme toggle button */
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-card);
+            color: var(--text-secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            padding: 0;
+            margin-right: 0.75rem;
+        }
+        .theme-toggle:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateY(-1px);
+        }
+        .theme-toggle svg { width: 18px; height: 18px; }
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: block; }
+        [data-theme="light"] .theme-toggle .icon-sun { display: block; }
+        [data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+        .nav-right { display: flex; align-items: center; }
 
         .nav-content {
             max-width: 1200px;
@@ -123,6 +206,10 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .founder-hero::before {
@@ -133,12 +220,21 @@
             transform: translateX(-50%);
             width: 800px;
             height: 500px;
-            background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15), transparent 70%);
+            background: radial-gradient(ellipse at center, var(--hero-glow), transparent 70%);
             pointer-events: none;
             z-index: 0;
         }
 
-        .founder-hero > * { position: relative; z-index: 1; }
+        .hero-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .founder-hero > .container { position: relative; z-index: 2; width: 100%; }
 
         .founder-badge {
             display: inline-block;
@@ -214,8 +310,8 @@
         }
 
         .highlight-card {
-            background: rgba(99, 102, 241, 0.06);
-            border: 1px solid rgba(99, 102, 241, 0.18);
+            background: var(--highlight-bg);
+            border: 1px solid var(--highlight-border);
             border-radius: 12px;
             padding: 1.5rem;
             transition: transform 0.2s, border-color 0.2s;
@@ -223,7 +319,7 @@
 
         .highlight-card:hover {
             transform: translateY(-2px);
-            border-color: rgba(99, 102, 241, 0.35);
+            border-color: var(--card-border-hover);
         }
 
         .highlight-label {
@@ -348,8 +444,8 @@
                         <circle cx="18" cy="20" r="6" fill="#030710"/>
                       </g>
                       <text x="62" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="300" letter-spacing="0.5" fill="url(#gw2)">Quiet</text>
-                      <text x="146" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.3" fill="#ffffff">Staff</text>
-                      <text x="63" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="9.5" letter-spacing="1.6" fill="#94a3b8">Multi-model AGaaS &middot; Managed AI Ops</text>
+                      <text x="146" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.3" class="logo-staff-text">Staff</text>
+                      <text x="63" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="9.5" letter-spacing="1.6" class="logo-tagline-text">Multi-model AGaaS &middot; Managed AI Ops</text>
                     </svg>
                 </a>
             </div>
@@ -360,6 +456,10 @@
                 <a href="/founder/">Founder</a>
             </div>
             <div class="nav-right">
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                </button>
                 <a href="/" class="nav-button">&larr; Back to Home</a>
             </div>
         </div>
@@ -367,6 +467,7 @@
 
     <!-- Hero -->
     <section class="founder-hero">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
         <div class="container">
             <div class="founder-badge">About the Founder</div>
             <h1>Meet <span class="text-gradient">Mohan</span></h1>
@@ -452,5 +553,124 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Particle Canvas — theme-aware orb animation
+        function createHeroCanvas() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function getThemeColors() {
+                const styles = getComputedStyle(document.documentElement);
+                return {
+                    a: (styles.getPropertyValue('--particle-color-a') || 'rgba(99, 102, 241, 0.6)').trim(),
+                    b: (styles.getPropertyValue('--particle-color-b') || 'rgba(34, 211, 238, 0.4)').trim(),
+                    line: (styles.getPropertyValue('--particle-line') || '99, 102, 241').trim(),
+                    lineOpacity: parseFloat((styles.getPropertyValue('--particle-line-opacity') || '0.1').trim()) || 0.1
+                };
+            }
+            let themeColors = getThemeColors();
+
+            function resizeCanvas() {
+                const rect = canvas.parentElement.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+            }
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.8;
+                    this.vy = (Math.random() - 0.5) * 0.8;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.useA = Math.random() > 0.5;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.x < 0) this.x = canvas.width;
+                    if (this.y > canvas.height) this.y = 0;
+                    if (this.y < 0) this.y = canvas.height;
+                }
+                draw() {
+                    ctx.fillStyle = this.useA ? themeColors.a : themeColors.b;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            canvas._refreshTheme = function() { themeColors = getThemeColors(); };
+
+            function initParticles() {
+                particles = [];
+                const count = Math.max(30, Math.floor((canvas.width * canvas.height) / 18000));
+                for (let i = 0; i < count; i++) particles.push(new Particle());
+            }
+
+            function drawConnections() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 140) {
+                            const alpha = themeColors.lineOpacity * (1 - distance / 140);
+                            ctx.strokeStyle = `rgba(${themeColors.line}, ${alpha})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            let animId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                drawConnections();
+                animId = requestAnimationFrame(animate);
+            }
+
+            resizeCanvas();
+            initParticles();
+            animate();
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) cancelAnimationFrame(animId);
+                else animate();
+            });
+            window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+        }
+
+        // Theme toggle
+        function setupThemeToggle() {
+            const btn = document.getElementById('themeToggle');
+            if (!btn) return;
+            btn.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') || 'dark';
+                const next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('quietstaff-theme', next); } catch (e) {}
+                const canvas = document.getElementById('hero-canvas');
+                if (canvas && typeof canvas._refreshTheme === 'function') canvas._refreshTheme();
+                const meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) meta.setAttribute('content', next === 'light' ? '#ffffff' : '#030710');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createHeroCanvas();
+            setupThemeToggle();
+        });
+    </script>
 </body>
 </html>
