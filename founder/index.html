@@ -25,15 +25,26 @@
     <link rel="canonical" href="https://quietstaff.com/founder/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="About the Founder — QuietStaff">
+    <meta property="og:title" content="About the Founder &amp; CEO — QuietStaff">
     <meta property="og:description" content="Building the next generation of multi-model AI agent teams for business operations.">
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://quietstaff.com/founder/">
+    <meta property="og:image" content="https://quietstaff.com/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="QuietStaff — AI Agent Teams for Business Operations">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="QuietStaff">
 
-    <!-- Favicon & Icons -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About the Founder &amp; CEO — QuietStaff">
+    <meta name="twitter:description" content="Building the next generation of multi-model AI agent teams for business operations.">
+    <meta name="twitter:image" content="https://quietstaff.com/assets/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="QuietStaff — AI Agent Teams for Business Operations">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/brand/logo-package/svg/quietstaff-favicon.svg">
-    <link rel="icon" type="image/png" sizes="64x64" href="/brand/logo-package/png/quietstaff-icon-color-64x64.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="/brand/logo-package/png/quietstaff-icon-color-512x512.png">
     <meta name="theme-color" content="#030710">
 
     <!-- Google Fonts -->
@@ -193,12 +204,16 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
         }
 
         .nav-button:hover {
             transform: translateY(-1px);
             box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
         }
+
+        /* Hide the short mobile label on desktop; mobile breakpoint swaps them */
+        .nav-button .label-mobile { display: none; }
 
         /* Hero */
         .founder-hero {
@@ -615,25 +630,73 @@
             border-top: 1px solid rgba(99, 102, 241, 0.08);
         }
 
-        /* Mobile */
+        /* Tablet / Mobile */
         @media (max-width: 768px) {
-            .nav-content { padding: 0.85rem 1.25rem; gap: 1rem; }
+            .nav-content { padding: 0.85rem 1rem; gap: 0.65rem; }
             .nav-center { display: none; }
+            .nav-logo svg { height: 44px; }
+            .nav-right { gap: 0.5rem; margin-right: 0; }
+            .theme-toggle { width: 44px; height: 44px; }
+            .nav-button { padding: 0.55rem 1rem; font-size: 0.85rem; }
+            .label-desktop { display: none; }
+            .label-mobile { display: inline; }
+
             .container { padding: 0 1.25rem; }
             .founder-hero { padding: 3rem 0 2rem; min-height: 360px; }
             .founder-hero h1 { font-size: 2rem; }
-            .founder-title-primary { font-size: 0.95rem; padding: 0.4rem 0.85rem; }
-            .founder-title-secondary { font-size: 0.8rem; }
+            .founder-title-block { max-width: 100%; }
+            .founder-title-primary {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.85rem;
+                text-align: center;
+                white-space: normal;
+                line-height: 1.35;
+            }
+            .founder-title-secondary { font-size: 0.75rem; letter-spacing: 0.06em; }
             .content-card { padding: 1.75rem 1.5rem; }
+            .content-card h2 { font-size: 1.35rem; }
             .highlights-grid { grid-template-columns: 1fr; }
             .pull-quote-card { padding: 2.25rem 1.5rem 1.75rem; }
-            .pull-quote-card::before { font-size: 5.5rem; top: -0.75rem; left: 0.75rem; }
+            .pull-quote-card::before { font-size: 5rem; top: -0.5rem; left: 0.75rem; }
             .pull-quote-card p { font-size: 1.05rem; line-height: 1.65; }
             .focus-grid { grid-template-columns: 1fr; }
             .promise-card { padding: 1.75rem 1.25rem; }
-            .promise-card h2 { font-size: 1.25rem; }
-            .cta-actions { flex-direction: column; gap: 0.75rem; }
-            .btn-kira { width: 100%; justify-content: center; }
+            .promise-card h2 { font-size: 1.2rem; line-height: 1.4; }
+            .cta-actions { flex-direction: column; gap: 0.75rem; width: 100%; }
+            .cta-actions .btn { margin: 0; width: 100%; max-width: 320px; }
+            .btn-kira { justify-content: center; }
+        }
+
+        /* Very small phones (<=480px) */
+        @media (max-width: 480px) {
+            .nav-logo svg { height: 36px; }
+            .nav-content { padding: 0.65rem 0.75rem; gap: 0.4rem; }
+            .nav-right { gap: 0.35rem; }
+            .theme-toggle { width: 40px; height: 40px; }
+            .nav-button { padding: 0.45rem 0.7rem; font-size: 0.75rem; }
+            .container { padding: 0 1rem; }
+            .founder-hero { padding: 2.25rem 0 1.5rem; min-height: 320px; }
+            .founder-hero h1 { font-size: 1.75rem; }
+            .founder-badge { font-size: 0.75rem; padding: 0.4rem 0.85rem; }
+            .tagline { font-size: 0.95rem; }
+            .founder-title-primary { font-size: 0.82rem; padding: 0.35rem 0.7rem; gap: 0.45rem; }
+            .founder-title-primary::before { width: 6px; height: 6px; }
+            .founder-title-secondary { font-size: 0.7rem; }
+            .content-card { padding: 1.5rem 1.1rem; border-radius: 14px; }
+            .content-card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+            .content-card p { font-size: 0.98rem; line-height: 1.7; }
+            .highlights-grid { gap: 0.75rem; }
+            .highlight-card { padding: 1.1rem 1rem; }
+            .highlight-value { font-size: 1rem; }
+            .pull-quote-card { padding: 2rem 1.1rem 1.5rem; border-radius: 16px; }
+            .pull-quote-card::before { font-size: 4.25rem; top: -0.35rem; left: 0.55rem; }
+            .pull-quote-card p { font-size: 0.98rem; }
+            .pull-quote-card .pq-label { font-size: 0.72rem; }
+            .focus-chip { padding: 0.75rem 0.9rem; font-size: 0.9rem; }
+            .promise-card { padding: 1.5rem 1rem; border-radius: 16px; }
+            .promise-card h2 { font-size: 1.1rem; }
+            .promise-label { font-size: 0.72rem; padding: 0.3rem 0.75rem; }
+            .promise-card .promise-sub { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -672,7 +735,7 @@
                     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 </button>
-                <a href="/" class="nav-button">&larr; Back to Home</a>
+                <a href="/" class="nav-button"><span class="label-desktop">&larr; Back to Home</span><span class="label-mobile">&larr; Home</span></a>
             </div>
         </div>
     </nav>

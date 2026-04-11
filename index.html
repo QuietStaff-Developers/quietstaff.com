@@ -31,19 +31,22 @@
     <meta property="og:url" content="https://quietstaff.com/">
     <meta property="og:title" content="QuietStaff - AI Agent Teams for Your Operations">
     <meta property="og:description" content="Custom-trained AI agents that handle your WhatsApp, email, sales, invoicing, and documents — managed end-to-end.">
-    <meta property="og:image" content="https://quietstaff.com/og-image.png">
+    <meta property="og:image" content="https://quietstaff.com/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="QuietStaff — AI Agent Teams for Business Operations">
+    <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="QuietStaff">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="QuietStaff - AI Agent Teams for Your Operations">
     <meta name="twitter:description" content="Custom-trained AI agents that handle your WhatsApp, email, sales, invoicing, and documents — managed end-to-end.">
-    <meta name="twitter:image" content="https://quietstaff.com/og-image.png">
+    <meta name="twitter:image" content="https://quietstaff.com/assets/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="QuietStaff — AI Agent Teams for Business Operations">
 
-    <!-- Favicon & Icons -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="brand/logo-package/svg/quietstaff-favicon.svg">
-    <link rel="icon" type="image/png" sizes="64x64" href="brand/logo-package/png/quietstaff-icon-color-64x64.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="brand/logo-package/png/quietstaff-icon-color-512x512.png">
     <meta name="theme-color" content="#030710">
 
     <!-- Structured Data -->
@@ -590,6 +593,40 @@
         /* How It Works */
         .how-section {
             background: linear-gradient(180deg, transparent 0%, rgba(34, 211, 238, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Shared background-image accent layer (used by .hero and .how-section) */
+        .section-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .section-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .section-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(3, 7, 16, 0.92);
+        }
+        /* Keep content above the bg accent */
+        .how-section > .container,
+        .hero > .container {
+            position: relative;
+            z-index: 2;
+        }
+        /* Strictly phones (< 768px): drop background images entirely for performance.
+           iPad portrait (768px) still shows them, matching the "phones only" intent. */
+        @media (max-width: 767px) {
+            .section-bg { display: none; }
         }
 
         .flow-container {
@@ -1431,11 +1468,29 @@
             .hamburger {
                 display: flex;
                 z-index: 1001; /* stays above the overlay */
+                width: 44px;
+                height: 44px;
+                justify-content: center;
+                align-items: center;
             }
 
-            /* Hide desktop Request Demo button on mobile */
+            /* Keep nav-right visible so the theme toggle still works on mobile; hide only the desktop Request Demo button */
             .nav-right {
+                gap: 0.5rem;
+            }
+            .nav-right .nav-button {
                 display: none;
+            }
+
+            /* Bump theme toggle to WCAG-friendly 44x44 touch target on mobile */
+            .theme-toggle {
+                width: 44px;
+                height: 44px;
+            }
+
+            /* Shrink logo so it fits alongside theme toggle + hamburger on 320–375px phones */
+            .nav-logo svg {
+                height: 44px;
             }
 
             /* Show mobile-only items */
@@ -1488,6 +1543,20 @@
 
             .tech-cards {
                 grid-template-columns: 1fr;
+            }
+
+            .arch-diagram {
+                padding: 1.5rem;
+            }
+
+            .arch-layer {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .arch-label {
+                height: auto;
             }
 
             .pricing-grid {
@@ -1733,12 +1802,15 @@
             h1 { font-size: 1.6rem !important; }
             h2 { font-size: 1.3rem !important; }
             .container { padding: 0 0.75rem; }
+            .nav-container { padding: 0 0.85rem; }
+            .nav-logo svg { height: 38px; }
             .hero-subheadline { font-size: 0.85rem; }
             .flow { flex-direction: column; gap: 0.5rem; }
             .flow-connector { transform: rotate(90deg); margin-top: 0; height: 30px; }
             .flow-node { min-width: unset; }
             .pricing-grid { gap: 1rem; }
             .modal { padding: 1.5rem; width: 95%; }
+            .theme-toggle { width: 42px; height: 42px; }
         }
 
         /* ─── Mobile flow: stack vertically under 768px ── */
@@ -1902,6 +1974,10 @@
     <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Background accent (hidden on mobile via CSS). Photo by Adi Goldstein on Unsplash — free commercial use. -->
+        <div class="section-bg" aria-hidden="true">
+            <img src="assets/images/hero-accent.webp" alt="" loading="lazy" decoding="async" width="1000" height="667">
+        </div>
         <canvas id="hero-canvas" class="hero-canvas"></canvas>
         <div class="container">
             <div class="hero-content">
@@ -2042,6 +2118,10 @@
 
     <!-- How It Works -->
     <section class="how-section" id="how">
+        <!-- Background accent (hidden on mobile via CSS). Photo on Unsplash — free commercial use. -->
+        <div class="section-bg" aria-hidden="true">
+            <img src="assets/images/tech-texture.webp" alt="" loading="lazy" decoding="async" width="1000" height="563">
+        </div>
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem;">How It Works</h2>
 
