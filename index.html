@@ -105,6 +105,11 @@
             --particle-color-b: rgba(34, 211, 238, 0.4);
             --particle-line: 99, 102, 241;
             --particle-line-opacity: 0.1;
+
+            /* Logo gradient stops — bright on dark */
+            --logo-grad-0: #818CF8;
+            --logo-grad-1: #3B82F6;
+            --logo-grad-2: #06B6D4;
         }
 
         [data-theme="light"] {
@@ -129,6 +134,11 @@
             --particle-color-b: rgba(8, 145, 178, 0.5);
             --particle-line: 99, 102, 241;
             --particle-line-opacity: 0.18;
+
+            /* Logo gradient stops — darker so they read on white */
+            --logo-grad-0: #4338CA;
+            --logo-grad-1: #1D4ED8;
+            --logo-grad-2: #0E7490;
         }
 
         html {
@@ -219,6 +229,12 @@
         /* Theme-aware SVG logo text */
         .logo-staff-text { fill: var(--text-primary); }
         .logo-tagline-text { fill: var(--text-muted); }
+
+        /* Theme-aware SVG gradient stops — apply via CSS classes (inline var() in
+           stop-color attribute isn't reliably supported across all browsers). */
+        .logo-stop-0 { stop-color: var(--logo-grad-0); }
+        .logo-stop-1 { stop-color: var(--logo-grad-1); }
+        .logo-stop-2 { stop-color: var(--logo-grad-2); }
 
         /* Theme toggle button */
         .theme-toggle {
@@ -1925,10 +1941,10 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" height="56" style="display:block;">
                   <defs>
                     <linearGradient id="gi" x1="0" y1="0" x2="55" y2="55" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stop-color="#818CF8"/><stop offset="50%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#06B6D4"/>
+                      <stop offset="0%" stop-color="#818CF8" class="logo-stop-0"/><stop offset="50%" stop-color="#3B82F6" class="logo-stop-1"/><stop offset="100%" stop-color="#06B6D4" class="logo-stop-2"/>
                     </linearGradient>
                     <linearGradient id="gw" x1="64" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stop-color="#818CF8"/><stop offset="55%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#06B6D4"/>
+                      <stop offset="0%" stop-color="#818CF8" class="logo-stop-0"/><stop offset="55%" stop-color="#3B82F6" class="logo-stop-1"/><stop offset="100%" stop-color="#06B6D4" class="logo-stop-2"/>
                     </linearGradient>
                     <filter id="fg"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                     <filter id="fs"><feGaussianBlur stdDeviation="1.1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
