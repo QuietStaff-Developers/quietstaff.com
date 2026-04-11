@@ -629,6 +629,10 @@
             .section-bg { display: none; }
         }
 
+        /* Light mode: hide background images entirely — the plain light layout reads cleaner
+           without the dark overlay panels. Dark mode keeps them as subtle texture. */
+        [data-theme="light"] .section-bg { display: none; }
+
         .flow-container {
             position: relative;
             margin: 3rem 0;
