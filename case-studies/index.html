@@ -65,15 +65,15 @@ nav.scrolled{background:rgba(3,7,16,0.92);backdrop-filter:blur(20px);border-bott
 .badge-healthcare{background:rgba(34,211,238,0.1);color:var(--healthcare-color);border:1px solid rgba(34,211,238,0.2);}
 .badge-finance{background:rgba(99,102,241,0.1);color:var(--finance-color);border:1px solid rgba(99,102,241,0.2);}
 .badge-logistics{background:rgba(139,92,246,0.1);color:var(--logistics-color);border:1px solid rgba(139,92,246,0.2);}
-/* AI SCORE MINI */
-.score-mini{background:rgba(3,7,16,0.5);border:1px solid var(--border-card);border-radius:10px;padding:10px 14px;min-width:140px;}
-.score-mini-title{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
-.score-mini-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:5px;}
+/* AI SCORE MINI — borderless, right-aligned, blends into card */
+.score-mini{padding:0;min-width:150px;text-align:right;}
+.score-mini-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.score-mini-row{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:4px;}
 .score-mini-label{font-size:10px;color:var(--text-muted);white-space:nowrap;}
 .score-mini-bars{display:flex;gap:2px;}
 .score-mini-bar{width:8px;height:6px;border-radius:1px;background:var(--border-subtle);}
 .score-mini-bar.filled{background:var(--accent-secondary);}
-.gap-pill{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:0.06em;margin-top:6px;display:inline-block;}
+.gap-pill{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:0.06em;margin-top:8px;display:inline-block;}
 .gap-high{background:rgba(34,211,238,0.15);color:var(--gap-high);border:1px solid rgba(34,211,238,0.3);}
 .gap-medium{background:rgba(99,102,241,0.15);color:var(--gap-medium);border:1px solid rgba(99,102,241,0.3);}
 /* CHALLENGE */
