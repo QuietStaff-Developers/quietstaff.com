@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
+    <!-- TODO: Add cookie consent UI before enabling any analytics / third-party tracking (UK GDPR / PECR) -->
     <title>QuietStaff — Managed AI Workforce for UK Businesses</title>
 
     <!-- Theme: read preference before paint (prevents flash of unstyled theme) -->
@@ -20,7 +21,7 @@
     </script>
 
     <!-- SEO -->
-    <meta name="description" content="Managed AI Workforce for UK SMBs. We score your AI readiness, design the delivery plan, build custom AI to your workflows, and run it on a managed retainer. No internal AI team required.">
+    <meta name="description" content="Managed AI workforce for UK SMBs. Score your readiness, plan the delivery, build custom AI to spec, and run it on a retainer. No AI team required.">
     <meta name="keywords" content="Managed AI Workforce, AI consulting UK, UK SMB AI, AI readiness assessment, custom AI build, managed AI retainer, AI for small business, AI implementation UK, QuietStaff">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="author" content="QuietStaff">
@@ -390,17 +391,6 @@
             animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
         }
 
-        .hero-eyebrow {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
-        }
-
         .hero h1 {
             margin-bottom: 1.5rem;
             animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
@@ -499,7 +489,7 @@
             height: 100%;
         }
 
-        .capability-card h2 {
+        .capability-card h3 {
             margin-bottom: 0.5rem;
             color: var(--text-primary);
             font-size: 1.125rem;
@@ -1931,6 +1921,8 @@
                 scroll-behavior: auto !important;
             }
             .flow-dot { display: none; }
+            /* Fallback so IntersectionObserver-gated content is always visible */
+            .fade-in { opacity: 1 !important; transform: none !important; }
         }
 
         /* ─── Print styles ──────────────────────────────── */
@@ -2154,10 +2146,15 @@
         }
         .industry-card:hover { transform: translateY(-3px); border-color: rgba(99,102,241,0.4); }
         .industry-icon {
-            font-size: 1.75rem;
+            width: 28px;
+            height: 28px;
             margin-bottom: 0.75rem;
-            line-height: 1;
+            color: var(--accent-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
+        .industry-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
         .industry-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
         .industry-card p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.55; margin-bottom: 0.85rem; }
         .industry-use-cases {
@@ -2635,14 +2632,14 @@
                 <a href="case-studies/">Case Studies</a>
                 <a href="#about">About</a>
                 <!-- CTA shown only inside mobile overlay -->
-                <a href="javascript:void(0)" onclick="openContactModal('score')" class="mobile-only mobile-cta-btn" style="text-decoration:none;">Get Your AI Score &rarr;</a>
+                <a href="#cta" onclick="openContactModal('score'); return false;" class="mobile-only mobile-cta-btn" style="text-decoration:none;">Get Your AI Score &rarr;</a>
             </div>
             <div class="nav-right">
                 <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
                     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 </button>
-                <a href="javascript:void(0)" onclick="openContactModal('score')" class="nav-button" style="text-decoration:none;">Get Your AI Score &rarr;</a>
+                <a href="#cta" onclick="openContactModal('score'); return false;" class="nav-button" style="text-decoration:none;">Get Your AI Score &rarr;</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
@@ -2663,11 +2660,10 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">Managed AI Workforce for UK SMBs</div>
-                <div class="hero-eyebrow">From AI Score to Live AI</div>
                 <h1><span class="text-gradient">The Complete Implementation Lifecycle</span><br>for Your Business</h1>
-                <p class="hero-subheadline">We score your AI readiness, plan the delivery, build it to spec, and run it for you. Discovery to support &mdash; fully managed. No internal AI team required.</p>
+                <p class="hero-subheadline">We score your AI readiness, plan the delivery, build it to spec, and run it for you. Discovery through support, fully managed. No internal AI team required.</p>
                 <div class="hero-buttons">
-                    <a href="javascript:void(0)" onclick="openContactModal('score')" class="btn btn-primary" style="text-decoration:none;">Get Your QuietStaff AI Score &rarr;</a>
+                    <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="text-decoration:none;">Get Your QuietStaff AI Score &rarr;</a>
                     <a href="#how" class="btn btn-outline" style="text-decoration:none;">See How We Work &darr;</a>
                 </div>
 
@@ -2679,7 +2675,7 @@
                                 <path d="M7 15l4-4 4 4 6-6"/>
                             </svg>
                         </div>
-                        <h2>AI Score</h2>
+                        <h3>AI Score</h3>
                         <p>Know exactly where you stand before spending a pound</p>
                     </div>
                     <div class="capability-card fade-in">
@@ -2690,7 +2686,7 @@
                                 <path d="M8 14h3M8 17h6"/>
                             </svg>
                         </div>
-                        <h2>Delivery Plan</h2>
+                        <h3>Delivery Plan</h3>
                         <p>Prioritised roadmap and fixed-scope SOW built on your score</p>
                     </div>
                     <div class="capability-card fade-in">
@@ -2700,7 +2696,7 @@
                                 <path d="M9 12l2 2 4-4"/>
                             </svg>
                         </div>
-                        <h2>Custom Build</h2>
+                        <h3>Custom Build</h3>
                         <p>AI designed to your workflows, your tools, your compliance</p>
                     </div>
                     <div class="capability-card fade-in">
@@ -2710,7 +2706,7 @@
                                 <path d="M12 7v5l3 2"/>
                             </svg>
                         </div>
-                        <h2>Managed &amp; Run</h2>
+                        <h3>Managed &amp; Run</h3>
                         <p>SLA-backed monthly retainer. Continuous improvement. No handoff.</p>
                     </div>
                 </div>
@@ -2731,7 +2727,7 @@
         <div class="container">
             <p style="text-align:center; font-size:0.75rem; font-weight:700; letter-spacing:0.15em; color:var(--accent-primary); text-transform:uppercase; margin-bottom:1rem;">Why QuietStaff</p>
             <h2 style="text-align: center; margin-bottom: 1rem;">AI Is Transforming UK Businesses.</h2>
-            <p style="text-align:center; color:var(--text-secondary); font-size:1.125rem; max-width:720px; margin:0 auto 3rem;">Most SMBs don&rsquo;t know where they stand &mdash; or where to start.</p>
+            <p style="text-align:center; color:var(--text-secondary); font-size:1.125rem; max-width:720px; margin:0 auto 3rem;">Most SMBs don&rsquo;t know where they stand, or where to start.</p>
             <div class="why-grid">
                 <div class="why-column">
                     <h3 style="margin-bottom: 1.5rem; color: var(--error-red);">The Problem</h3>
@@ -2796,7 +2792,7 @@
                     </div>
                 </div>
             </div>
-            <div class="why-quote">&ldquo;Managed AI Workforce &mdash; the complete journey, from your AI Score to live operations.&rdquo;</div>
+            <div class="why-quote">&ldquo;Managed AI Workforce: the complete journey, from your AI Score to live operations.&rdquo;</div>
         </div>
     </section>
 
@@ -2811,7 +2807,7 @@
         <div class="container">
             <p style="text-align:center; font-size:0.75rem; font-weight:700; letter-spacing:0.15em; color:var(--accent-primary); text-transform:uppercase; margin-bottom:1rem;">How We Work</p>
             <h2 style="text-align: center; margin-bottom: 1rem;">Four Stages. Full Lifecycle.</h2>
-            <p style="text-align:center; color:var(--text-secondary); font-size:1.125rem; max-width:720px; margin:0 auto 4rem;">You&rsquo;re in control at every step. From your first AI Score to live operations &mdash; one partner, no handoff.</p>
+            <p style="text-align:center; color:var(--text-secondary); font-size:1.125rem; max-width:720px; margin:0 auto 4rem;">You&rsquo;re in control at every step. From your first AI Score to live operations, one partner, no handoff.</p>
 
             <!-- STAGE 1 — AI SCORE (anchor of the whole lifecycle) -->
             <div class="stage-block">
@@ -2903,8 +2899,8 @@
             <div class="stage-cta-row">
                 <p class="stage-cta-tagline">&ldquo;Start with your AI Score. Know exactly where you stand before spending a pound on building anything.&rdquo;</p>
                 <div class="stage-cta-buttons">
-                    <a href="javascript:void(0)" onclick="openContactModal('score')" class="btn btn-primary" style="text-decoration:none;">Get Your AI Score &rarr;</a>
-                    <a href="javascript:void(0)" onclick="openContactModal('call')" class="btn btn-outline" style="text-decoration:none;">Book a Discovery Call &rarr;</a>
+                    <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="text-decoration:none;">Get Your AI Score &rarr;</a>
+                    <a href="#cta" onclick="openContactModal('call'); return false;" class="btn btn-outline" style="text-decoration:none;">Book a Discovery Call &rarr;</a>
                 </div>
             </div>
         </div>
@@ -2921,7 +2917,7 @@
 
             <div class="industries-grid">
                 <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true">&#x2695;</div>
+                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg></div>
                     <h3>Healthcare &amp; Life Sciences</h3>
                     <p>GP practices, clinics, and private healthcare. Patient triage, referral letters, medical coding, appointment admin.</p>
                     <ul class="industry-use-cases">
@@ -2932,7 +2928,7 @@
                 </div>
 
                 <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true">&#xA3;</div>
+                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 7c0-5.333-8-5.333-8 0"/><path d="M10 7v12"/><path d="M6 13h8"/><path d="M6 19h12"/></svg></div>
                     <h3>Finance &amp; Accountancy</h3>
                     <p>Accounting practices, bookkeepers, financial advisors. Invoice processing, reconciliation, reporting, client queries.</p>
                     <ul class="industry-use-cases">
@@ -2943,7 +2939,7 @@
                 </div>
 
                 <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true">&#x2696;</div>
+                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
                     <h3>Legal &amp; Compliance</h3>
                     <p>Solicitors, paralegals, compliance teams. Contract review, document drafting, case research, client intake.</p>
                     <ul class="industry-use-cases">
@@ -2954,7 +2950,7 @@
                 </div>
 
                 <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true">&#x1F6CD;</div>
+                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
                     <h3>Retail &amp; eCommerce</h3>
                     <p>Independent retailers, eCommerce brands, multi-channel sellers. Customer support, inventory queries, returns, product content.</p>
                     <ul class="industry-use-cases">
@@ -2965,7 +2961,7 @@
                 </div>
 
                 <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true">&#x1F465;</div>
+                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                     <h3>HR &amp; Recruitment</h3>
                     <p>Recruitment agencies, in-house HR teams, talent consultancies. CV screening, candidate matching, onboarding, internal queries.</p>
                     <ul class="industry-use-cases">
@@ -2976,7 +2972,7 @@
                 </div>
 
                 <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true">&#x1F69A;</div>
+                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
                     <h3>Logistics &amp; Operations</h3>
                     <p>Couriers, freight forwarders, field service operators. Dispatch, routing, customer updates, exception handling.</p>
                     <ul class="industry-use-cases">
@@ -2988,7 +2984,7 @@
             </div>
 
             <div class="industries-footer">
-                <p>Not on this list? We also work with professional services, property, marketing agencies, and education. <a href="javascript:void(0)" onclick="openContactModal('score')" class="inline-link">Ask us about your sector &rarr;</a></p>
+                <p>Not on this list? We also work with professional services, property, marketing agencies, and education. <a href="#cta" onclick="openContactModal('score'); return false;" class="inline-link">Ask us about your sector &rarr;</a></p>
             </div>
         </div>
     </section>
@@ -3074,7 +3070,7 @@
                 <div class="agent-card cta-card fade-in">
                     <h3>Quiet[You]</h3>
                     <p>Your workflow. Your domain. Your specialist AI — built, deployed, and managed by us.</p>
-                    <a href="javascript:void(0)" onclick="openContactModal('score')" class="btn btn-primary" style="width:100%;text-decoration:none;text-align:center;">Start With Your AI Score &rarr;</a>
+                    <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="width:100%;text-decoration:none;text-align:center;">Start With Your AI Score &rarr;</a>
                 </div>
             </div>
         </div>
@@ -3093,7 +3089,7 @@
                         <span class="case-sector">Healthcare</span>
                         <span class="case-score">AI Score <strong>7/10</strong></span>
                     </div>
-                    <h3>GP Practice &mdash; Patient Admin AI</h3>
+                    <h3>GP Practice: Patient Admin AI</h3>
                     <p class="case-summary">A 12-GP practice drowning in referral letters and triage calls. We scored their readiness, built QuietCare for patient intake, and QuietOps for referral letter drafting.</p>
                     <div class="case-metrics">
                         <div class="case-metric"><strong>4.5 hrs</strong><span>saved / GP / day</span></div>
@@ -3107,7 +3103,7 @@
                         <span class="case-sector">Finance &amp; Accountancy</span>
                         <span class="case-score">AI Score <strong>6/10</strong></span>
                     </div>
-                    <h3>Accountancy Practice &mdash; Bookkeeping AI</h3>
+                    <h3>Accountancy Practice: Bookkeeping AI</h3>
                     <p class="case-summary">A 40-person accountancy firm losing margin on small-client bookkeeping. We built QuietBooks to automate categorisation, reconciliation, and month-end prep.</p>
                     <div class="case-metrics">
                         <div class="case-metric"><strong>3x</strong><span>bookkeeping throughput</span></div>
@@ -3121,7 +3117,7 @@
                         <span class="case-sector">Logistics</span>
                         <span class="case-score">AI Score <strong>5/10</strong></span>
                     </div>
-                    <h3>Courier Network &mdash; Dispatch AI</h3>
+                    <h3>Courier Network: Dispatch AI</h3>
                     <p class="case-summary">A regional courier with manual dispatch and an overworked customer service team. QuietOps for dispatch decisions, QuietCare for delivery-status queries.</p>
                     <div class="case-metrics">
                         <div class="case-metric"><strong>-42%</strong><span>customer service calls</span></div>
@@ -3131,7 +3127,7 @@
                 </a>
             </div>
 
-            <p class="case-disclaimer">Client names and identifying details have been changed to protect confidentiality. Engagements, approach, and outcome metrics are real.</p>
+            <p class="case-disclaimer">Illustrative engagements based on sector patterns and QuietStaff methodology. No client data shown.</p>
 
             <!-- Early Phase Partner Offer -->
             <div class="founding-offer">
@@ -3144,7 +3140,7 @@
                     <div class="fo-item">&#x2713; 90-day delivery roadmap</div>
                     <div class="fo-item">&#x2713; Discounted build + retainer rates</div>
                 </div>
-                <a href="javascript:void(0)" onclick="openContactModal('score')" class="btn btn-primary" style="text-decoration:none;">Apply as an Early-Phase Partner &rarr;</a>
+                <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="text-decoration:none;">Apply as an Early-Phase Partner &rarr;</a>
             </div>
         </div>
     </section>
@@ -3171,7 +3167,7 @@
                         <li>Fixed scope. Fixed price.</li>
                     </ul>
                     <div class="pc-price">Fixed fee &middot; POA</div>
-                    <a href="javascript:void(0)" onclick="openContactModal('score')" class="btn btn-outline" style="width:100%;text-decoration:none;text-align:center;">Start With Your AI Score &rarr;</a>
+                    <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-outline" style="width:100%;text-decoration:none;text-align:center;">Start With Your AI Score &rarr;</a>
                 </div>
 
                 <div class="pricing-card-v3 featured fade-in">
@@ -3196,7 +3192,7 @@
                         <li>Monthly review &amp; roadmap</li>
                     </ul>
                     <div class="pc-price">Build (one-off) + monthly retainer &middot; POA</div>
-                    <a href="javascript:void(0)" onclick="openContactModal('build-retainer')" class="btn btn-primary" style="width:100%;text-decoration:none;text-align:center;">Talk to Us &rarr;</a>
+                    <a href="#cta" onclick="openContactModal('build-retainer'); return false;" class="btn btn-primary" style="width:100%;text-decoration:none;text-align:center;">Talk to Us &rarr;</a>
                 </div>
 
                 <div class="pricing-card-v3 fade-in">
@@ -3211,7 +3207,7 @@
                         <li>Cyber Essentials + tender-ready</li>
                     </ul>
                     <div class="pc-price">Custom engagement &middot; POA</div>
-                    <a href="javascript:void(0)" onclick="openContactModal('enterprise')" class="btn btn-outline" style="width:100%;text-decoration:none;text-align:center;">Request Enterprise Brief &rarr;</a>
+                    <a href="#cta" onclick="openContactModal('enterprise'); return false;" class="btn btn-outline" style="width:100%;text-decoration:none;text-align:center;">Request Enterprise Brief &rarr;</a>
                 </div>
             </div>
 
@@ -3247,7 +3243,7 @@
 
             <div class="about-cta-row">
                 <a href="founder/" class="btn btn-outline" style="text-decoration:none;">Meet the Founder &rarr;</a>
-                <a href="javascript:void(0)" onclick="openContactModal('general')" class="btn btn-outline" style="text-decoration:none;">Email Us &rarr;</a>
+                <a href="#cta" onclick="openContactModal('general')" class="btn btn-outline" style="text-decoration:none;">Email Us &rarr;</a>
                 <a href="#" class="btn btn-outline" style="text-decoration:none;" aria-label="LinkedIn company page (coming soon)">LinkedIn &rarr;</a>
             </div>
         </div>
@@ -3261,8 +3257,8 @@
             <h2>Ready to find out what AI can do for your business?</h2>
             <p class="cta-sub">Start with your QuietStaff AI Score. Fixed-fee. Fixed-scope. Ninety-day roadmap. No internal AI team required.</p>
             <div class="cta-buttons">
-                <a href="javascript:void(0)" onclick="openContactModal('score')" class="btn btn-primary" style="text-decoration:none;">Get Your QuietStaff AI Score &rarr;</a>
-                <a href="javascript:void(0)" onclick="openContactModal('call')" class="btn btn-outline" style="text-decoration:none;">Schedule a Call &rarr;</a>
+                <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="text-decoration:none;">Get Your QuietStaff AI Score &rarr;</a>
+                <a href="#cta" onclick="openContactModal('call'); return false;" class="btn btn-outline" style="text-decoration:none;">Schedule a Call &rarr;</a>
             </div>
         </div>
     </section>
@@ -3279,9 +3275,9 @@
             </div>
             <div class="footer-column">
                 <h4>Services</h4>
-                <a href="javascript:void(0)" onclick="openContactModal('score')">AI Readiness Assessment</a>
-                <a href="javascript:void(0)" onclick="openContactModal('build-retainer')">Custom AI Build</a>
-                <a href="javascript:void(0)" onclick="openContactModal('build-retainer')">Managed Retainer</a>
+                <a href="#cta" onclick="openContactModal('score'); return false;">AI Readiness Assessment</a>
+                <a href="#cta" onclick="openContactModal('build-retainer'); return false;">Custom AI Build</a>
+                <a href="#cta" onclick="openContactModal('build-retainer'); return false;">Managed Retainer</a>
                 <a href="#industries">Industries</a>
             </div>
             <div class="footer-column">
@@ -3289,7 +3285,7 @@
                 <a href="#about">About</a>
                 <a href="founder/">Founder</a>
                 <a href="case-studies/">Case Studies</a>
-                <a href="javascript:void(0)" onclick="openContactModal('general')">Contact</a>
+                <a href="mailto:contact@quietstaff.com">Contact</a>
                 <a href="#" aria-label="LinkedIn company page (coming soon)">LinkedIn</a>
             </div>
             <div class="footer-column">
@@ -3458,13 +3454,21 @@
 
         // Intersection Observer for fade-in animations
         function setupIntersectionObserver() {
+            // If the user has prefers-reduced-motion, or if IntersectionObserver is unsupported,
+            // reveal all fade-in content immediately.
+            const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReduced || !('IntersectionObserver' in window)) {
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+                return;
+            }
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+            }, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
 
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
