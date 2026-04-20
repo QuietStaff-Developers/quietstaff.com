@@ -1,1034 +1,466 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark light">
-    <title>About the Founder — QuietStaff</title>
-
-    <!-- Theme: read preference before paint -->
-    <script>
-        (function() {
-            try {
-                var saved = localStorage.getItem('quietstaff-theme');
-                var theme = saved === 'light' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', theme);
-            } catch (e) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
-    <meta name="description" content="About the Founder of QuietStaff — building the next generation of multi-model AI agent teams for business operations.">
-    <meta name="robots" content="index, follow">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://quietstaff.com/founder/">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="About the Founder &amp; CEO — QuietStaff">
-    <meta property="og:description" content="Building the next generation of multi-model AI agent teams for business operations.">
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://quietstaff.com/founder/">
-    <meta property="og:image" content="https://quietstaff.com/assets/images/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="QuietStaff — AI Agent Teams for Business Operations">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="QuietStaff">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About the Founder &amp; CEO — QuietStaff">
-    <meta name="twitter:description" content="Building the next generation of multi-model AI agent teams for business operations.">
-    <meta name="twitter:image" content="https://quietstaff.com/assets/images/og-image.jpg">
-    <meta name="twitter:image:alt" content="QuietStaff — AI Agent Teams for Business Operations">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/brand/logo-package/svg/quietstaff-favicon.svg">
     <meta name="theme-color" content="#030710">
-
-    <!-- Google Fonts -->
+    <meta name="description" content="About the Founder — QuietStaff. Senior enterprise technology leader and doctoral researcher building AI for UK SMBs.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>About the Founder &mdash; QuietStaff</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root,
-        [data-theme="dark"] {
+        :root {
             --bg-primary: #030710;
-            --bg-secondary: #0f172a;
-            --bg-card: rgba(15, 23, 42, 0.6);
-            --border-card: rgba(99, 102, 241, 0.12);
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
+            --bg-secondary: #0a0f1f;
+            --card-bg: rgba(255,255,255,0.02);
+            --card-border: rgba(99,102,241,0.18);
+            --text-primary: #f5f7fa;
+            --text-secondary: #a3a8b8;
+            --text-tertiary: #6b7280;
             --accent-primary: #6366f1;
-            --accent-secondary: #22d3ee;
-            --accent-tertiary: #7c3aed;
-            --gradient-accent: linear-gradient(135deg, #6366f1, #7c3aed, #22d3ee);
-
-            --nav-bg: rgba(3, 7, 16, 0.85);
-            --hero-glow: rgba(99, 102, 241, 0.15);
-            --card-border-hover: rgba(99, 102, 241, 0.35);
-            --highlight-bg: rgba(99, 102, 241, 0.06);
-            --highlight-border: rgba(99, 102, 241, 0.18);
-            --particle-color-a: rgba(99, 102, 241, 0.6);
-            --particle-color-b: rgba(34, 211, 238, 0.4);
-            --particle-line: 99, 102, 241;
-            --particle-line-opacity: 0.1;
-
-            /* Logo gradient stops — bright on dark (matches homepage logo) */
-            --logo-grad-0: #818CF8;
-            --logo-grad-1: #3B82F6;
-            --logo-grad-2: #06B6D4;
+            --accent-cyan: #22d3ee;
+            --accent-violet: #7c3aed;
+            --nav-bg: rgba(3,7,16,0.85);
+            --nav-border: rgba(99,102,241,0.15);
         }
-
         [data-theme="light"] {
             --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-card: rgba(255, 255, 255, 0.78);
-            --border-card: rgba(99, 102, 241, 0.18);
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --accent-primary: #6366f1;
-            --accent-secondary: #0891b2;
-            --accent-tertiary: #7c3aed;
-            --gradient-accent: linear-gradient(135deg, #6366f1, #7c3aed, #0891b2);
-
-            --nav-bg: rgba(255, 255, 255, 0.85);
-            --hero-glow: rgba(99, 102, 241, 0.12);
-            --card-border-hover: rgba(99, 102, 241, 0.45);
-            --highlight-bg: rgba(99, 102, 241, 0.05);
-            --highlight-border: rgba(99, 102, 241, 0.2);
-            --particle-color-a: rgba(99, 102, 241, 0.55);
-            --particle-color-b: rgba(8, 145, 178, 0.5);
-            --particle-line: 99, 102, 241;
-            --particle-line-opacity: 0.18;
-
-            /* Logo gradient stops — darker so they read on white (matches homepage logo) */
-            --logo-grad-0: #4338CA;
-            --logo-grad-1: #1D4ED8;
-            --logo-grad-2: #0E7490;
+            --bg-secondary: #f5f7fa;
+            --card-bg: rgba(255,255,255,0.8);
+            --card-border: rgba(99,102,241,0.2);
+            --text-primary: #0a0f1f;
+            --text-secondary: #4b5563;
+            --text-tertiary: #6b7280;
+            --accent-primary: #4338ca;
+            --accent-cyan: #0e7490;
+            --accent-violet: #6d28d9;
+            --nav-bg: rgba(255,255,255,0.9);
+            --nav-border: rgba(99,102,241,0.25);
         }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
+            overflow-x: hidden;
             min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            transition: background 0.3s;
         }
-
+        .skip-link {
+            position: absolute; left: -9999px; top: 0; z-index: 999;
+            background: var(--accent-primary); color: #fff; padding: 0.75rem 1rem;
+            text-decoration: none; border-radius: 0 0 6px 0;
+        }
+        .skip-link:focus { left: 0; }
         a { color: inherit; text-decoration: none; }
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; color: var(--text-primary); }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Navigation */
+        /* Nav */
         nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             background: var(--nav-bg);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-card);
-            transition: background 0.3s ease, border-color 0.3s ease;
+            border-bottom: 1px solid var(--nav-border);
+            padding: 0.75rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 1rem;
         }
-
-        /* Theme-aware SVG logo text */
+        .logo-link { display: inline-flex; align-items: center; text-decoration: none; }
         .logo-staff-text { fill: var(--text-primary); }
-        .logo-tagline-text { fill: var(--text-muted); }
-
-        /* Theme-aware SVG gradient stops — CSS class approach (reliable across browsers) */
-        .logo-stop-0 { stop-color: var(--logo-grad-0); }
-        .logo-stop-1 { stop-color: var(--logo-grad-1); }
-        .logo-stop-2 { stop-color: var(--logo-grad-2); }
-
-        /* Theme toggle button */
-        .theme-toggle {
+        .logo-tagline-text { fill: var(--text-muted, var(--text-secondary)); }
+        .logo-stop-0 { stop-color: #818CF8; }
+        .logo-stop-1 { stop-color: #3B82F6; }
+        .logo-stop-2 { stop-color: #06B6D4; }
+        [data-theme="light"] .logo-stop-0 { stop-color: #4338CA; }
+        [data-theme="light"] .logo-stop-1 { stop-color: #1D4ED8; }
+        [data-theme="light"] .logo-stop-2 { stop-color: #0E7490; }
+        .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+        .theme-toggle, .nav-home {
             background: transparent;
-            border: 1px solid var(--border-card);
-            color: var(--text-secondary);
-            width: 40px;
-            height: 40px;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            padding: 0;
-            margin-right: 0.75rem;
-        }
-        .theme-toggle:hover {
-            color: var(--accent-primary);
-            border-color: var(--accent-primary);
-            transform: translateY(-1px);
-        }
-        .theme-toggle svg { width: 18px; height: 18px; }
-        .theme-toggle .icon-sun { display: none; }
-        .theme-toggle .icon-moon { display: block; }
-        [data-theme="light"] .theme-toggle .icon-sun { display: block; }
-        [data-theme="light"] .theme-toggle .icon-moon { display: none; }
-
-        .nav-right { display: flex; align-items: center; }
-
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .nav-logo svg { display: block; height: 56px; width: auto; }
-
-        .nav-center {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-center a {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-center a:hover { color: var(--text-primary); }
-
-        .nav-button {
-            padding: 0.6rem 1.3rem;
-            background: var(--gradient-accent);
-            color: #fff;
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 0.5rem 0.9rem;
             border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            white-space: nowrap;
-        }
-
-        .nav-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
-        }
-
-        /* Hide the short mobile label on desktop; mobile breakpoint swaps them */
-        .nav-button .label-mobile { display: none; }
-
-        /* Hero */
-        .founder-hero {
-            padding: 5rem 0 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 420px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .founder-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 500px;
-            background: radial-gradient(ellipse at center, var(--hero-glow), transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .hero-canvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .founder-hero > .container { position: relative; z-index: 2; width: 100%; }
-
-        .founder-badge {
-            display: inline-block;
-            padding: 0.5rem 1.1rem;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.25);
-            border-radius: 999px;
             font-size: 0.85rem;
             font-weight: 500;
-            color: var(--accent-secondary);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
         }
+        .theme-toggle:hover, .nav-home:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
 
-        .founder-hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        /* Dual title block under the name */
-        .founder-title-block {
-            margin: 0 auto 1.25rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.35rem;
-        }
-        .founder-title-primary {
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            color: var(--text-primary);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.45rem 1rem;
-            background: var(--highlight-bg);
-            border: 1px solid var(--highlight-border);
-            border-radius: 999px;
-        }
-        .founder-title-primary::before {
-            content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--gradient-accent);
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
-        }
-        .founder-title-secondary {
-            font-size: 0.88rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--accent-secondary);
-        }
-
-        .text-gradient {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .founder-hero .tagline {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            max-width: 620px;
+        /* Hero */
+        main { padding-top: 80px; }
+        .hero {
+            max-width: 860px;
             margin: 0 auto;
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+        }
+        .eyebrow {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: clamp(1.85rem, 4vw, 2.75rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 640px;
+            margin: 0 auto 2rem;
+        }
+        .founder-credentials {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            max-width: 680px;
+            margin: 0 auto 1.25rem;
+            opacity: 0.92;
+        }
+        @media (max-width: 480px) {
+            .founder-credentials { font-size: 0.85rem; line-height: 1.55; }
+        }
+        .founder-mark {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-violet));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(99,102,241,0.25);
+        }
+        .founder-mark svg { width: 44px; height: 44px; }
+        .founder-role {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 999px;
+            backdrop-filter: blur(10px);
         }
 
         /* Content sections */
-        .founder-body {
-            padding: 3rem 0 5rem;
+        section.content {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
         }
-
-        .content-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(8px);
-        }
-
-        .content-card h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
+        section.content h2 {
+            font-size: clamp(1.35rem, 2.6vw, 1.75rem);
             margin-bottom: 1.25rem;
-            color: var(--text-primary);
         }
+        section.content p { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.75; margin-bottom: 1rem; }
+        section.content p strong { color: var(--text-primary); }
 
-        .content-card p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .content-card p:last-child { margin-bottom: 0; }
-
-        /* Highlights grid */
-        .highlights-grid {
+        /* Credential cards */
+        .cred-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.25rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
             margin: 2rem 0;
         }
-
-        .highlight-card {
-            background: var(--highlight-bg);
-            border: 1px solid var(--highlight-border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: transform 0.2s, border-color 0.2s;
+        .cred-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 1.5rem 1.25rem;
+            backdrop-filter: blur(10px);
         }
-
-        .highlight-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--card-border-hover);
-        }
-
-        .highlight-label {
-            font-size: 0.8rem;
-            font-weight: 600;
+        .cred-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--accent-primary);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent-secondary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
+        .cred-body { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.55; }
 
-        .highlight-value {
-            font-size: 1.1rem;
+        /* Stat row */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .stat {
+            text-align: center;
+            padding: 1.25rem 0.75rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.25rem;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
             font-weight: 600;
-            color: var(--text-primary);
-            line-height: 1.4;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
-        /* Inline quote inside cards */
-        .founder-quote {
+        /* Pull quote */
+        blockquote {
             border-left: 3px solid var(--accent-primary);
-            padding: 1.25rem 0 1.25rem 1.75rem;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            border-radius: 0 10px 10px 0;
             font-style: italic;
             color: var(--text-primary);
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             line-height: 1.7;
-            margin: 1.5rem 0;
-        }
-
-        /* Pull-quote section (Point of View) */
-        .pull-quote-card {
-            position: relative;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(124, 58, 237, 0.06), rgba(34, 211, 238, 0.08));
-            border: 1px solid var(--border-card);
-            border-radius: 20px;
-            padding: 3rem 2.75rem 2.75rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(8px);
-            overflow: hidden;
-        }
-        .pull-quote-card::before {
-            content: '\201C';
-            position: absolute;
-            top: -1.25rem;
-            left: 1.5rem;
-            font-family: 'Inter', serif;
-            font-size: 8rem;
-            line-height: 1;
-            font-weight: 800;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            opacity: 0.65;
-            pointer-events: none;
-        }
-        .pull-quote-card .pq-label {
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--accent-secondary);
-            margin-bottom: 1rem;
-            position: relative;
-        }
-        .pull-quote-card p {
-            font-size: 1.25rem;
-            line-height: 1.75;
-            color: var(--text-primary);
-            font-weight: 500;
-            margin: 0;
-            position: relative;
-        }
-
-        /* Focus Areas — chip grid */
-        .focus-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-        .focus-chip {
-            display: flex;
-            align-items: center;
-            gap: 0.65rem;
-            padding: 0.85rem 1.1rem;
-            background: var(--highlight-bg);
-            border: 1px solid var(--highlight-border);
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            transition: transform 0.2s, border-color 0.2s, background 0.2s;
-        }
-        .focus-chip:hover {
-            transform: translateY(-1px);
-            border-color: var(--card-border-hover);
-            background: rgba(99, 102, 241, 0.12);
-        }
-        .focus-chip .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--gradient-accent);
-            flex-shrink: 0;
-        }
-
-        /* 30-Day Promise callout */
-        .promise-card {
-            position: relative;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(34, 211, 238, 0.1));
-            border: 1px solid rgba(99, 102, 241, 0.4);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            overflow: hidden;
-        }
-        .promise-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.18), transparent 70%);
-            pointer-events: none;
-        }
-        .promise-card > * { position: relative; }
-        .promise-label {
-            display: inline-block;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--accent-secondary);
-            margin-bottom: 1rem;
-            padding: 0.35rem 0.9rem;
-            border: 1px solid var(--highlight-border);
-            background: var(--highlight-bg);
-            border-radius: 999px;
-        }
-        .promise-card h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            line-height: 1.35;
-            color: var(--text-primary);
-            max-width: 620px;
-            margin: 0 auto;
-            letter-spacing: -0.01em;
-        }
-        .promise-card .promise-sub {
-            margin-top: 1rem;
-            font-size: 1rem;
-            color: var(--text-secondary);
         }
 
         /* CTA */
-        .founder-cta {
+        .cta-block {
             text-align: center;
-            margin-top: 3rem;
+            padding: 3rem 1.5rem;
+            max-width: 720px;
+            margin: 2rem auto;
         }
-
-        .cta-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .btn-kira {
-            background: var(--gradient-accent);
-            color: #fff;
-            padding: 1rem 2rem;
-            font-size: 1.05rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.65rem;
-            box-shadow: 0 10px 28px rgba(99, 102, 241, 0.28);
-        }
-        .btn-kira svg { width: 20px; height: 20px; flex-shrink: 0; }
-        .btn-kira:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 40px rgba(99, 102, 241, 0.4);
-        }
-
-        .cta-email {
-            display: inline-block;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            letter-spacing: 0.02em;
-            margin-top: 0.25rem;
-        }
-        .cta-email a {
-            color: var(--accent-primary);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
-        .cta-email a:hover { border-bottom-color: var(--accent-primary); }
-
+        .cta-block h2 { margin-bottom: 1rem; font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+        .cta-block p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .btn-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
         .btn {
             display: inline-block;
-            padding: 0.9rem 1.8rem;
-            background: var(--gradient-accent);
-            color: #fff;
+            padding: 0.85rem 1.5rem;
             border-radius: 10px;
             font-weight: 600;
-            font-size: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin: 0 0.5rem 0.75rem;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+            min-height: 44px;
+            cursor: pointer;
+            border: none;
         }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.35);
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-violet));
+            color: #fff;
         }
-
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(99,102,241,0.3); }
         .btn-outline {
             background: transparent;
-            border: 1px solid rgba(99, 102, 241, 0.4);
+            border: 1px solid var(--card-border);
             color: var(--text-primary);
         }
-
-        .btn-outline:hover {
-            background: rgba(99, 102, 241, 0.1);
-            box-shadow: none;
-        }
+        .btn-outline:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
 
         /* Footer */
         footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid rgba(99, 102, 241, 0.1);
-            padding: 3rem 0 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            margin-top: 3rem;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--card-border);
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .footer-content a {
             color: var(--text-secondary);
-            margin: 0 0.75rem;
-            transition: color 0.2s;
+            font-size: 0.85rem;
         }
+        footer p { margin-bottom: 0.3rem; }
+        footer a { color: var(--accent-primary); }
 
-        .footer-content a:hover { color: var(--text-primary); }
-
-        .footer-bottom {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(99, 102, 241, 0.08);
-        }
-
-        /* Tablet / Mobile */
+        /* Mobile */
         @media (max-width: 768px) {
-            .nav-content { padding: 0.85rem 1rem; gap: 0.65rem; }
-            .nav-center { display: none; }
-            .nav-logo svg { height: 44px; }
-            .nav-right { gap: 0.5rem; margin-right: 0; }
-            .theme-toggle { width: 44px; height: 44px; }
-            .nav-button { padding: 0.55rem 1rem; font-size: 0.85rem; }
-            .label-desktop { display: none; }
-            .label-mobile { display: inline; }
-
-            .container { padding: 0 1.25rem; }
-            .founder-hero { padding: 3rem 0 2rem; min-height: 360px; }
-            .founder-hero h1 { font-size: 2rem; }
-            .founder-title-block { max-width: 100%; }
-            .founder-title-primary {
-                font-size: 0.9rem;
-                padding: 0.4rem 0.85rem;
-                text-align: center;
-                white-space: normal;
-                line-height: 1.35;
-            }
-            .founder-title-secondary { font-size: 0.75rem; letter-spacing: 0.06em; }
-            .content-card { padding: 1.75rem 1.5rem; }
-            .content-card h2 { font-size: 1.35rem; }
-            .highlights-grid { grid-template-columns: 1fr; }
-            .pull-quote-card { padding: 2.25rem 1.5rem 1.75rem; }
-            .pull-quote-card::before { font-size: 5rem; top: -0.5rem; left: 0.75rem; }
-            .pull-quote-card p { font-size: 1.05rem; line-height: 1.65; }
-            .focus-grid { grid-template-columns: 1fr; }
-            .promise-card { padding: 1.75rem 1.25rem; }
-            .promise-card h2 { font-size: 1.2rem; line-height: 1.4; }
-            .cta-actions { flex-direction: column; gap: 0.75rem; width: 100%; }
-            .cta-actions .btn { margin: 0; width: 100%; max-width: 320px; }
-            .btn-kira { justify-content: center; }
+            nav { padding: 0.75rem 1rem; }
+            .hero { padding: 3rem 1.25rem 2rem; }
+            .cred-grid { grid-template-columns: 1fr; }
+            .stat-row { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .stat-row { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+            .stat-value { font-size: 1.3rem; }
         }
 
-        /* Very small phones (<=480px) */
-        @media (max-width: 480px) {
-            /* Wider 320×64 viewBox means 32px height = 160px width — fits safely at 320px */
-            .nav-logo svg { height: 32px; }
-            .nav-content { padding: 0.65rem 0.75rem; gap: 0.4rem; }
-            .nav-right { gap: 0.35rem; }
-            .theme-toggle { width: 40px; height: 40px; }
-            .nav-button { padding: 0.45rem 0.7rem; font-size: 0.75rem; }
-            .container { padding: 0 1rem; }
-            .founder-hero { padding: 2.25rem 0 1.5rem; min-height: 320px; }
-            .founder-hero h1 { font-size: 1.75rem; }
-            .founder-badge { font-size: 0.75rem; padding: 0.4rem 0.85rem; }
-            .tagline { font-size: 0.95rem; }
-            .founder-title-primary { font-size: 0.82rem; padding: 0.35rem 0.7rem; gap: 0.45rem; }
-            .founder-title-primary::before { width: 6px; height: 6px; }
-            .founder-title-secondary { font-size: 0.7rem; }
-            .content-card { padding: 1.5rem 1.1rem; border-radius: 14px; }
-            .content-card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
-            .content-card p { font-size: 0.98rem; line-height: 1.7; }
-            .highlights-grid { gap: 0.75rem; }
-            .highlight-card { padding: 1.1rem 1rem; }
-            .highlight-value { font-size: 1rem; }
-            .pull-quote-card { padding: 2rem 1.1rem 1.5rem; border-radius: 16px; }
-            .pull-quote-card::before { font-size: 4.25rem; top: -0.35rem; left: 0.55rem; }
-            .pull-quote-card p { font-size: 0.98rem; }
-            .pull-quote-card .pq-label { font-size: 0.72rem; }
-            .focus-chip { padding: 0.75rem 0.9rem; font-size: 0.9rem; }
-            .promise-card { padding: 1.5rem 1rem; border-radius: 16px; }
-            .promise-card h2 { font-size: 1.1rem; }
-            .promise-label { font-size: 0.72rem; padding: 0.3rem 0.75rem; }
-            .promise-card .promise-sub { font-size: 0.9rem; }
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { transition: none !important; animation: none !important; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-content">
-            <div class="nav-logo">
-                <a href="/" aria-label="QuietStaff Home">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" height="56" role="img" aria-label="QuietStaff" style="display:block;">
-                      <defs>
-                        <linearGradient id="gi" x1="0" y1="0" x2="55" y2="55" gradientUnits="userSpaceOnUse">
-                          <stop offset="0%" stop-color="#818CF8" class="logo-stop-0"/><stop offset="50%" stop-color="#3B82F6" class="logo-stop-1"/><stop offset="100%" stop-color="#06B6D4" class="logo-stop-2"/>
-                        </linearGradient>
-                        <linearGradient id="gw" x1="64" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
-                          <stop offset="0%" stop-color="#818CF8" class="logo-stop-0"/><stop offset="55%" stop-color="#3B82F6" class="logo-stop-1"/><stop offset="100%" stop-color="#06B6D4" class="logo-stop-2"/>
-                        </linearGradient>
-                        <filter id="fg"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                        <filter id="fs"><feGaussianBlur stdDeviation="1.1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                        <filter id="ft"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                      </defs>
-                      <g transform="translate(4,5) scale(0.52)">
-                        <path d="M 50 10 L 84.6 30 L 84.6 70 L 50 90 L 15.4 70 L 15.4 30 Z" fill="none" stroke="url(#gi)" stroke-width="5.5" stroke-linejoin="round"/>
-                        <line x1="84.6" y1="70" x2="95.9" y2="81.3" stroke="url(#gi)" stroke-width="5.5" stroke-linecap="round"/>
-                        <circle cx="97.8" cy="83.2" r="6.5" fill="url(#gi)" filter="url(#ft)"/>
-                        <circle cx="96" cy="81.4" r="2" fill="white" opacity="0.45"/>
-                        <line x1="50" y1="34" x2="34" y2="60" stroke="url(#gi)" stroke-width="2" opacity="0.5"/>
-                        <line x1="50" y1="34" x2="66" y2="60" stroke="url(#gi)" stroke-width="2" opacity="0.5"/>
-                        <line x1="34" y1="60" x2="66" y2="60" stroke="url(#gi)" stroke-width="1.4" opacity="0.28"/>
-                        <circle cx="50" cy="34" r="8.5" fill="url(#gi)" filter="url(#fg)"/>
-                        <circle cx="47.5" cy="31.5" r="2.8" fill="white" opacity="0.4"/>
-                        <circle cx="34" cy="60" r="5.5" fill="url(#gi)" filter="url(#fs)"/>
-                        <circle cx="66" cy="60" r="5.5" fill="url(#gi)" filter="url(#fs)"/>
-                      </g>
-                      <text x="62" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="300" letter-spacing="0.5" fill="url(#gw)">Quiet</text>
-                      <text x="146" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.3" class="logo-staff-text">Staff</text>
-                      <text x="63" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="9.5" letter-spacing="1.6" class="logo-tagline-text">Multi-model AGaaS &middot; Managed AI Ops</text>
-                    </svg>
-                </a>
-            </div>
-            <div class="nav-center">
-                <a href="/#platform">Platform</a>
-                <a href="/#agents">Agents</a>
-                <a href="/#technology">Technology</a>
-                <a href="/founder/">Founder &amp; CEO</a>
-            </div>
-            <div class="nav-right">
-                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                </button>
-                <a href="/" class="nav-button"><span class="label-desktop">&larr; Back to Home</span><span class="label-mobile">&larr; Home</span></a>
-            </div>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Nav -->
+    <nav role="navigation" aria-label="Primary">
+        <a href="../" class="logo-link" aria-label="QuietStaff home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" height="40" style="display:block;">
+              <defs>
+                <linearGradient id="gi" x1="0" y1="0" x2="55" y2="55" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#818CF8" class="logo-stop-0"/><stop offset="50%" stop-color="#3B82F6" class="logo-stop-1"/><stop offset="100%" stop-color="#06B6D4" class="logo-stop-2"/>
+                </linearGradient>
+                <linearGradient id="gw" x1="64" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#818CF8" class="logo-stop-0"/><stop offset="55%" stop-color="#3B82F6" class="logo-stop-1"/><stop offset="100%" stop-color="#06B6D4" class="logo-stop-2"/>
+                </linearGradient>
+                <filter id="fg"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="fs"><feGaussianBlur stdDeviation="1.1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="ft"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <g transform="translate(4,5) scale(0.52)">
+                <path d="M 50 10 L 84.6 30 L 84.6 70 L 50 90 L 15.4 70 L 15.4 30 Z" fill="none" stroke="url(#gi)" stroke-width="5.5" stroke-linejoin="round"/>
+                <line x1="84.6" y1="70" x2="95.9" y2="81.3" stroke="url(#gi)" stroke-width="5.5" stroke-linecap="round"/>
+                <circle cx="97.8" cy="83.2" r="6.5" fill="url(#gi)" filter="url(#ft)"/>
+                <circle cx="96" cy="81.4" r="2" fill="white" opacity="0.45"/>
+                <line x1="50" y1="34" x2="34" y2="60" stroke="url(#gi)" stroke-width="2" opacity="0.5"/>
+                <line x1="50" y1="34" x2="66" y2="60" stroke="url(#gi)" stroke-width="2" opacity="0.5"/>
+                <line x1="34" y1="60" x2="66" y2="60" stroke="url(#gi)" stroke-width="1.4" opacity="0.28"/>
+                <circle cx="50" cy="34" r="8.5" fill="url(#gi)" filter="url(#fg)"/>
+                <circle cx="47.5" cy="31.5" r="2.8" fill="white" opacity="0.4"/>
+                <circle cx="34" cy="60" r="5.5" fill="url(#gi)" filter="url(#fs)"/>
+                <circle cx="66" cy="60" r="5.5" fill="url(#gi)" filter="url(#fs)"/>
+              </g>
+              <text x="62" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="300" letter-spacing="0.5" fill="url(#gw)">Quiet</text>
+              <text x="146" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.3" class="logo-staff-text">Staff</text>
+              <text x="63" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="9.5" letter-spacing="1.6" class="logo-tagline-text">AI Solutions &middot; Quietly Delivered</text>
+            </svg>
+        </a>
+        <div class="nav-right">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">&#9728;</button>
+            <a href="../" class="nav-home">&larr; Back to Home</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="founder-hero">
-        <canvas id="hero-canvas" class="hero-canvas"></canvas>
-        <div class="container">
-            <div class="founder-badge">About the Founder</div>
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="founder-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" stroke="white" stroke-width="1.8"/>
+                    <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="eyebrow">About the Founder</div>
             <h1>Meet <span class="text-gradient">Raj</span></h1>
-            <div class="founder-title-block">
-                <div class="founder-title-primary">Founder &amp; CEO, QuietStaff</div>
-                <div class="founder-title-secondary">Chief AI Architect</div>
-            </div>
-            <p class="tagline">Two decades building technology operations &mdash; now deploying AI agents that work like staff.</p>
-        </div>
-    </section>
+            <p class="founder-credentials">Doctoral Researcher, EIMT (UK) &middot; AI Researcher &middot; Engineering Leadership for 2+ decades</p>
+            <p class="hero-sub">QuietStaff is led by Raj — a senior engineering leader with over two decades building and scaling enterprise technology, and active doctoral research into enterprise AI adoption.</p>
+            <div class="founder-role">Founder &middot; CEO &middot; Chief AI Architect</div>
+        </section>
 
-    <!-- Body -->
-    <section class="founder-body">
-        <div class="container">
-
-            <!-- Background -->
-            <div class="content-card">
-                <h2>Background</h2>
-                <p>
-                    Raj has spent two decades building and scaling technology operations at enterprise organisations &mdash; leading distributed engineering teams, architecting cloud-native platforms, and delivering operational systems at scale.
-                </p>
-                <p>
-                    Across every role, the same story kept repeating: capable businesses weighed down by operational overhead, talent gaps, and the hidden cost of manual coordination. When AI began outperforming those workflows, the path forward became obvious.
-                </p>
-                <p>
-                    QuietStaff is what he built next &mdash; a managed AI agent service that gives businesses the operational power of a skilled team, without the hiring cost, overhead, or delay.
-                </p>
-            </div>
-
-            <!-- At a Glance -->
-            <div class="content-card">
-                <h2>At a Glance</h2>
-                <div class="highlights-grid">
-                    <div class="highlight-card">
-                        <div class="highlight-label">Experience</div>
-                        <div class="highlight-value">21 Years in Tech</div>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-label">Platform</div>
-                        <div class="highlight-value">Cloud-Native on AWS</div>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-label">Research</div>
-                        <div class="highlight-value">Doctoral Researcher, Business Administration</div>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-label">Focus</div>
-                        <div class="highlight-value">Multi-Model AI &amp; Agent Architectures</div>
-                    </div>
+        <!-- Stats -->
+        <section class="content" aria-label="Founder credentials at a glance">
+            <div class="stat-row">
+                <div class="stat">
+                    <div class="stat-value">2+</div>
+                    <div class="stat-label">Decades in Enterprise Tech</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">DBA</div>
+                    <div class="stat-label">Doctoral Research (EIMT)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">AI</div>
+                    <div class="stat-label">Research &amp; Delivery</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">NHS</div>
+                    <div class="stat-label">Sector Experience</div>
                 </div>
             </div>
+        </section>
 
-            <!-- Point of View -->
-            <div class="pull-quote-card">
-                <div class="pq-label">Point of View</div>
-                <p>
-                    The future isn't AI replacing people. It's the right minds, equipped with the right agents &mdash; solving problems neither could tackle alone. Most businesses don't need more staff. They need smarter systems with a human at the wheel. That's what QuietStaff builds.
-                </p>
-            </div>
+        <!-- The thesis -->
+        <section class="content">
+            <h2>Why QuietStaff exists</h2>
+            <p>Raj spent over two decades building enterprise software, scaling cloud platforms, and leading engineering teams inside regulated industries. The problem that kept showing up wasn&rsquo;t that AI didn&rsquo;t work &mdash; it was that <strong>it never got implemented properly.</strong></p>
+            <p>Tools were bought and parked. Proofs of concept never made it to production. Advisors diagnosed but didn&rsquo;t build. Internal teams couldn&rsquo;t ship. And the businesses most exposed to the gap &mdash; UK SMBs &mdash; had no realistic way to close it.</p>
+            <blockquote>
+                &ldquo;Large enterprises have AI teams. UK SMBs have a shortlist of SaaS tools and a growing sense they&rsquo;re falling behind. QuietStaff is the missing middle: enterprise-grade AI, delivered as a managed service, sized for the businesses that actually need it.&rdquo;
+            </blockquote>
+        </section>
 
-            <!-- Focus Areas -->
-            <div class="content-card">
-                <h2>What Raj Brings to QuietStaff</h2>
-                <p>
-                    A builder's mindset sharpened over two decades of enterprise delivery, now focused entirely on making AI agent teams practical, reliable, and safe for real operations.
-                </p>
-                <div class="focus-grid">
-                    <div class="focus-chip"><span class="dot"></span>Generative AI &amp; Agentic Systems</div>
-                    <div class="focus-chip"><span class="dot"></span>Multi-Agent Architecture</div>
-                    <div class="focus-chip"><span class="dot"></span>AI Strategy &amp; Governance</div>
-                    <div class="focus-chip"><span class="dot"></span>Cloud-Native Platform Engineering</div>
-                    <div class="focus-chip"><span class="dot"></span>Distributed Engineering Leadership</div>
-                    <div class="focus-chip"><span class="dot"></span>Enterprise Operations at Scale</div>
-                    <div class="focus-chip"><span class="dot"></span>Product Support Engineering</div>
-                    <div class="focus-chip"><span class="dot"></span>Technical Programme Delivery</div>
+        <!-- Credentials -->
+        <section class="content">
+            <h2>Credentials &amp; experience</h2>
+            <div class="cred-grid">
+                <div class="cred-card">
+                    <div class="cred-label">Technical Depth</div>
+                    <div class="cred-body">Over two decades architecting and delivering enterprise software and cloud-native systems for large organisations. Specialist in multi-model AI architectures.</div>
+                </div>
+                <div class="cred-card">
+                    <div class="cred-label">Sector Experience</div>
+                    <div class="cred-body">Delivered AI and data platforms into NHS and HealthTech environments, and financial services operations &mdash; regulated sectors where compliance, auditability, and privacy are non-negotiable.</div>
+                </div>
+                <div class="cred-card">
+                    <div class="cred-label">Academic Rigour</div>
+                    <div class="cred-body">Doctoral researcher at EIMT (UK). Research focus: enterprise AI adoption among UK SMBs &mdash; the exact problem QuietStaff solves for clients.</div>
                 </div>
             </div>
+        </section>
 
-            <!-- Passion for Multi-Model AI -->
-            <div class="content-card">
-                <h2>Why Multi-Model</h2>
-                <p>
-                    No single model wins at everything. Some reason better, some write better, some see better, some are simply faster or cheaper. The real unlock comes from composing them into systems that pick the right model for the right moment &mdash; and know when to hand control back to a human.
-                </p>
-                <p>
-                    That conviction shapes QuietStaff's core architecture. Every agent is built on a multi-model foundation &mdash; routed, observed, governed, and continuously improved. It's how a small business gets enterprise-grade intelligence without enterprise-grade complexity.
-                </p>
-            </div>
+        <!-- Approach -->
+        <section class="content">
+            <h2>How Raj works</h2>
+            <p><strong>Direct.</strong> Proposals are fixed-scope, fixed-fee. Risks are flagged before they become problems. You&rsquo;ll know where you stand after the first conversation.</p>
+            <p><strong>Technical.</strong> Every QuietStaff engagement is architected personally by Raj. You&rsquo;re not being passed to a junior after the sales call.</p>
+            <p><strong>Outcome-led.</strong> We don&rsquo;t charge for activity. We charge for systems that run, for workflows that collapse, for headcount that doesn&rsquo;t need hiring. Every engagement is tied to measurable operational impact.</p>
+        </section>
 
-            <!-- What QuietStaff Does -->
-            <div class="content-card">
-                <h2>What QuietStaff Does</h2>
-                <p>
-                    QuietStaff deploys custom-trained AI agents that handle the operational work your team doesn't have time for &mdash; WhatsApp and email management, scheduling, document handling, invoicing follow-up, sales outreach, and more.
-                </p>
-                <p>
-                    Every agent is fine-tuned to your business using the Skills Engine. We manage the entire setup, training, and ongoing operations. You get the output of a skilled team member at a fraction of the cost.
-                </p>
+        <!-- CTA -->
+        <section class="cta-block">
+            <h2>Ready to start a conversation?</h2>
+            <p>The fastest way in is a QuietStaff AI Score. Fixed fee. Ninety-day roadmap. No internal AI team required.</p>
+            <div class="btn-row">
+                <a href="../#cta" class="btn btn-primary">Get Your AI Score &rarr;</a>
+                <a href="../" class="btn btn-outline">&larr; Back to Home</a>
             </div>
+        </section>
+    </main>
 
-            <!-- 30-Day Promise -->
-            <div class="promise-card">
-                <span class="promise-label">The 30-Day Promise</span>
-                <h2>Your AI agent is live, trained on your workflows, and handling real tasks within 30 days &mdash; or we don't charge.</h2>
-                <p class="promise-sub">No long contracts. No endless discovery. Real output, or real money back.</p>
-            </div>
-
-            <!-- CTA -->
-            <div class="founder-cta">
-                <div class="cta-actions">
-                    <a href="https://t.me/kira_quietstaff_bot" target="_blank" rel="noopener" class="btn btn-kira">
-                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.05 2.41L1.86 10.3c-1.38.55-1.37 1.32-.25 1.67l5.18 1.62 12-7.57c.57-.34 1.08-.16.66.22L9.75 15.1 9.4 20.2c.55 0 .79-.25 1.1-.55l2.64-2.57 5.48 4.05c1 .55 1.72.27 1.97-.93L23.95 4.2c.36-1.46-.55-2.13-1.9-1.79z"/></svg>
-                        Talk to Kira
-                    </a>
-                    <a href="/" class="btn btn-outline">&larr; Back to QuietStaff</a>
-                </div>
-                <div class="cta-email">
-                    Or email <a href="mailto:contact@quietstaff.com">contact@quietstaff.com</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div>
-                <a href="/">Home</a>
-                <a href="/#platform">Platform</a>
-                <a href="/#agents">Agents</a>
-                <a href="/#technology">Technology</a>
-                <a href="/founder/">Founder &amp; CEO</a>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 QuietStaff &middot; AI, Quietly Running Your Operations
-            </div>
-        </div>
+    <footer role="contentinfo">
+        <p>&copy; 2026 QuietStaff Ltd. Registered in England &amp; Wales.</p>
+        <p>66 Paul Street, London EC2A 4NE</p>
     </footer>
 
     <script>
-        // Particle Canvas — theme-aware orb animation
-        function createHeroCanvas() {
-            const canvas = document.getElementById('hero-canvas');
-            if (!canvas) return;
-
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-
-            function getThemeColors() {
-                const styles = getComputedStyle(document.documentElement);
-                return {
-                    a: (styles.getPropertyValue('--particle-color-a') || 'rgba(99, 102, 241, 0.6)').trim(),
-                    b: (styles.getPropertyValue('--particle-color-b') || 'rgba(34, 211, 238, 0.4)').trim(),
-                    line: (styles.getPropertyValue('--particle-line') || '99, 102, 241').trim(),
-                    lineOpacity: parseFloat((styles.getPropertyValue('--particle-line-opacity') || '0.1').trim()) || 0.1
-                };
-            }
-            let themeColors = getThemeColors();
-
-            function resizeCanvas() {
-                const rect = canvas.parentElement.getBoundingClientRect();
-                canvas.width = rect.width;
-                canvas.height = rect.height;
-            }
-
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.vx = (Math.random() - 0.5) * 0.8;
-                    this.vy = (Math.random() - 0.5) * 0.8;
-                    this.size = Math.random() * 2 + 0.5;
-                    this.useA = Math.random() > 0.5;
-                }
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    if (this.x > canvas.width) this.x = 0;
-                    if (this.x < 0) this.x = canvas.width;
-                    if (this.y > canvas.height) this.y = 0;
-                    if (this.y < 0) this.y = canvas.height;
-                }
-                draw() {
-                    ctx.fillStyle = this.useA ? themeColors.a : themeColors.b;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-
-            canvas._refreshTheme = function() { themeColors = getThemeColors(); };
-
-            function initParticles() {
-                particles = [];
-                const count = Math.max(30, Math.floor((canvas.width * canvas.height) / 18000));
-                for (let i = 0; i < count; i++) particles.push(new Particle());
-            }
-
-            function drawConnections() {
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        if (distance < 140) {
-                            const alpha = themeColors.lineOpacity * (1 - distance / 140);
-                            ctx.strokeStyle = `rgba(${themeColors.line}, ${alpha})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            let animId;
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => { p.update(); p.draw(); });
-                drawConnections();
-                animId = requestAnimationFrame(animate);
-            }
-
-            resizeCanvas();
-            initParticles();
-            animate();
-
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) cancelAnimationFrame(animId);
-                else animate();
-            });
-            window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
-        }
-
         // Theme toggle
-        function setupThemeToggle() {
-            const btn = document.getElementById('themeToggle');
+        (function() {
+            try {
+                var saved = localStorage.getItem('quietstaff-theme');
+                if (saved === 'light' || saved === 'dark') {
+                    document.documentElement.setAttribute('data-theme', saved);
+                }
+            } catch (e) {}
+            var btn = document.getElementById('themeToggle');
             if (!btn) return;
-            btn.addEventListener('click', () => {
-                const current = document.documentElement.getAttribute('data-theme') || 'dark';
-                const next = current === 'dark' ? 'light' : 'dark';
+            btn.addEventListener('click', function() {
+                var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+                var next = cur === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', next);
                 try { localStorage.setItem('quietstaff-theme', next); } catch (e) {}
-                const canvas = document.getElementById('hero-canvas');
-                if (canvas && typeof canvas._refreshTheme === 'function') canvas._refreshTheme();
-                const meta = document.querySelector('meta[name="theme-color"]');
+                var meta = document.querySelector('meta[name="theme-color"]');
                 if (meta) meta.setAttribute('content', next === 'light' ? '#ffffff' : '#030710');
             });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createHeroCanvas();
-            setupThemeToggle();
-        });
+        })();
     </script>
 </body>
 </html>

@@ -16,15 +16,17 @@
 - **Local working directory:** `/Users/molab/Documents/Users/molab/Documents/Claude/Projects/QS-OIA Incubation/quietstaff.com-1/`
 
 ### What QuietStaff is
-A managed **AI Agent Team service** for business operations — specifically targeting Indian SMBs. Custom-trained AI agents handle WhatsApp, email, sales, invoicing, scheduling, document processing, etc. Every agent is fine-tuned to a business through an internal engine called the **Skills Engine** (internal codename: **OpenClaw** — do NOT expose "OpenClaw" on the public site). The Skills Engine is the actual core product; the agents are the user-visible surface.
+A custom **AI implementation consultancy** for UK SMBs — specifically targeting **digital health and professional services**. We close the AI Execution Gap: moving clients from experimentation to production AI workflows. Delivery stack: **StackAI + Appwrite**. Compliance: HIPAA/GDPR. Entry point: **AI Diagnostic**. Engagement model: Diagnostic → Implementation → Retainer. No free pilots.
+
+**Phase 2 (in build — seed language on site, not primary):** a managed AGaaS platform powered by the internal **Skills Engine** (internal codename: **OpenClaw** — do NOT expose "OpenClaw" on the public site). The Skills Engine is the future product; custom consulting is the current business.
 
 ### Brand essentials
 - **Brand name:** QuietStaff (one word, capital Q and S)
-- **Hero tagline (product):** *"AI Agents as Skilled Staff"*
+- **Hero tagline (product):** *"Closing the AI Execution Gap"*
 - **Brand tagline (footer/ops):** *"AI, Quietly Running Your Operations"*
-- **Agent naming convention:** `Quiet[Role]` — `QuietMind` (orchestrator), `QuietGate` (routing/classification), `QuietSell` (sales), `QuietBooks` (invoicing/finance), `QuietCare` (support), `QuietWatch` (monitoring). When inventing new agents, follow this pattern.
+- **Agent naming convention:** `Quiet[Role]` — `QuietMind` (orchestrator), `QuietGate` (routing/classification), `QuietSell` (sales), `QuietBooks` (invoicing/finance), `QuietCare` (support), `QuietOps` (operations), `QuietWatch` (monitoring). When inventing new agents, follow this pattern.
 - **Voice:** calm, confident, operational — not hypey. Think "enterprise-grade, quietly competent".
-- **Audience:** Indian SMB decision-makers (founders, ops leads) plus global enterprise. Must feel credible to both.
+- **Audience:** UK mid-market — digital health operators, professional services firms, regulated industries. Must feel credible and compliant. NOT India-first (India is Phase 0, deprecated on the site).
 
 ### Contact surfaces
 - Primary inbox: `contact@quietstaff.com`
@@ -182,7 +184,7 @@ The logo is a **hand-drawn inline SVG** containing:
 - A wireframe hexagonal "orb" (left) with glow filters + connecting lines
 - "Quiet" (gradient fill, light weight)
 - "Staff" (solid theme-color fill, bold)
-- A small tagline: "Multi-model AGaaS · Managed AI Ops"
+- A small tagline: "AI Consulting · UK Mid-Market"
 
 **Both `index.html` and `founder/index.html` must use the IDENTICAL logo SVG** — same `viewBox="0 0 320 64"`, same paths, same filter IDs (`fg`, `fs`, `ft`), same gradient IDs (`gi`, `gw`). A past bug shipped a simpler disc+hole design on the founder page that didn't match the homepage brand mark. Do not re-introduce that.
 
@@ -475,5 +477,5 @@ When the user asks for a change:
 
 ---
 
-**Last updated:** 2026-04-11
+**Last updated:** 2026-04-19
 **Maintained by:** whoever is holding the keyboard, guided by this doc.

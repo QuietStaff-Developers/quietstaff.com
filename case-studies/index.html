@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#030710">
+<title>Client Engagements — QuietStaff</title>
+<meta name="description" content="Engagements showing how QuietStaff deploys Managed AI Workforce solutions for UK SMBs across healthcare, finance, and logistics. Client names changed for privacy.">
+<script>(function(){try{var s=localStorage.getItem('quietstaff-theme');document.documentElement.setAttribute('data-theme',s==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="dark"]{
+  --bg-primary:#030710;--bg-secondary:#0f172a;--bg-card:rgba(15,23,42,0.6);
+  --border-card:rgba(99,102,241,0.12);--border-subtle:rgba(255,255,255,0.06);
+  --text-primary:#f1f5f9;--text-secondary:#94a3b8;--text-muted:#64748b;
+  --accent-primary:#6366f1;--accent-secondary:#22d3ee;
+  --gradient-accent:linear-gradient(135deg,#6366f1,#7c3aed,#22d3ee);
+  --logo-grad-0:#818CF8;--logo-grad-1:#3B82F6;--logo-grad-2:#06B6D4;
+  --gap-high:#22d3ee;--gap-medium:#6366f1;--gap-low:#64748b;
+  --healthcare-color:#22d3ee;--finance-color:#6366f1;--logistics-color:#8b5cf6;
+}
+[data-theme="light"]{
+  --bg-primary:#ffffff;--bg-secondary:#f8fafc;--bg-card:rgba(248,250,252,0.9);
+  --border-card:rgba(99,102,241,0.15);--border-subtle:rgba(0,0,0,0.08);
+  --text-primary:#0f172a;--text-secondary:#475569;--text-muted:#94a3b8;
+  --logo-grad-0:#4338CA;--logo-grad-1:#1D4ED8;--logo-grad-2:#0E7490;
+}
+.logo-stop-0{stop-color:var(--logo-grad-0);}
+.logo-stop-1{stop-color:var(--logo-grad-1);}
+.logo-stop-2{stop-color:var(--logo-grad-2);}
+.logo-staff-text{fill:var(--text-primary);}
+.logo-tagline-text{fill:var(--text-muted,var(--text-secondary));}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s;}
+nav.scrolled{background:rgba(3,7,16,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle);}
+.nav-logo a{display:flex;align-items:center;text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--text-primary);}
+.nav-cta{background:var(--gradient-accent);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.9;}
+.theme-toggle{background:none;border:1px solid var(--border-card);border-radius:8px;padding:8px;cursor:pointer;color:var(--text-secondary);font-size:16px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.theme-toggle:hover{color:var(--text-primary);border-color:var(--accent-primary);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+/* HERO */
+.hero{padding:140px 24px 80px;text-align:center;position:relative;}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--accent-secondary);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto;}
+.hero h1 span{background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1.05rem;color:var(--text-secondary);max-width:560px;margin:0 auto 48px;}
+.illustrative-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.25);border-radius:24px;padding:8px 16px;font-size:13px;color:var(--text-secondary);font-family:'JetBrains Mono',monospace;}
+.illustrative-badge::before{content:'ℹ';font-family:'Inter',sans-serif;}
+/* GRID */
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;padding:60px 0 100px;}
+/* CARD */
+.case-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:20px;padding:32px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:24px;transition:border-color 0.3s,transform 0.3s;text-decoration:none;color:inherit;}
+.case-card:hover{border-color:var(--accent-primary);transform:translateY(-4px);}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.sector-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:6px;white-space:nowrap;}
+.badge-healthcare{background:rgba(34,211,238,0.1);color:var(--healthcare-color);border:1px solid rgba(34,211,238,0.2);}
+.badge-finance{background:rgba(99,102,241,0.1);color:var(--finance-color);border:1px solid rgba(99,102,241,0.2);}
+.badge-logistics{background:rgba(139,92,246,0.1);color:var(--logistics-color);border:1px solid rgba(139,92,246,0.2);}
+/* AI SCORE MINI */
+.score-mini{background:rgba(3,7,16,0.5);border:1px solid var(--border-card);border-radius:10px;padding:10px 14px;min-width:140px;}
+.score-mini-title{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.score-mini-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:5px;}
+.score-mini-label{font-size:10px;color:var(--text-muted);white-space:nowrap;}
+.score-mini-bars{display:flex;gap:2px;}
+.score-mini-bar{width:8px;height:6px;border-radius:1px;background:var(--border-subtle);}
+.score-mini-bar.filled{background:var(--accent-secondary);}
+.gap-pill{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:0.06em;margin-top:6px;display:inline-block;}
+.gap-high{background:rgba(34,211,238,0.15);color:var(--gap-high);border:1px solid rgba(34,211,238,0.3);}
+.gap-medium{background:rgba(99,102,241,0.15);color:var(--gap-medium);border:1px solid rgba(99,102,241,0.3);}
+/* CHALLENGE */
+.challenge-line{font-size:13px;color:var(--text-muted);font-family:'JetBrains Mono',monospace;}
+.card-title{font-size:1.15rem;font-weight:700;line-height:1.3;}
+/* OUTCOMES */
+.outcomes{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.outcomes li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-secondary);}
+.outcomes li::before{content:'';width:20px;height:20px;min-width:20px;background:var(--gradient-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;background-size:cover;}
+.outcome-num{font-weight:700;color:var(--text-primary);}
+/* QUOTE */
+.pull-quote{font-style:italic;font-size:14px;color:var(--text-secondary);padding:14px 16px;border-left:2px solid var(--accent-primary);background:rgba(99,102,241,0.05);border-radius:0 8px 8px 0;line-height:1.6;}
+.card-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--accent-primary);text-decoration:none;margin-top:auto;padding-top:8px;}
+.card-link:hover{color:var(--accent-secondary);}
+/* FOUNDING SECTION */
+.founding{background:var(--bg-secondary);border:1px solid var(--border-card);border-radius:24px;padding:60px 48px;text-align:center;margin-bottom:100px;}
+.founding-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--accent-secondary);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;}
+.founding h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:16px;}
+.founding p{color:var(--text-secondary);max-width:520px;margin:0 auto 32px;font-size:15px;}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gradient-accent);color:#fff;padding:16px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:opacity 0.2s;letter-spacing:-0.01em;}
+.cta-btn:hover{opacity:0.9;}
+/* FOOTER */
+footer{border-top:1px solid var(--border-subtle);padding:40px 24px;text-align:center;color:var(--text-muted);font-size:13px;}
+footer a{color:var(--text-muted);text-decoration:none;}
+footer a:hover{color:var(--text-primary);}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .cases-grid{grid-template-columns:1fr;}
+  .founding{padding:40px 24px;}
+}
+
+    .skip-link{position:absolute;left:-9999px;top:0;z-index:999;background:var(--accent-primary,#6366f1);color:#fff;padding:0.75rem 1rem;text-decoration:none;border-radius:0 0 6px 0;font-weight:600;}
+    .skip-link:focus{left:0;outline:2px solid #fff;}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<nav id="nav" role="navigation" aria-label="Primary">
+  <div class="nav-logo">
+    <a href="../">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" height="40" style="display:block;">
+        <defs>
+          <linearGradient id="gi" x1="0" y1="0" x2="55" y2="55" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#818CF8" class="logo-stop-0"/><stop offset="50%" stop-color="#3B82F6" class="logo-stop-1"/><stop offset="100%" stop-color="#06B6D4" class="logo-stop-2"/>
+          </linearGradient>
+          <linearGradient id="gw" x1="64" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#818CF8" class="logo-stop-0"/><stop offset="55%" stop-color="#3B82F6" class="logo-stop-1"/><stop offset="100%" stop-color="#06B6D4" class="logo-stop-2"/>
+          </linearGradient>
+          <filter id="fg"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="fs"><feGaussianBlur stdDeviation="1.1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="ft"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g transform="translate(4,5) scale(0.52)">
+          <path d="M 50 10 L 84.6 30 L 84.6 70 L 50 90 L 15.4 70 L 15.4 30 Z" fill="none" stroke="url(#gi)" stroke-width="5.5" stroke-linejoin="round"/>
+          <line x1="84.6" y1="70" x2="95.9" y2="81.3" stroke="url(#gi)" stroke-width="5.5" stroke-linecap="round"/>
+          <circle cx="97.8" cy="83.2" r="6.5" fill="url(#gi)" filter="url(#ft)"/>
+          <circle cx="96" cy="81.4" r="2" fill="white" opacity="0.45"/>
+          <line x1="50" y1="34" x2="34" y2="60" stroke="url(#gi)" stroke-width="2" opacity="0.5"/>
+          <line x1="50" y1="34" x2="66" y2="60" stroke="url(#gi)" stroke-width="2" opacity="0.5"/>
+          <line x1="34" y1="60" x2="66" y2="60" stroke="url(#gi)" stroke-width="1.4" opacity="0.28"/>
+          <circle cx="50" cy="34" r="8.5" fill="url(#gi)" filter="url(#fg)"/>
+          <circle cx="47.5" cy="31.5" r="2.8" fill="white" opacity="0.4"/>
+          <circle cx="34" cy="60" r="5.5" fill="url(#gi)" filter="url(#fs)"/>
+          <circle cx="66" cy="60" r="5.5" fill="url(#gi)" filter="url(#fs)"/>
+        </g>
+        <text x="62" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="300" letter-spacing="0.5" fill="url(#gw)">Quiet</text>
+        <text x="146" y="32" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-0.3" class="logo-staff-text">Staff</text>
+        <text x="63" y="50" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="9.5" letter-spacing="1.6" class="logo-tagline-text">AI Solutions &middot; Quietly Delivered</text>
+      </svg>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../#services">Services</a></li>
+    <li><a href="../#how">How We Work</a></li>
+    <li><a href="../#industries">Industries</a></li>
+    <li><a href="../#about">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9788;</button>
+    <a href="../#cta" class="nav-cta">Get Your AI Score &rarr;</a>
+  </div>
+</nav>
+<main id="main" role="main">
+<section class="hero">
+  <div class="hero-eyebrow">Client Engagements</div>
+  <h1>Real Operations.<br><span>Measurable Results.</span></h1>
+  <p class="hero-sub">How QuietStaff deploys Managed AI Workforce solutions for UK SMBs — from discovery to live in weeks.</p>
+  <div class="illustrative-badge">Client names changed for privacy &mdash; engagements, approach, and outcome metrics are real</div>
+</section>
+
+<div class="container">
+  <div class="cases-grid">
+
+    <!-- Healthcare -->
+    <a class="case-card" href="healthcare/">
+      <div class="card-top">
+        <div>
+          <div class="sector-badge badge-healthcare">Healthcare &amp; Life Sciences</div>
+        </div>
+        <div class="score-mini">
+          <div class="score-mini-title">QS AI Score&trade;</div>
+          <div class="score-mini-row">
+            <span class="score-mini-label">Automation</span>
+            <div class="score-mini-bars">
+              <div class="score-mini-bar filled"></div><div class="score-mini-bar filled"></div>
+              <div class="score-mini-bar"></div><div class="score-mini-bar"></div><div class="score-mini-bar"></div>
+            </div>
+          </div>
+          <div class="score-mini-row">
+            <span class="score-mini-label">AI Usage</span>
+            <div class="score-mini-bars">
+              <div class="score-mini-bar filled"></div>
+              <div class="score-mini-bar"></div><div class="score-mini-bar"></div><div class="score-mini-bar"></div><div class="score-mini-bar"></div>
+            </div>
+          </div>
+          <div class="gap-pill gap-high">GAP: HIGH</div>
+        </div>
+      </div>
+      <div>
+        <div class="challenge-line">Multi-site private GP &amp; physio group &mdash; 52 staff</div>
+        <div class="card-title">Cutting Patient Admin Overhead Without Adding Headcount</div>
+      </div>
+      <ul class="outcomes">
+        <li><span><span class="outcome-num">61%</span> of inbound enquiries handled without staff intervention</span></li>
+        <li><span>Appointment no-show rate dropped from <span class="outcome-num">23% &rarr; 11%</span></span></li>
+        <li><span>Referral letters: <span class="outcome-num">3&ndash;4 days &rarr; same day</span> (4-min draft)</span></li>
+      </ul>
+      <div class="pull-quote">&ldquo;We were sceptical that an AI could handle the nuance of patient communication. What we got was something that handled the routine perfectly &mdash; and knew exactly when to hand off to us.&rdquo;</div>
+      <span class="card-link">Read full story &rarr;</span>
+    </a>
+
+    <!-- Finance -->
+    <a class="case-card" href="finance/">
+      <div class="card-top">
+        <div>
+          <div class="sector-badge badge-finance">Finance &amp; Accountancy</div>
+        </div>
+        <div class="score-mini">
+          <div class="score-mini-title">QS AI Score&trade;</div>
+          <div class="score-mini-row">
+            <span class="score-mini-label">Automation</span>
+            <div class="score-mini-bars">
+              <div class="score-mini-bar filled"></div><div class="score-mini-bar filled"></div>
+              <div class="score-mini-bar filled"></div><div class="score-mini-bar filled"></div>
+              <div class="score-mini-bar"></div>
+            </div>
+          </div>
+          <div class="score-mini-row">
+            <span class="score-mini-label">AI Usage</span>
+            <div class="score-mini-bars">
+              <div class="score-mini-bar filled"></div><div class="score-mini-bar filled"></div>
+              <div class="score-mini-bar"></div><div class="score-mini-bar"></div><div class="score-mini-bar"></div>
+            </div>
+          </div>
+          <div class="gap-pill gap-high">GAP: HIGH</div>
+        </div>
+      </div>
+      <div>
+        <div class="challenge-line">Independent accountancy practice &mdash; 14 staff, Birmingham</div>
+        <div class="card-title">Clearing the Invoice Backlog and Streamlining Client Onboarding</div>
+      </div>
+      <ul class="outcomes">
+        <li><span>Invoice processing backlog: <span class="outcome-num">3 weeks &rarr; 48 hours</span></span></li>
+        <li><span>New client onboarding: <span class="outcome-num">5 days &rarr; 1 day</span></span></li>
+        <li><span><span class="outcome-num">17 hrs/week</span> of senior partner admin time freed</span></li>
+      </ul>
+      <div class="pull-quote">&ldquo;The ROI conversation with our partners was straightforward once we saw the numbers. This pays for itself in month one on the senior partner time alone.&rdquo;</div>
+      <span class="card-link">Read full story &rarr;</span>
+    </a>
+
+    <!-- Logistics -->
+    <a class="case-card" href="logistics/">
+      <div class="card-top">
+        <div>
+          <div class="sector-badge badge-logistics">Logistics &amp; Operations</div>
+        </div>
+        <div class="score-mini">
+          <div class="score-mini-title">QS AI Score&trade;</div>
+          <div class="score-mini-row">
+            <span class="score-mini-label">Automation</span>
+            <div class="score-mini-bars">
+              <div class="score-mini-bar filled"></div><div class="score-mini-bar filled"></div>
+              <div class="score-mini-bar filled"></div><div class="score-mini-bar filled"></div>
+              <div class="score-mini-bar filled"></div>
+            </div>
+          </div>
+          <div class="score-mini-row">
+            <span class="score-mini-label">AI Usage</span>
+            <div class="score-mini-bars">
+              <div class="score-mini-bar filled"></div><div class="score-mini-bar filled"></div>
+              <div class="score-mini-bar"></div><div class="score-mini-bar"></div><div class="score-mini-bar"></div>
+            </div>
+          </div>
+          <div class="gap-pill gap-medium">GAP: MEDIUM&ndash;HIGH</div>
+        </div>
+      </div>
+      <div>
+        <div class="challenge-line">Regional B2B logistics &amp; courier company &mdash; 85 staff</div>
+        <div class="card-title">Scaling Customer Operations Without Adding Headcount</div>
+      </div>
+      <ul class="outcomes">
+        <li><span>Customer enquiries resolved without human: <span class="outcome-num">5% &rarr; 74%</span></span></li>
+        <li><span>Average response time: <span class="outcome-num">6&ndash;8 hours &rarr; under 8 minutes</span></span></li>
+        <li><span>New headcount added to handle growth: <span class="outcome-num">0</span></span></li>
+      </ul>
+      <div class="pull-quote">&ldquo;We were expecting to hire two people this quarter. We didn&rsquo;t. And our response times are better than they&rsquo;ve ever been.&rdquo;</div>
+      <span class="card-link">Read full story &rarr;</span>
+    </a>
+
+  </div>
+
+  <div class="founding">
+    <div class="founding-eyebrow">Early Phase Partner Programme</div>
+    <h2>Become a Reference Engagement</h2>
+    <p>We&rsquo;re onboarding a small number of early-phase partners &mdash; UK SMBs working with us while we&rsquo;re still shaping the playbook. A few engagements are already in flight; new partners get significantly discounted assessment and build in exchange for a reference engagement.</p>
+    <a href="../#cta" class="cta-btn">Get Your QuietStaff AI Score &rarr;</a>
+  </div>
+</div>
+
+</main>
+<footer>
+  <p>&copy; 2026 QuietStaff Ltd. Registered in England &amp; Wales. 66 Paul Street, EC2A 4NE, London.</p>
+  <p style="margin-top:8px;"><a href="../">Home</a> &nbsp;&middot;&nbsp; <a href="../#services">Services</a> &nbsp;&middot;&nbsp; <a href="mailto:contact@quietstaff.com">contact@quietstaff.com</a></p>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20);});
+// Theme
+const btn = document.getElementById('themeToggle');
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);btn.innerHTML=t==='light'?'&#9790;':'&#9788;';try{localStorage.setItem('quietstaff-theme',t);}catch(e){}}
+btn.addEventListener('click',()=>{applyTheme(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');});
+const saved=document.documentElement.getAttribute('data-theme');btn.innerHTML=saved==='light'?'&#9790;':'&#9788;';
+</script>
+</body>
+</html>
