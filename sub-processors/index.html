@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+    <title>Sub-processor List — QuietStaff Ltd</title>
+
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('quietstaff-theme');
+                var theme = saved === 'light' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <meta name="description" content="QuietStaff Ltd Sub-processor List — third parties engaged in delivery of Services, with regions and transfer mechanisms.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quietstaff.co.uk/sub-processors">
+
+    <link rel="icon" type="image/svg+xml" href="/brand/logo-package/svg/quietstaff-favicon.svg">
+    <meta name="theme-color" content="#030710">
+
+    <style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/inter-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/inter-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/inter-700-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url('/assets/fonts/inter-800-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+    </style>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root, [data-theme="dark"] {
+            --bg-primary: #030710; --bg-secondary: #0f172a; --bg-card: rgba(15, 23, 42, 0.6);
+            --border-card: rgba(99, 102, 241, 0.12); --text-primary: #f1f5f9; --text-secondary: #94a3b8;
+            --text-muted: #94a3b8; --accent-primary: #6366f1; --accent-secondary: #22d3ee;
+            --table-row-alt: rgba(99, 102, 241, 0.04); --code-bg: rgba(99, 102, 241, 0.12);
+        }
+        [data-theme="light"] {
+            --bg-primary: #ffffff; --bg-secondary: #f8fafc; --bg-card: rgba(255, 255, 255, 0.78);
+            --border-card: rgba(99, 102, 241, 0.22); --text-primary: #0f172a; --text-secondary: #475569;
+            --text-muted: #64748b; --accent-primary: #4f46e5; --accent-secondary: #0e7490;
+            --table-row-alt: rgba(99, 102, 241, 0.04); --code-bg: rgba(99, 102, 241, 0.08);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        .legal-header { position: sticky; top: 0; background: var(--bg-primary); border-bottom: 1px solid var(--border-card); padding: 1rem 0; z-index: 100; }
+        .legal-header-inner { max-width: 1024px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .legal-home-link { color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.2s ease; }
+        .legal-home-link:hover { color: var(--accent-primary); }
+
+        .theme-toggle { background: transparent; border: 1px solid var(--border-card); color: var(--text-secondary); width: 38px; height: 38px; border-radius: 0.5rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s ease; padding: 0; }
+        .theme-toggle:hover { color: var(--accent-primary); border-color: var(--accent-primary); }
+        .theme-toggle svg { width: 18px; height: 18px; }
+        .theme-toggle .icon-sun { display: none; } .theme-toggle .icon-moon { display: block; }
+        [data-theme="light"] .theme-toggle .icon-sun { display: block; }
+        [data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+        main { max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 1.5rem; }
+        .doc-meta { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; padding: 1.25rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 0.75rem; }
+        .doc-meta strong { color: var(--text-primary); font-weight: 600; }
+        .version-note { color: var(--text-secondary); font-style: italic; font-size: 0.9rem; margin-bottom: 3rem; padding-left: 1rem; border-left: 3px solid var(--accent-primary); }
+
+        h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.015em; margin-top: 3rem; margin-bottom: 1rem; color: var(--text-primary); }
+        h2:first-of-type { margin-top: 2rem; }
+        h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1.75rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+
+        p { margin-bottom: 1.25rem; color: var(--text-secondary); }
+        p:last-child { margin-bottom: 0; }
+        strong { color: var(--text-primary); font-weight: 600; }
+
+        a { color: var(--accent-primary); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color 0.2s ease; }
+        a:hover { color: var(--accent-secondary); }
+
+        ul, ol { margin: 0 0 1.25rem 1.5rem; color: var(--text-secondary); }
+        li { margin-bottom: 0.5rem; }
+
+        code { background: var(--code-bg); color: var(--accent-primary); padding: 0.15em 0.4em; border-radius: 0.25rem; font-family: ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; }
+        hr { border: none; height: 1px; background: var(--border-card); margin: 2.5rem 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 0.5rem; overflow: hidden; }
+        th, td { text-align: left; padding: 0.875rem 1rem; border-bottom: 1px solid var(--border-card); color: var(--text-secondary); vertical-align: top; }
+        th { background: rgba(99, 102, 241, 0.08); color: var(--text-primary); font-weight: 600; }
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) td { background: var(--table-row-alt); }
+
+        blockquote { border-left: 3px solid var(--accent-primary); padding: 0.75rem 1.25rem; margin: 1.5rem 0; color: var(--text-secondary); font-style: italic; background: var(--bg-card); border-radius: 0 0.5rem 0.5rem 0; }
+
+        .doc-footer-note { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-card); color: var(--text-muted); font-style: italic; font-size: 0.9rem; }
+
+        footer { background: var(--bg-secondary); border-top: 1px solid var(--border-card); padding: 2.5rem 0 2rem; color: var(--text-secondary); margin-top: 4rem; }
+        .footer-inner { max-width: 1024px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+        .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+        .footer-links a:hover { color: var(--accent-primary); }
+        .footer-meta { color: var(--text-muted); font-size: 0.85rem; }
+
+        @media (max-width: 640px) {
+            main { padding: 2.5rem 1.25rem 4rem; }
+            h1 { font-size: 1.875rem; }
+            h2 { font-size: 1.25rem; margin-top: 2.25rem; }
+            table { font-size: 0.85rem; }
+            th, td { padding: 0.625rem 0.75rem; }
+            .footer-inner { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="legal-header">
+    <div class="legal-header-inner">
+        <a href="/" class="legal-home-link">&larr; QuietStaff home</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+    </div>
+</header>
+
+<main>
+
+<h1>Sub-processor List &mdash; QuietStaff Ltd</h1>
+
+<div class="doc-meta">
+    <strong>Effective date:</strong> 23 May 2026<br>
+    <strong>Document version:</strong> v1.1<br>
+    <strong>Maintained by:</strong> <a href="mailto:privacy@quietstaff.com">privacy@quietstaff.com</a><br>
+    <strong>Change-notification list:</strong> to request inclusion on the sub-processor change-notification list, email <a href="mailto:privacy@quietstaff.com">privacy@quietstaff.com</a>
+</div>
+
+<hr>
+
+<h2>What this list is</h2>
+
+<p>QuietStaff Ltd (Co. No. 17171308) acts as a Data Processor under UK GDPR for our Customers' personal data. To deliver the Services, we engage the Sub-processors listed below. Each Sub-processor is bound by a written Data Processing Agreement that imposes data-protection obligations no less onerous than those we owe to our Customers.</p>
+
+<p>This list operates in conjunction with our <a href="/privacy">Privacy Policy</a> and forms part of every signed QuietStaff Data Processing Agreement (DPA). Customer authorisation under the Sub-Processors clause of the DPA covers every Sub-processor on this list as at the date of signature. We give Customers at least <strong>30 days' prior written notice</strong> of the addition of any new Sub-processor.</p>
+
+<hr>
+
+<h2>Current Sub-processors</h2>
+
+<table>
+    <thead>
+        <tr><th>#</th><th>Sub-processor</th><th>Purpose</th><th>Region</th><th>Transfer mechanism</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td><strong>Amazon Web Services EMEA SARL</strong></td>
+            <td>Cloud infrastructure and storage of Customer Personal Data, including AWS Bedrock access to AI foundation models</td>
+            <td>London (eu-west-2)</td>
+            <td>UK / EU &mdash; no Restricted Transfer</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><strong>Google LLC (Google Workspace)</strong></td>
+            <td>Email, document storage, calendar &mdash; incidental Customer Personal Data when Customer corresponds with QuietStaff</td>
+            <td>EU multi-region with global routing</td>
+            <td>EU Standard Contractual Clauses + UK International Data Transfer Addendum (per Google's standard DPA)</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2>Sub-processors not currently engaged but contemplated</h2>
+
+<p>When the following are activated, this page will be updated and Customers notified at least 30 days in advance:</p>
+
+<ul>
+    <li><strong>Anthropic, PBC (direct API)</strong> &mdash; listed in v1.0 (1 May 2026) and removed in v1.1. Customer-instructed access to Claude models is delivered via <strong>AWS Bedrock</strong> (in the AWS sub-processor entry above) rather than the Anthropic direct API. Bedrock cross-region inference is disabled by default; live Customer Personal Data is processed only in dedicated client AWS accounts in eu-west-2 (London). The Anthropic direct API will only be re-introduced as a Sub-processor if and when a specific Customer engagement requires it, with prior notice under the change-notification process below.</li>
+    <li><strong>Pipedrive (Pipedrive Inc.)</strong> &mdash; CRM / sales pipeline management &mdash; engagement pending JD posting + first agent hire (currently expected Q3 2026). EU/Frankfurt region intended.</li>
+</ul>
+
+<hr>
+
+<h2>What is NOT a Sub-processor</h2>
+
+<p>The following providers are used by QuietStaff for our own internal operations and do <strong>not</strong> process Customer Personal Data on Customer's behalf, and are therefore not Sub-processors under UK GDPR Article 28:</p>
+
+<ul>
+    <li>Banking providers (Tide, Wise) &mdash; process QuietStaff's own financial data only</li>
+    <li>Internal accounting / payroll providers &mdash; process QuietStaff staff data only</li>
+</ul>
+
+<hr>
+
+<h2>Change-notification process</h2>
+
+<p>For each material change to this list (addition or removal of a Sub-processor):</p>
+
+<ol>
+    <li>The change is staged at least 30 days before going live</li>
+    <li>All current Customers are notified by email to the address registered on their signed DPA</li>
+    <li>The change appears on this page with a <code>(NEW &mdash; added YYYY-MM-DD)</code> marker for 60 days</li>
+    <li>Customers retain the right to object under the Sub-Processors clause of their signed DPA</li>
+</ol>
+
+<hr>
+
+<h2>Snapshot retention</h2>
+
+<p>For every signed Customer DPA, QuietStaff retains a snapshot of this page as it existed at the date of execution. This snapshot is available to the relevant Customer on request as evidence of their authorisation.</p>
+
+<hr>
+
+<h2>Contact</h2>
+
+<p>Questions about this list, change notifications, or to record an objection:<br>
+<strong><a href="mailto:privacy@quietstaff.com">privacy@quietstaff.com</a></strong></p>
+
+<p>QuietStaff Ltd, 66 Paul Street, London, EC2A 4NE, United Kingdom<br>
+ICO registration: ZC130484</p>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/sub-processors">Sub-processors</a>
+            <a href="mailto:contact@quietstaff.com">Contact</a>
+        </div>
+        <div class="footer-meta">
+            &copy; 2026 QuietStaff Ltd &middot; Company No. 17171308 &middot; ICO ZC130484
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('themeToggle').addEventListener('click', function() {
+        var current = document.documentElement.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('quietstaff-theme', next); } catch (e) {}
+    });
+</script>
+
+</body>
+</html>

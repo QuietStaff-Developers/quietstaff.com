@@ -69,10 +69,23 @@
     }
     </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Self-hosted fonts (was Google Fonts CDN). PECR/UK GDPR clean — no third-party transfers. -->
+    <style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/inter-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/inter-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/inter-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/inter-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/inter-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/inter-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/inter-700-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/inter-700-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/inter-800-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/inter-800-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/jetbrains-mono-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/jetbrains-mono-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/jetbrains-mono-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/jetbrains-mono-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+    </style>
 
     <style>
         * {
@@ -3290,7 +3303,8 @@
             </div>
             <div class="footer-column">
                 <h4>Legal</h4>
-                <span class="footer-link-soon">Privacy Policy <em>(coming soon)</em></span>
+                <a href="privacy/">Privacy Policy</a>
+                <a href="sub-processors/">Sub-processors</a>
                 <span class="footer-link-soon">Terms of Service <em>(coming soon)</em></span>
                 <span class="footer-link-soon">Security <em>(coming soon)</em></span>
                 <span class="footer-link-soon">Compliance <em>(coming soon)</em></span>
@@ -3625,33 +3639,28 @@
                 <h3 id="modalTitle">Get in Touch</h3>
                 <div class="modal-context" id="modalContext">Request a Demo</div>
 
-                <form action="https://formsubmit.co/contact@quietstaff.com" method="POST" id="qsForm">
-                    <!-- FormSubmit config -->
-                    <input type="hidden" name="_subject" id="formSubject" value="New Inquiry - QuietStaff">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="box">
-                    <input type="hidden" name="_next" value="#">
-                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Leave empty">
-                    <input type="hidden" name="Inquiry Type" id="formInquiry" value="Demo Request">
+                <form id="qsForm" onsubmit="return sendViaMailto(event)">
+                    <input type="hidden" name="_honey" id="qs-honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+                    <input type="hidden" id="formInquiry" value="Demo Request">
 
                     <div class="form-group">
                         <label for="qs-name">Full Name *</label>
-                        <input type="text" id="qs-name" name="Name" placeholder="John Doe" required autocomplete="name">
+                        <input type="text" id="qs-name" name="name" placeholder="John Doe" required autocomplete="name">
                     </div>
 
                     <div class="form-group">
                         <label for="qs-email">Work Email *</label>
-                        <input type="email" id="qs-email" name="Email" placeholder="john@company.com" required autocomplete="email">
+                        <input type="email" id="qs-email" name="email" placeholder="john@company.com" required autocomplete="email">
                     </div>
 
                     <div class="form-group">
                         <label for="qs-company">Company</label>
-                        <input type="text" id="qs-company" name="Company" placeholder="Company name" autocomplete="organization">
+                        <input type="text" id="qs-company" name="company" placeholder="Company name" autocomplete="organization">
                     </div>
 
                     <div class="form-group">
                         <label for="qs-interest">What are you looking for?</label>
-                        <select id="qs-interest" name="Interest">
+                        <select id="qs-interest" name="interest">
                             <option value="AI Readiness Assessment">AI Readiness Assessment (Starting Point)</option>
                             <option value="Build + Retainer">Build + Managed Retainer</option>
                             <option value="Enterprise">Enterprise Engagement</option>
@@ -3661,18 +3670,62 @@
 
                     <div class="form-group">
                         <label for="qs-message">Message</label>
-                        <textarea id="qs-message" name="Message" placeholder="Tell us about your use case, team size, or any questions..."></textarea>
+                        <textarea id="qs-message" name="message" placeholder="Tell us about your use case, team size, or any questions..."></textarea>
                     </div>
 
-                    <button type="submit" class="form-submit">Send Request &rarr;</button>
+                    <button type="submit" class="form-submit">Open email client &rarr;</button>
                 </form>
+
+                <script>
+                function sendViaMailto(event) {
+                    event.preventDefault();
+                    if (document.getElementById('qs-honey').value) return false;
+
+                    var name = document.getElementById('qs-name').value;
+                    var email = document.getElementById('qs-email').value;
+                    var company = document.getElementById('qs-company').value;
+                    var interest = document.getElementById('qs-interest').value;
+                    var message = document.getElementById('qs-message').value;
+
+                    var subject = 'QuietStaff enquiry — ' + interest + ' — ' + name;
+                    var body = [
+                        'Hi QuietStaff,',
+                        '',
+                        'I would like to enquire about: ' + interest,
+                        '',
+                        '— My details —',
+                        'Name: ' + name,
+                        'Email: ' + email,
+                        'Company: ' + (company || '(not provided)'),
+                        '',
+                        '— Message —',
+                        message || '(no additional message)',
+                        '',
+                        '— Sent from the contact form on quietstaff.com —'
+                    ].join('\n');
+
+                    var mailto = 'mailto:contact@quietstaff.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+                    window.location.href = mailto;
+
+                    setTimeout(function() {
+                        var cf = document.getElementById('contactForm');
+                        var fs = document.getElementById('formSuccess');
+                        if (cf && fs) {
+                            cf.style.display = 'none';
+                            fs.style.display = 'block';
+                        }
+                    }, 400);
+
+                    return false;
+                }
+                </script>
             </div>
 
             <!-- Success state -->
             <div class="form-success" id="formSuccess">
                 <div class="check-icon">&check;</div>
-                <h3>Request Sent!</h3>
-                <p style="color:var(--text-secondary); margin-top:0.75rem;">We'll get back to you within 24 hours at the email you provided.</p>
+                <h3>Email client opened</h3>
+                <p style="color:var(--text-secondary); margin-top:0.75rem;">We've opened your email client with your enquiry prepared. Please review and hit <strong>Send</strong> to reach us. If nothing opened, email us directly at <a href="mailto:contact@quietstaff.com" style="color:var(--accent-primary)">contact@quietstaff.com</a>.</p>
             </div>
         </div>
     </div>
