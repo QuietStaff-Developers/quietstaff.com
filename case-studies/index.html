@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work &mdash; QuietStaff</title>
-{% include head-meta.html title="Illustrative Scenarios" desc="Three illustrative scenarios across healthcare, finance and logistics — what QuietStaff would build, how impact would be measured, and what managed AI replaces. Illustrative, not client engagements." path="case-studies/" %}
-<script>(function(){try{var s=localStorage.getItem('quietstaff-theme');document.documentElement.setAttribute('data-theme',s==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})()</script>
+<title>Founder engineering work and illustrative AI scenarios — QuietStaff</title>
+{% include head-meta.html title="Founder engineering work and illustrative AI scenarios" desc="Explore founder engineering examples and hypothetical healthcare, accountancy and logistics scenarios, separate from QuietStaff client results." path="case-studies/" %}
+<script>(function(){try{var q=new URLSearchParams(location.search).get('theme');var s=(q==='light'||q==='dark')?q:localStorage.getItem('quietstaff-theme');document.documentElement.setAttribute('data-theme',s==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})()</script>
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <style>
 /* ============================================================
@@ -320,12 +320,9 @@ nav.scrolled{border-bottom-color:var(--hairline);}
 }
 @media (max-width:820px){ .card-title{min-height:0;} }
 .card-body{
-  padding:12px 22px 0;
-  max-height:6.6em;
-  overflow:hidden;
-  -webkit-mask-image:linear-gradient(180deg,#000 52%,transparent 100%);
-          mask-image:linear-gradient(180deg,#000 52%,transparent 100%);
-  transition:max-height .42s cubic-bezier(.2,.7,.3,1);
+  padding:12px 22px 22px;
+  max-height:none;
+  overflow:visible;
 }
 .card.is-open .card-body{
   max-height:130em;
@@ -570,7 +567,7 @@ footer .sep{color:var(--ink-meta);padding:0 6px;}
 </style>
     <link rel="stylesheet" href="/assets/css/shared.css">
 </head>
-<body>
+<body class="qs-editorial qs-work">
 <a href="#main" class="skip-link">Skip to content</a>
 
 <nav id="nav" role="navigation" aria-label="Primary">
@@ -608,14 +605,15 @@ footer .sep{color:var(--ink-meta);padding:0 6px;}
     </a>
   </div>
   <ul class="nav-links">
-    <li><a href="../#services">Services</a></li>
-    <li><a href="../#how">How We Work</a></li>
-    <li><a href="../#industries">Industries</a></li>
-    <li><a href="../#about">About</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#how">How we work</a></li>
+    <li><a href="/#industries">Industries</a></li>
+    <li><a href="/case-studies/">Work</a></li>
+    <li><a href="/#about">About</a></li>
   </ul>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9788;</button>
-    <a href="../#cta" class="nav-cta">Get your free AI Score &rarr;</a>
+    <a href="/#contact-quietstart" class="nav-cta">Enquire about QuietStart &rarr;</a>
   </div>
 </nav>
 
@@ -624,9 +622,9 @@ footer .sep{color:var(--ink-meta);padding:0 6px;}
   <div class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">Selected Work</div>
-        <h1>Built by QuietStaff, Recently.<span class="l2">And How the Method Applies.</span></h1>
-        <p class="hero-sub">A selection of systems built over the past period, followed by three worked scenarios showing how a QuietStaff engagement runs for a UK SMB &mdash; from discovery through to live.</p>
+        <div class="eyebrow">Work and possibilities</div>
+        <h1>Engineering examples.<span class="l2">Ideas for your business.</span></h1>
+        <p class="hero-sub">Explore examples of the founder's engineering work, followed by hypothetical scenarios for UK small businesses. The scenarios are not client engagements or measured outcomes.</p>
       </div>
       <div class="deck-mark" aria-hidden="true"><i></i><i></i><i></i></div>
     </section>
@@ -635,199 +633,16 @@ footer .sep{color:var(--ink-meta);padding:0 6px;}
   <div class="wrap">
 
     <!-- ============================ DECK ONE ============================ -->
-    <section class="deck-section" aria-labelledby="deck-one-h">
-      <div class="deck-head">
-        <div class="label"><span>Selected Work</span></div>
-        <h2 id="deck-one-h">Systems built, recently</h2>
-        <p>Governance tooling, data-boundary enforcement, observability, monitoring and pipeline work. Described at the engineering level &mdash; what was built, how it was built, and where the hard parts were. Detail is generalised deliberately; these are capability builds, not paid client engagements.</p>
-      </div>
-
-      <div class="deck">
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">QuietClean &mdash; a 14-phase governance model for AI-authored software</h3>
-          <div class="card-body" id="b01">
-            <p>A governed software lifecycle for code written with AI. Every stage &mdash; scoping through review to release &mdash; ran through a named phase with its own entry and exit criteria, so a change could always be located at a known point in the lifecycle rather than treated as an ungoverned edit. Its own marketing and documentation copy was linted for overclaiming against a maintained denylist, failing the build on a hit; anything the lint could not adjudicate routed to a named human reviewer before it could ship. A DPIA was carried out and kept current for as long as it processed personal data.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b01" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">A commerce build with a compile-time data boundary</h3>
-          <div class="card-body" id="b02">
-            <p>Six parallel research workstreams &mdash; demand, competition, operations, costing, financials and risk &mdash; run to completion before any product code was written. The build itself carries a margin-protection pricing engine whose cost and margin fields must never reach the browser, and that boundary is enforced by a compile-time assertion rather than a runtime filter or a code-review checklist: pass a cost-bearing data shape toward client-facing code and the build fails before it ships. On top of that boundary, a live 3D product configurator and server-generated quote and RFQ documents.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b02" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">Mission Control &mdash; a live agent-operations view</h3>
-          <div class="card-body" id="b03">
-            <p>A Node dashboard that tails a coding agent&rsquo;s own session transcripts through a filesystem watch, including per-subagent transcript files, and serves a live view: current status, the tool in use right now, token spend, elapsed time, session cost and context-window usage. Zero npm dependencies &mdash; the whole thing runs with <code>node server.js</code>. Built in a single day.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b03" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">Atlas &mdash; a cross-project observability layer, and the case for not selling it</h3>
-          <div class="card-body" id="b04">
-            <p>A cross-project status registry and collector tracking every project run through the toolchain, feeding a dashboard on a scheduled local collection cycle. It answers the question every multi-project operator eventually asks: what is actually running, and where. The registry was built first, then sized as a product &mdash; and the architecture, competitive and market-viability research that followed reached a plain verdict that the addressable market was too small to justify productising it. It stayed an internal tool.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b04" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">A Golden Signals monitor, deployed as a system service</h3>
-          <div class="card-body" id="b05">
-            <p>A bash-first monitoring service on the classical Golden Signals method: external heartbeat, disk usage, memory usage and container count, each on its own schedule. It ships with its own installer script and a macOS LaunchAgent definition, so it runs continuously as a background service instead of relying on someone remembering to check it. Small, tested, and boring on purpose &mdash; which is the point of the method.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b05" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">A naming pipeline with authoritative domain clearance</h3>
-          <div class="card-body" id="b06">
-            <p>Built to solve a one-off naming problem for a real venture, then generalised. A brief goes in; genre-diverse candidates come out; each is checked against authoritative domain-registry clearance data rather than a guess or a cached list; results fan out across a registry proxy; and a fixed scoring rubric ranks the shortlist that emerges. The naming problem belonged to one venture. The pipeline that solved it did not.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b06" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">A billing and documents portal for a coworking operator</h3>
-          <div class="card-body" id="b07">
-            <p>Live since August 2026. A password-gated web portal front-office staff use to raise tax-compliant invoices, quotations and payment receipts against the live member ledger. Two pricing modes: rate-driven, where tax is added on top, and agreed-total, where the taxable amount has to be worked back out of a fixed inclusive figure &mdash; which is not cleanly invertible under statutory rounding, so the generator searches for the taxable base that reproduces the target total exactly. Multi-line documents allocate the subtotal proportionally with the last line absorbing the rounding remainder, so line amounts always sum to the total. Quotations prorate a partial first month against a date range rather than rounding to whole months.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b07" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">Releasing it without breaking a live ledger</h3>
-          <div class="card-body" id="b08">
-            <p>The portal writes into a spreadsheet three people already had open, which has no transactional isolation of its own. Every write takes a document lock with a timeout, so two staff cannot race the same receipt number. The password exists only as a hash in a script property &mdash; not in source, not in docs, not in version control &mdash; and is compared with a hand-rolled constant-time check, because the runtime has no native one. It went live against a written checklist: backup taken and read back before promotion, every document type test-generated and visually inspected as a finished page, and a confirmed zero dummy records in production.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b08" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">An operations assistant inside the team&rsquo;s chat</h3>
-          <div class="card-body" id="b09">
-            <p>Set up and running for the same operation, currently supported under supervision. It reads the operational group and turns a day of chat into a twice-daily brief &mdash; what was decided, who owns it, what is still open &mdash; with every item linked back to the message it came from. It is structurally prevented from inventing one. Model output is rejected unless every field matches an allow-listed key set, every cited message is one actually supplied to it, and any assignment of an owner is traceable to text that really named that person. It returns <code>unknown</code> rather than guess. Reviewers rate each decision as correct, incomplete, wrong or unsafe, and approved corrections create a new immutable version of that knowledge rather than overwriting the old one &mdash; so it improves through a reviewed loop with an audit trail, not by drifting.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b09" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">Building it so it can decide but not act</h3>
-          <div class="card-body" id="b10">
-            <p>The assistant talks to a real business group, so a wrong or duplicate message is a real-world error rather than a log line. Its decisions are written to a review queue; actual delivery runs through a separate gated path that checks a mute switch first, so nothing the model produces can send itself. Every hop is treated as at-least-once, with unique idempotency keys on both model invocations and outbound messages &mdash; a redelivered job replays the stored result instead of calling the model and billing twice. Ambiguous outcomes become a state a human reconciles, never an automatic resend. Failures dead-letter into an audited path rather than disappearing. And retention is enforced by a scheduled purge that nulls content and strips actor identifiers on a clock, leaving a tombstone recording that something was removed without retaining what.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b10" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">The same system, twice, on two very different runtimes</h3>
-          <div class="card-body" id="b11">
-            <p>It runs on an edge platform &mdash; serverless workers, a strongly-consistent coordination object used as the deduplication gate, a managed queue with a dead-letter path, SQLite at the edge. It also runs as a self-hosted build on a plain VPS: the same domain model on PostgreSQL behind a reverse proxy with automatic TLS, in containers that are read-only with all capabilities dropped. Without a managed queue, that build claims work with row-level locking that skips locked rows, and serialises the daily model-spend check behind an advisory lock so two workers cannot both pass a stale count and overshoot the cap. Portability was the point: the same product, not tied to one vendor.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b11" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-        <article class="card">
-          <div class="card-head"><span class="card-notch" aria-hidden="true"></span></div>
-          <h3 class="card-title">Finding the mail failure that only hit some recipients</h3>
-          <div class="card-body" id="b12">
-            <p>Business mail from a live domain was landing in spam for some recipients and arriving cleanly for others &mdash; the pattern that makes a mail problem hard to pin down. The cause was an SPF record making twelve DNS lookups against RFC 7208&rsquo;s hard limit of ten, producing a permanent error that strict validators read as no authentication at all, while lenient ones short-circuited on the first match and let the mail through. Fixing it meant first establishing that DNS was not actually being served where the registrar&rsquo;s own control panel implied it was. The rebuilt record sits at seven lookups of ten, with headroom left deliberately.</p>
-          </div>
-          <button class="card-toggle" aria-expanded="false" aria-controls="b12" aria-label="Show more"><span class="chev" aria-hidden="true">&#9662;</span></button>
-        </article>
-
-      </div>
-    </section>
+    <section class="deck-section" aria-labelledby="deck-one-h"><div class="deck-head"><div class="label"><span>Founder engineering work</span></div><h2 id="deck-one-h">Examples from Raj's own work</h2><p>These examples describe the founder's engineering work. They are separate from QuietStaff client engagements. Identifying details are omitted where appropriate.</p></div><div class="deck"><article class="card"><div class="card-head"><span class="card-notch" aria-hidden="true"></span></div><h3 class="card-title">Separating internal pricing data from a customer interface</h3><div class="card-body" id="b01"><p>A commerce prototype exploring how to keep internal cost fields out of browser-facing data while generating customer quotes.</p></div></article>
+<article class="card"><div class="card-head"><span class="card-notch" aria-hidden="true"></span></div><h3 class="card-title">A view of coding-agent activity</h3><div class="card-body" id="b02"><p>A local dashboard for inspecting agent session activity and reported usage.</p></div></article>
+<article class="card"><div class="card-head"><span class="card-notch" aria-hidden="true"></span></div><h3 class="card-title">Cross-project status tracking</h3><div class="card-body" id="b03"><p>An internal registry and dashboard for reviewing activity across projects.</p></div></article>
+<article class="card"><div class="card-head"><span class="card-notch" aria-hidden="true"></span></div><h3 class="card-title">A naming research workflow</h3><div class="card-body" id="b04"><p>A pipeline for generating and comparing name candidates with domain-availability checks.</p></div></article>
+</div></section>
 
     <!-- ============================ DECK TWO ============================ -->
-    <section class="deck-section" aria-labelledby="deck-two-h">
-      <div class="deck-head">
-        <div class="label"><span>Illustrative</span></div>
-        <h2 id="deck-two-h">How the method would apply</h2>
-        <p>Below are three worked scenarios, not engagements. They show how a QuietStaff engagement would run for a UK SMB &mdash; discovery through to live &mdash; in three sectors.</p>
-      </div>
+    <section class="deck-section" aria-labelledby="deck-two-h"><div class="deck-head"><div class="label"><span>Hypothetical scenarios</span></div><h2 id="deck-two-h">How an approach might take shape</h2><p>These imagined situations show questions we would explore and possible workflows we might consider. Feasibility, costs and benefits would need to be assessed for a real business.</p></div><div class="sdeck"><a class="scard health" href="/case-studies/healthcare/"><span class="sbadge">Hypothetical scenario · Healthcare administration</span><h3 class="stitle">Healthcare: appointment administration</h3><div class="plate"><div class="plate-title">What to explore</div><p>Explore how enquiry routing, reminders and draft preparation could support a practice's administrative team.</p></div><span class="slink">Read the scenario <span class="arw" aria-hidden="true">&rarr;</span></span></a><a class="scard finance" href="/case-studies/finance/"><span class="sbadge">Hypothetical scenario · Finance and accountancy</span><h3 class="stitle">Accountancy: document and invoice administration</h3><div class="plate"><div class="plate-title">What to explore</div><p>Explore document collection, invoice preparation and exception review in a small accountancy practice.</p></div><span class="slink">Read the scenario <span class="arw" aria-hidden="true">&rarr;</span></span></a><a class="scard logistics" href="/case-studies/logistics/"><span class="sbadge">Hypothetical scenario · Logistics and operations</span><h3 class="stitle">Logistics: delivery enquiries and dispatch preparation</h3><div class="plate"><div class="plate-title">What to explore</div><p>Explore how reliable shipment information and a reviewable dispatch draft could support daily operations.</p></div><span class="slink">Read the scenario <span class="arw" aria-hidden="true">&rarr;</span></span></a></div></section>
 
-      <div class="sdeck">
-
-        <a class="scard health" href="healthcare/">
-          <span class="sbadge">Healthcare &amp; Life Sciences</span>
-          <h3 class="stitle">Patient Admin AI for a Healthcare Practice</h3>
-          <div class="plate">
-            <div class="plate-title">QS AI Score&trade;</div>
-            <div class="meter">
-              <span class="meter-l">Automation</span>
-              <span class="bars" aria-hidden="true"><b class="on"></b><b class="on"></b><b></b><b></b><b></b></span>
-            </div>
-            <div class="meter">
-              <span class="meter-l">AI Usage</span>
-              <span class="bars" aria-hidden="true"><b class="on"></b><b></b><b></b><b></b><b></b></span>
-            </div>
-            <span class="gap">GAP: HIGH</span>
-          </div>
-          <span class="slink">Read full story <span class="arw" aria-hidden="true">&rarr;</span></span>
-        </a>
-
-        <a class="scard finance" href="finance/">
-          <span class="sbadge">Finance &amp; Accountancy</span>
-          <h3 class="stitle">Bookkeeping AI for an Accountancy Practice</h3>
-          <div class="plate">
-            <div class="plate-title">QS AI Score&trade;</div>
-            <div class="meter">
-              <span class="meter-l">Automation</span>
-              <span class="bars" aria-hidden="true"><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b><b></b></span>
-            </div>
-            <div class="meter">
-              <span class="meter-l">AI Usage</span>
-              <span class="bars" aria-hidden="true"><b class="on"></b><b class="on"></b><b></b><b></b><b></b></span>
-            </div>
-            <span class="gap">GAP: HIGH</span>
-          </div>
-          <span class="slink">Read full story <span class="arw" aria-hidden="true">&rarr;</span></span>
-        </a>
-
-        <a class="scard logistics" href="logistics/">
-          <span class="sbadge">Logistics &amp; Operations</span>
-          <h3 class="stitle">Dispatch AI for a Logistics Operator</h3>
-          <div class="plate">
-            <div class="plate-title">QS AI Score&trade;</div>
-            <div class="meter">
-              <span class="meter-l">Automation</span>
-              <span class="bars" aria-hidden="true"><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></span>
-            </div>
-            <div class="meter">
-              <span class="meter-l">AI Usage</span>
-              <span class="bars" aria-hidden="true"><b class="on"></b><b class="on"></b><b></b><b></b><b></b></span>
-            </div>
-            <span class="gap">GAP: MEDIUM&ndash;HIGH</span>
-          </div>
-          <span class="slink">Read full story <span class="arw" aria-hidden="true">&rarr;</span></span>
-        </a>
-
-      </div>
-    </section>
-
-    <section class="founding" aria-labelledby="founding-h">
-      <div class="label">Early Phase Partner Programme</div>
-      <h2 id="founding-h">Become a Reference Engagement</h2>
-      <p>We&rsquo;re onboarding a small number of early-phase partners &mdash; UK SMBs working with us while we&rsquo;re still shaping the playbook. New partners get significantly discounted assessment and build in exchange for a reference engagement.</p>
-      <a href="../#cta" class="cta-btn">Get your free AI Score &rarr;</a>
-    </section>
+    <section class="founding" aria-labelledby="founding-h"><div class="label">QuietStart</div><h2 id="founding-h">Where could AI help your business?</h2><p>Start with QuietStart: one hour with our Principal AI Architect and a concise written recommendation within three working days after the call. £99, with no obligation to continue.</p><a href="/#contact-quietstart" class="cta-btn">Enquire about QuietStart &rarr;</a></section>
 
   </div>
 </main>
@@ -860,17 +675,6 @@ footer .sep{color:var(--ink-meta);padding:0 6px;}
   var saved = document.documentElement.getAttribute('data-theme');
   btn.innerHTML = saved === 'light' ? '&#9790;' : '&#9788;';
 
-  // Card turn — pointer AND keyboard, same single control.
-  // Nothing is revealed by hover alone; the full text is always in the DOM.
-  document.querySelectorAll('.card-toggle').forEach(function(b){
-    b.addEventListener('click', function(){
-      var card = b.closest('.card');
-      var open = b.getAttribute('aria-expanded') === 'true';
-      b.setAttribute('aria-expanded', String(!open));
-      b.setAttribute('aria-label', open ? 'Show more' : 'Show less');
-      card.classList.toggle('is-open', !open);
-    });
-  });
 })();
 </script>
 </body>

@@ -8,11 +8,7 @@
     <meta name="color-scheme" content="dark light">
     <title>Page not found — QuietStaff</title>
     <meta name="robots" content="noindex, follow">
-    <script>
-        (function(){try{var s=localStorage.getItem('quietstaff-theme');
-        document.documentElement.setAttribute('data-theme', s==='light'?'light':'dark');}
-        catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
-    </script>
+    <script>(function(){var theme='light';try{theme=localStorage.getItem('quietstaff-theme')==='dark'?'dark':'light';}catch(e){}var forced=new URLSearchParams(location.search).get('theme');if(forced==='light'||forced==='dark')theme=forced;document.documentElement.setAttribute('data-theme',theme);})();</script>
     <link rel="icon" type="image/svg+xml" href="/brand/logo-package/svg/quietstaff-favicon.svg">
     <link rel="stylesheet" href="/assets/css/shared.css">
     <style>
@@ -58,14 +54,14 @@
         .links a.ghost { color: var(--accent-text); }
     </style>
 </head>
-<body>
+<body class="qs-editorial">
     {% include nav.html %}
     <div class="wrap">
         <p class="code">404</p>
         <h1>That page isn&rsquo;t here.</h1>
-        <p>It may have moved, or it may never have existed. Either way, the quickest route back is the homepage &mdash; or start with the free AI Score.</p>
+        <p>It may have moved, or it may never have existed. Either way, the quickest route back is the homepage &mdash; or enquire about QuietStart.</p>
         <div class="links">
-            <a class="primary" href="/#cta">Get your free AI Score &rarr;</a>
+            <a class="primary" href="/#contact-quietstart">Enquire about QuietStart &rarr;</a>
             <a class="ghost" href="/">Back to the homepage</a>
         </div>
     </div>

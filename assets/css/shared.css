@@ -118,3 +118,118 @@
    Hide the link; the bar keeps the theme toggle, right-aligned. */
 .legal-home-link { display: none; }
 .legal-header-inner { justify-content: flex-end; }
+
+/* Approved editorial direction. Scoped to supporting marketing pages so the
+   homepage's concept stylesheet and legal pages retain their own layout. */
+.qs-editorial {
+    --bg-primary: #f6f5f0; --bg-secondary: #dbece3;
+    --text-primary: #202b36; --text-secondary: #52616a; --text-muted: #52616a;
+    --accent-primary: #5141b5; --accent-text: #5141b5; --accent-btn: #5141b5;
+    --surface: #fffef9; --stock: #fffef9; --stock-2: #fffef9;
+    --desk: #f6f5f0; --bg-card: #fffef9; --card-bg: #fffef9;
+    --ink: #202b36; --ink-2: #52616a; --ink-meta: #52616a;
+    --accent-ink: #5141b5; --hairline: #d5dcd6; --stock-rule: #d5dcd6;
+    --nav-bg: #f6f5f0; --nav-border: #d5dcd6; --border-card: #d5dcd6;
+    --sector-health: #28604f; --sector-finance: #5141b5; --sector-logistics: #624983;
+    --sector-color: #5141b5; --agent-ink: #5141b5;
+    --qs-wash: #eeebf8; --shadow-rest: 0 20px 55px #263e3210;
+    background: var(--bg-primary); color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+}
+[data-theme="dark"] .qs-editorial {
+    --bg-primary: #0b121c; --bg-secondary: #182f31;
+    --text-primary: #edf1f4; --text-secondary: #aab8c4; --text-muted: #aab8c4;
+    --accent-primary: #afa1ff; --accent-text: #afa1ff; --accent-btn: #5141b5;
+    --surface: #121e2a; --stock: #121e2a; --stock-2: #121e2a;
+    --desk: #0b121c; --bg-card: #121e2a; --card-bg: #121e2a;
+    --ink: #edf1f4; --ink-2: #aab8c4; --ink-meta: #aab8c4;
+    --accent-ink: #afa1ff; --hairline: #2b3a46; --stock-rule: #2b3a46;
+    --nav-bg: #0b121c; --nav-border: #2b3a46; --border-card: #2b3a46;
+    --sector-health: #99d7bf; --sector-finance: #afa1ff; --sector-logistics: #c9ade8;
+    --sector-color: #afa1ff; --agent-ink: #afa1ff;
+    --qs-wash: #211f39; --shadow-rest: 0 20px 55px #0002;
+}
+.qs-editorial nav { background: var(--bg-primary); border-bottom-color: var(--hairline); }
+.qs-editorial :is(.btn-primary,.nav-cta,.cta-btn,.nav-button) { border-radius: 100px; }
+.qs-editorial .theme-toggle { border-radius: 100px; background: transparent; color: var(--text-primary); }
+.qs-editorial :is(a,button):focus-visible { outline: 3px solid var(--accent-text); outline-offset: 5px; }
+.qs-editorial :is(.eyebrow,.section-index,.deck-head .label,.sector-badge) {
+    font-family: inherit; letter-spacing: .13em; color: var(--accent-text);
+}
+.qs-editorial :is(h1,h2,h3) { text-wrap: balance; }
+.qs-editorial .hero h1 { font-weight: 550; line-height: 1.08; letter-spacing: -.055em; }
+.qs-editorial :is(.deck-head h2,.section-head h2,.cta-block h2,.cta-section h3) {
+    font-weight: 500; letter-spacing: -.035em; line-height: 1.16;
+}
+.qs-editorial footer { background: var(--bg-primary); }
+
+/* Founder: a portrait and text in their own columns, rather than a scrim
+   spanning the photograph. This keeps every line readable in both themes. */
+.qs-founder .hero-inner {
+    display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr);
+    gap: clamp(2rem,5vw,5rem); align-items: center; min-height: 0;
+    padding-top: 4rem; padding-bottom: 5rem;
+}
+.qs-founder .hero-copy { grid-column: 1; grid-row: 1; padding: 0; margin-top: 0; max-width: none; }
+.qs-founder .hero-copy::before,.qs-founder .hero-glow { display: none; }
+.qs-founder .portrait {
+    position: relative; grid-column: 2; grid-row: 1; right: auto; bottom: auto;
+    width: 100%; max-width: 470px; justify-self: end;
+    mask-image: none; -webkit-mask-image: none;
+    border-radius: 48% 48% 6% 6%; overflow: hidden; background: var(--bg-secondary);
+    will-change: auto;
+}
+.qs-founder .portrait img { transform: none !important; }
+.qs-founder .hero h1 { font-size: clamp(2.6rem,4.6vw,4.5rem); }
+.qs-founder .hero-role { color: var(--accent-text); }
+.qs-founder .section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.qs-founder .cta-block { background: var(--qs-wash); border: 0; border-radius: 40px 40px 0 0; }
+
+/* Work: open two-column editorial entries, then clearly clickable scenarios. */
+.qs-work .hero { padding-top: 140px; padding-bottom: 70px; }
+.qs-work .hero h1 { max-width: 20ch; }
+.qs-work .hero h1 .l2 { font-family: Georgia,serif; font-style: italic; color: var(--accent-text); font-weight: 400; }
+.qs-work .deck { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 3rem; }
+.qs-work .card { border: 0; border-top: 1px solid var(--hairline); background: transparent; border-radius: 0; box-shadow: none; padding: 28px 0; animation: none; }
+.qs-work .card:hover { transform: none; box-shadow: none; }
+.qs-work .card::before,.qs-work .card::after,.qs-work .card-head { display: none; }
+.qs-work .card-title { padding: 0; min-height: 0; font-size: 1.35rem; font-weight: 550; text-wrap: pretty; }
+.qs-work .card-body { padding: 16px 0 0; }
+.qs-work .scard { border: 0; border-top: 2px solid var(--sector); border-radius: 0 0 32px 0; box-shadow: none; animation: none; }
+.qs-work .scard:hover { transform: translateY(-3px); box-shadow: var(--shadow-rest); }
+.qs-work .plate { background: transparent; box-shadow: none; border-color: var(--hairline); }
+.qs-work .founding { background: var(--qs-wash); border: 0; border-radius: 40px 40px 0 0; box-shadow: none; }
+
+/* Scenario: an editorial introduction and a connected list of possibilities. */
+.qs-scenario .hero h1 { font-size: clamp(2.2rem,4vw,3.5rem); }
+.qs-scenario .sector-badge { display: block; border: 0; border-radius: 0; padding: 0; background: transparent; line-height: 1.7; }
+.qs-scenario .hero p { font-size: 1.05rem; line-height: 1.8; }
+.qs-scenario .content { padding-top: 30px; }
+.qs-scenario .section h2 { font-size: 1.6rem; font-weight: 550; letter-spacing: -.035em; }
+.qs-scenario .score-block { background: var(--bg-secondary); border: 0; border-radius: 0 32px 32px 0; box-shadow: none; }
+.qs-scenario .score-block::before,.qs-scenario .score-block::after,.qs-scenario .agent-item::before,.qs-scenario .agent-item::after { display: none; }
+.qs-scenario .agents-grid { gap: 0; border-left: 1px solid var(--accent-text); margin-left: 8px; }
+.qs-scenario .agent-item { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 16px 0 20px 26px; overflow: visible; }
+.qs-scenario .agent-name { font-family: inherit; font-size: 1.05rem; }
+.qs-scenario .cta-section { background: var(--qs-wash); border: 0; border-radius: 40px 40px 0 0; box-shadow: none; }
+@media (max-width: 899px) {
+    .qs-founder .hero-inner { grid-template-columns: 1fr; padding-top: 2.5rem; padding-bottom: 3rem; gap: 2.5rem; }
+    .qs-founder .hero-copy { grid-column: 1; grid-row: 1; }
+    .qs-founder .portrait { grid-column: 1; grid-row: 2; max-width: 420px; justify-self: center; width: 100%; }
+}
+@media (max-width: 600px) {
+    .qs-work .deck { grid-template-columns: minmax(0,1fr); }
+    .qs-work .hero { padding-top: 110px; padding-bottom: 45px; }
+    .qs-founder .hero-inner { padding-left: 24px; padding-right: 24px; }
+    .qs-founder .section { padding-top: 2rem; padding-bottom: 2rem; }
+    .qs-scenario .score-block { padding: 24px; }
+    .qs-editorial :is(.cta-section,.cta-block) { border-radius: 28px 28px 0 0; }
+}
+
+/* Supporting pages do not hide content behind a scroll or entrance trigger. */
+html.js .qs-editorial .reveal,
+html.js .qs-editorial .hero-copy > *,
+html.js .qs-editorial .portrait,
+html.js .qs-editorial .portrait img {
+    opacity: 1; transform: none; animation: none; transition: none;
+}

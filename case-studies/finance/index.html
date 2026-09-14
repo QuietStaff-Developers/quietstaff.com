@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finance Scenario (Illustrative) — QuietStaff</title>
-{% include head-meta.html title="Finance Scenario — Invoice and Reconciliation AI" desc="An illustrative financial-services scenario: where AI would take invoice matching, reconciliation and inbound queries off a finance team, and how the payback would be measured." path="case-studies/finance/" type="article" %}
-<script>(function(){try{var s=localStorage.getItem('quietstaff-theme');document.documentElement.setAttribute('data-theme',s==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})()</script>
+<title>Accountancy administration — hypothetical AI scenario — QuietStaff</title>
+{% include head-meta.html title="Accountancy administration — hypothetical AI scenario" desc="An imagined accountancy workflow exploring document collection, invoice preparation and professional review. Not a client result." path="case-studies/finance/" type="article" %}
+<script>(function(){try{var q=new URLSearchParams(location.search).get('theme');var s=(q==='light'||q==='dark')?q:localStorage.getItem('quietstaff-theme');document.documentElement.setAttribute('data-theme',s==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})()</script>
 <!-- Self-hosted fonts (was Google Fonts CDN). PECR / UK GDPR clean — no third-party transfers on first byte. -->
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <link rel="stylesheet" href="/assets/css/case-study.css">
@@ -104,7 +104,7 @@ body{background:var(--desk);}
 </style>
     <link rel="stylesheet" href="/assets/css/shared.css">
 </head>
-<body>
+<body class="qs-editorial qs-scenario">
 <a href="#main" class="skip-link">Skip to content</a>
 <nav id="nav" role="navigation" aria-label="Primary">
   <div class="nav-logo">
@@ -141,83 +141,38 @@ body{background:var(--desk);}
     </a>
   </div>
   <ul class="nav-links">
-    <li><a href="../../#services">Services</a></li>
-    <li><a href="../../#how">How We Work</a></li>
-    <li><a href="../../#industries">Industries</a></li>
-    <li><a href="../">Work</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#how">How we work</a></li>
+    <li><a href="/#industries">Industries</a></li>
+    <li><a href="/case-studies/">Work</a></li>
+    <li><a href="/#about">About</a></li>
   </ul>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9788;</button>
-    <a href="../../#cta" class="nav-cta">Get your free AI Score &rarr;</a>
+    <a href="/#contact-quietstart" class="nav-cta">Enquire about QuietStart &rarr;</a>
   </div>
 </nav>
 <main id="main" role="main">
 <div class="hero" style="max-width:800px;margin:0 auto;padding:130px 24px 20px;">
-  <a href="../" class="back-link">&larr; All Work</a>
-  <div class="sector-badge">Finance &amp; Accountancy</div>
-  <h1>Clearing the Invoice Backlog at a <span>Mid-Size Accountancy Practice</span></h1>
+<a href="../" class="back-link">&larr; All Work</a>
+<div class="sector-badge">Finance and accountancy · Hypothetical scenario</div>
+<h1>Exploring document and invoice administration in an accountancy practice</h1>
+<p>This is an imagined example, not a QuietStaff client engagement. It describes possible approaches, not a delivered system or measured result.</p>
 </div>
-
 <div class="content">
-
-  <div class="section">
-    <h2>The Situation</h2>
-    <p>Picture a 14-person accountancy practice serving 300+ SMB clients, sitting on a three-week invoice processing backlog. Two junior accountants spend Monday mornings manually matching receipts to expense categories and chasing clients for missing documentation.</p>
-    <p>New client onboarding &mdash; KYC forms, engagement letters, practice management setup &mdash; takes five business days and averages eleven back-and-forth emails per client.</p>
-    <p>Admin that &ldquo;shouldn&rsquo;t require a human&rdquo; is absorbing something like 20 billable hours a week. This is a composite of patterns we see in the sector, not a client.</p>
-  </div>
-
-  <div class="score-block">
-    <div class="score-title">QuietStaff AI Score&trade; — Illustrative Pre-Engagement Assessment</div>
-    <div class="score-row">
-      <span class="score-label">Automation Usage</span>
-      <div class="score-bars">
-        <div class="bar filled"></div><div class="bar filled"></div>
-        <div class="bar filled"></div><div class="bar filled"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-      </div>
-      <span class="score-val">4 / 10</span>
-    </div>
-    <div class="score-row">
-      <span class="score-label">AI Usage</span>
-      <div class="score-bars">
-        <div class="bar filled"></div><div class="bar filled"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div>
-      </div>
-      <span class="score-val">2 / 10</span>
-    </div>
-    <div class="gap-badge">
-      <span class="gap-label">AI Opportunity Gap:</span>
-      <span class="gap-value">HIGH</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>What We&rsquo;d Build</h2>
-    <div class="agents-grid">
-      <div class="agent-item">
-        <div class="agent-name">QuietBooks</div>
-        <div class="agent-desc">Would be deployed for end-to-end invoice ingestion — OCR extraction from PDF and email attachments, automatic expense categorisation against client-specific rules, and exception flagging for human review. Junior accountants would only need to touch the edge cases QuietBooks can't resolve with confidence.</div>
-      </div>
-      <div class="agent-item">
-        <div class="agent-name">QuietGate</div>
-        <div class="agent-desc">Would be deployed as the client onboarding intake agent — collecting KYC documentation via a structured conversation, validating completeness, triggering engagement letter generation via DocuSign, and pushing confirmed data directly into their practice management system. Average email thread would reduce from 11 exchanges to 3.</div>
-      </div>
-    </div>
-    <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">Would integrate with Xero, their existing CRM, and DocuSign — zero change to client-facing tools, with the AI working entirely behind the scenes.</p>
-  </div>
-
-  <div class="cta-section">
-    <h3>What Would Your Score Look Like?</h3>
-    <p>Get a QuietStaff AI Score for your organisation. We map your automation and AI usage, identify the highest-value gaps, and show you what&rsquo;s possible.</p>
-    <a href="../../#cta" class="cta-btn">Get your free AI Score &rarr;</a>
-  </div>
-
+<section class="section"><h2>The situation</h2>
+<p>Imagine a practice where staff spend time collecting missing documents, preparing invoice information and checking records before professional review. Client onboarding generates repeated requests for the same information.</p></section>
+<section class="score-block section"><h2>What to explore</h2>
+<p>We would examine the document flow, common exceptions, existing accounting tools and who approves changes. The first question is which administrative step could be simplified without weakening the practice's controls.</p></section>
+<section class="section"><h2>Possible workflows</h2>
+<div class="agents-grid"><div class="agent-item"><div class="agent-name">Document collection</div><div class="agent-desc">Track requested information, identify missing items and prepare follow-up messages for approval.</div></div>
+<div class="agent-item"><div class="agent-name">Invoice preparation</div><div class="agent-desc">Extract proposed invoice fields and categories, with uncertain or inconsistent entries flagged for staff review before posting.</div></div>
+<div class="agent-item"><div class="agent-name">Onboarding administration</div><div class="agent-desc">Organise supplied information and prepare completeness checks for the responsible professional. Identity checks and regulated decisions remain with the practice.</div></div>
+</div></section>
+<section class="section"><h2>What would need to be tested</h2>
+<p>Compare processing time, extraction errors, exception volume and review effort with the existing process. Check system access, data handling and approval requirements before agreeing an implementation. No accounting, tax or regulatory outcome is promised.</p></section>
+<section class="cta-section"><h3>Explore your own starting point.</h3><p>Start with QuietStart: one hour with our Principal AI Architect and a concise written recommendation within three working days after the call. £99, with no obligation to continue.</p><a href="/#contact-quietstart" class="cta-btn">Enquire about QuietStart &rarr;</a></section>
 </div>
-
 </main>
 <footer>
   <p style="margin-top:8px;"><a href="../../">Home</a> &nbsp;&middot;&nbsp; <a href="../">Work</a></p>

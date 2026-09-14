@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
-    <title>QuietStaff — Managed AI Workforce for UK Businesses</title>
+    <title>QuietStart: practical AI consulting for UK business owners — QuietStaff</title>
 
     <!-- Theme: read preference before paint (prevents flash of unstyled theme).
          Also marks the document JS-capable, so entrance motion is only withheld
@@ -18,8 +18,8 @@
             var theme;
             try {
                 var saved = localStorage.getItem('quietstaff-theme');
-                theme = saved === 'light' ? 'light' : 'dark';
-            } catch (e) { theme = 'dark'; }
+                theme = saved === 'dark' ? 'dark' : 'light';
+            } catch (e) { theme = 'light'; }
             var q = new URLSearchParams(location.search);
             var forced = q.get('theme');
             if (forced === 'light' || forced === 'dark') theme = forced;
@@ -29,7 +29,7 @@
         })();
     </script>
 
-    {% include head-meta.html title="Managed AI Workforce for UK Businesses" desc="Managed AI workforce for UK SMBs. A free AI Score, a fixed £3,000 Blueprint credited back against your build, then we build it and run it. No internal AI team required." path="" %}
+    {% include head-meta.html title="QuietStart: practical AI consulting for UK business owners" desc="Start with a one-hour QuietStart consultation with our Principal AI Architect for £99, with a concise email recommendation within three working days after the call." path="" %}
 
     <!-- Self-hosted fonts (was Google Fonts CDN). PECR/UK GDPR clean — no third-party transfers. -->
         <link rel="stylesheet" href="/assets/css/fonts.css">
@@ -487,7 +487,7 @@ nav.scrolled {
 .why-column:nth-child(2) > h3 { color: var(--accent-text); }
 .why-item {
     display: grid;
-    grid-template-columns: 1.4rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     column-gap: 0.9rem;
     padding: 1.45rem 0;
     background: none; border: 0; border-top: 1px solid var(--hairline);
@@ -1229,8 +1229,20 @@ html.still .hero-mesh { opacity: 1 !important; }
 }
 </style>
     <link rel="stylesheet" href="/assets/css/shared.css">
+<style>.quietstart-price-line{color:var(--text-secondary);font-size:.9rem;margin-top:1.25rem;line-height:1.7}.quietstart-offer{max-width:850px;margin:0 auto}.quietstart-offer .pc-price span{font-size:1rem}.quietstart-offer .cta-fineprint{margin-top:1.25rem}.scenario-label{font-family:var(--font-mono,monospace);font-size:.7rem;color:var(--text-secondary)}.case-card-top{flex-wrap:wrap;gap:.6rem}.hero-buttons{flex-wrap:wrap}.modal-context{line-height:1.6}.modal{max-height:90dvh;overflow-y:auto}.cta-buttons{display:flex;gap:1rem;flex-wrap:wrap}.form-help{color:var(--text-secondary);font-size:.82rem;line-height:1.5;margin-top:.5rem}#quietstart{scroll-margin-top:110px}
+/* QuietStart replaces the former three-column pricing ladder. */
+.pricing-card-v3.quietstart-offer { grid-template-columns: minmax(0,1fr) auto; gap:1.5rem 2rem; padding:2rem; background:var(--bg-card); border:1px solid var(--hairline); border-left:3px solid var(--accent-primary); border-radius:12px; }
+.quietstart-offer > h3 { grid-column:1; grid-row:1; align-self:center; font-size:1.6rem; }
+.quietstart-offer > .pc-price { grid-column:2; grid-row:1; font-size:2.8rem; letter-spacing:-.04em; line-height:1.1; border:0; padding:0; }
+.quietstart-offer > .pc-price span { display:block; font-size:.75rem; letter-spacing:.08em; margin-top:.4rem; }
+.quietstart-offer > .pc-list { grid-column:1 / -1; grid-row:2; }
+.quietstart-offer > .pc-desc { grid-column:1 / -1; grid-row:3; }
+.quietstart-offer > .cta-buttons { grid-column:1 / -1; grid-row:4; }
+.quietstart-offer > .cta-fineprint { grid-column:1 / -1; grid-row:5; margin:0; color:var(--text-secondary); font-size:.85rem; line-height:1.7; }
+@media(max-width:600px) { .pricing-card-v3.quietstart-offer { padding:1.25rem; gap:1.2rem; } .quietstart-offer > .pc-price { font-size:2.4rem; } .quietstart-offer .cta-buttons { flex-direction:column; } }
+</style><link rel="stylesheet" href="/assets/css/home-concept.css">
 </head>
-<body>
+<body class="qs-editorial">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
@@ -1276,14 +1288,14 @@ html.still .hero-mesh { opacity: 1 !important; }
                 <a href="case-studies/">Work</a>
                 <a href="#about">About</a>
                 <!-- CTA shown only inside mobile overlay -->
-                <a href="#cta" onclick="openContactModal('score'); return false;" class="mobile-only mobile-cta-btn" style="text-decoration:none;">Get your free AI Score &rarr;</a>
+                <a href="#cta" onclick="openContactModal('quietstart'); return false;" class="mobile-only mobile-cta-btn" style="text-decoration:none;">Enquire about QuietStart &rarr;</a>
             </div>
             <div class="nav-right">
                 <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
                     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 </button>
-                <a href="#cta" onclick="openContactModal('score'); return false;" class="nav-button" style="text-decoration:none;">Get your free AI Score &rarr;</a>
+                <a href="#cta" onclick="openContactModal('quietstart'); return false;" class="nav-button" style="text-decoration:none;">Enquire about QuietStart &rarr;</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
@@ -1293,726 +1305,25 @@ html.still .hero-mesh { opacity: 1 !important; }
         </div>
     </nav>
 
-    <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- Brand raster, dissolved into the top-right band on all four edges.
-             Explicit width/height on the <img> means no layout shift. -->
-        <div class="hero-art" aria-hidden="true">
-            <picture>
-                <source type="image/webp"
-                        srcset="/assets/images/hero-960.webp 960w, /assets/images/hero-1600.webp 1600w"
-                        sizes="(max-width: 1023px) 100vw, 62vw">
-                <img src="/assets/images/hero-1600.jpg"
-                     srcset="/assets/images/hero-960.jpg 960w, /assets/images/hero-1600.jpg 1600w"
-                     sizes="(max-width: 1023px) 100vw, 62vw"
-                     width="1600" height="893" alt="" decoding="async" fetchpriority="high">
-            </picture>
-        </div>
-        <div class="hero-mesh" aria-hidden="true"></div>
-        <canvas id="hero-canvas" class="hero-canvas"></canvas>
-        <div class="container">
-            <div class="hero-inner">
-                <div class="hero-lede">
-                    <div class="hero-badge">Managed AI Workforce for UK SMBs</div>
-                    <h1><span class="text-gradient">Know exactly where AI pays back</span><br>in your business. Before you spend a pound finding out.</h1>
-                </div>
-                <div class="hero-copy">
-                    <p class="hero-subheadline">Start with a free AI Score: we score your operation and name the three places AI would pay back fastest, with the numbers behind them. Turn it into a delivery plan for a fixed &pound;3,000 &mdash; credited back in full if we build it.</p>
-                    <div class="hero-buttons">
-                        <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="text-decoration:none;">Get your free AI Score &rarr;</a>
-                        <a href="#how" class="btn btn-outline" style="text-decoration:none;">See How We Work &darr;</a>
-                    </div>
-                </div>
-
-                <div class="hero-cards">
-                    <div class="capability-card fade-in">
-                        <div class="capability-icon">
-                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 3v18h18"/>
-                                <path d="M7 15l4-4 4 4 6-6"/>
-                            </svg>
-                        </div>
-                        <h2>AI Score</h2>
-                        <p>Know exactly where you stand before spending a pound</p>
-                    </div>
-                    <div class="capability-card fade-in">
-                        <div class="capability-icon">
-                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="4" width="18" height="16" rx="2"/>
-                                <path d="M3 10h18"/>
-                                <path d="M8 14h3M8 17h6"/>
-                            </svg>
-                        </div>
-                        <h2>The Blueprint</h2>
-                        <p>Prioritised roadmap and fixed-scope SOW built on your score</p>
-                    </div>
-                    <div class="capability-card fade-in">
-                        <div class="capability-icon">
-                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/>
-                                <path d="M9 12l2 2 4-4"/>
-                            </svg>
-                        </div>
-                        <h2>Custom Build</h2>
-                        <p>AI designed to your workflows, your tools, your compliance</p>
-                    </div>
-                    <div class="capability-card fade-in">
-                        <div class="capability-icon">
-                            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="9"/>
-                                <path d="M12 7v5l3 2"/>
-                            </svg>
-                        </div>
-                        <h2>Managed &amp; Run</h2>
-                        <p>SLA-backed monthly retainer. Continuous improvement. No handoff.</p>
-                    </div>
-                </div>
-
-                <div class="hero-footer">
-                  <span>Your AI Score</span>
-                  <span>The Blueprint</span>
-                  <span>Custom Build</span>
-                  <span>Managed &amp; Run</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="gradient-bar"></div>
-
-    <!-- Why QuietStaff -->
-    <section class="why-section" id="services">
-        <div class="container">
-            <div class="sec-head reveal">
-                <p class="section-eyebrow">Why QuietStaff</p>
-                <h2>AI Is Transforming UK Businesses.</h2>
-                <p class="section-lede">Most SMBs don&rsquo;t know where they stand, or where to start.</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-column">
-                    <h3>The Problem</h3>
-                    <div class="why-item why-problem">
-                        <div class="why-icon">×</div>
-                        <div class="why-text">
-                            <h4>No one has told you how AI-ready you actually are</h4>
-                            <p>You&rsquo;ve heard the hype. You don&rsquo;t have a score, a baseline, or a plan.</p>
-                        </div>
-                    </div>
-                    <div class="why-item why-problem">
-                        <div class="why-icon">×</div>
-                        <div class="why-text">
-                            <h4>Tools bought, never properly implemented</h4>
-                            <p>Licences sitting idle. Trials expired. Generic chatbots that don&rsquo;t understand your workflows.</p>
-                        </div>
-                    </div>
-                    <div class="why-item why-problem">
-                        <div class="why-icon">×</div>
-                        <div class="why-text">
-                            <h4>Advisors who diagnose but don&rsquo;t build or run</h4>
-                            <p>PowerPoint strategies. Slide-deck roadmaps. No one stays on to execute.</p>
-                        </div>
-                    </div>
-                    <div class="why-item why-problem">
-                        <div class="why-icon">×</div>
-                        <div class="why-text">
-                            <h4>No AI team, no budget to hire one, no clear path forward</h4>
-                            <p>A full AI hire costs six figures. Most SMBs can&rsquo;t justify it &mdash; and don&rsquo;t need to.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-column">
-                    <h3>The QuietStaff Way</h3>
-                    <div class="why-item why-solution">
-                        <div class="why-icon">✓</div>
-                        <div class="why-text">
-                            <h4>We score your AI readiness</h4>
-                            <p>Automation and AI usage measured. Gaps identified. Opportunity quantified.</p>
-                        </div>
-                    </div>
-                    <div class="why-item why-solution">
-                        <div class="why-icon">✓</div>
-                        <div class="why-text">
-                            <h4>We plan the delivery</h4>
-                            <p>Roadmap and SOW built on your actual score &mdash; not a generic template.</p>
-                        </div>
-                    </div>
-                    <div class="why-item why-solution">
-                        <div class="why-icon">✓</div>
-                        <div class="why-text">
-                            <h4>We build it</h4>
-                            <p>Custom AI to your exact spec &mdash; integrated with what you already use.</p>
-                        </div>
-                    </div>
-                    <div class="why-item why-solution">
-                        <div class="why-icon">✓</div>
-                        <div class="why-text">
-                            <h4>We run it</h4>
-                            <p>SLA-backed managed retainer. Monthly reporting. Continuous improvement.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="why-quote reveal">&ldquo;Managed AI Workforce: the complete journey, from your AI Score to live operations.&rdquo;</div>
-        </div>
-    </section>
-
-    <div class="gradient-bar"></div>
-
-    <!-- How We Work -->
-    <section class="how-section" id="how">
-        <div class="container">
-            <div class="rail">
-            <div class="sec-head reveal">
-                <p class="section-eyebrow">How We Work</p>
-                <h2>Four Stages. Full Lifecycle.</h2>
-                <p class="section-lede">You&rsquo;re in control at every step. From your first AI Score to live operations, one partner, no handoff.</p>
-            </div>
-            <div class="rail-body">
-
-            <!-- STAGE 1 — AI SCORE (anchor of the whole lifecycle) -->
-            <div class="stage-block reveal">
-                <div class="stage-header">
-                    <span class="stage-tag">STAGE 1</span>
-                    <h3>Your AI Score</h3>
-                </div>
-                <p class="stage-intro">Before a single line of AI is built, we need to know exactly where you stand. We audit your workflows and measure two dimensions.</p>
-
-                <div class="score-grid">
-                    <div class="score-pillar">
-                        <div class="score-pillar-label">AUTOMATION SCORE</div>
-                        <p>How much of your current workflow is already automated? Where are the manual bottlenecks costing you time and money?</p>
-                        <div class="score-rating">Rated 1&ndash;10</div>
-                    </div>
-                    <div class="score-pillar">
-                        <div class="score-pillar-label">AI USAGE SCORE</div>
-                        <p>Are you using AI today? What models, tools, or assistants? Where&rsquo;s the gap between what you have and what&rsquo;s possible?</p>
-                        <div class="score-rating">Rated 1&ndash;10</div>
-                    </div>
-                </div>
-
-                <p class="score-combined-intro">Combined, these produce your</p>
-
-                <div class="score-badge" role="img" aria-label="Example QuietStaff AI Score of 6 out of 10">
-                    <div class="score-badge-top">
-                        <div class="score-badge-title">QuietStaff AI Score&trade;</div>
-                        <div class="score-badge-value"><strong>6</strong><span>/10</span></div>
-                    </div>
-                    <div class="score-badge-bar" aria-hidden="true">
-                        <span class="sb-dot filled"></span>
-                        <span class="sb-dot filled"></span>
-                        <span class="sb-dot filled"></span>
-                        <span class="sb-dot filled"></span>
-                        <span class="sb-dot filled"></span>
-                        <span class="sb-dot filled"></span>
-                        <span class="sb-dot"></span>
-                        <span class="sb-dot"></span>
-                        <span class="sb-dot"></span>
-                        <span class="sb-dot"></span>
-                    </div>
-                    <div class="score-badge-row">
-                        <div class="score-metric">Automation <strong>7/10</strong></div>
-                        <div class="score-metric">AI Usage <strong>5/10</strong></div>
-                        <div class="score-gap gap-high">AI Opportunity Gap: HIGH</div>
-                    </div>
-                    <div class="score-badge-footer">Top 3 quick wins identified &darr;</div>
-                    <ul class="score-quick-wins" aria-label="Top 3 quick wins identified">
-                        <li><span class="qw-num">01</span><span class="qw-text">Automate customer intake routing &mdash; est. 6&ndash;10 hrs/wk saved</span></li>
-                        <li><span class="qw-num">02</span><span class="qw-text">Weekly finance snapshot from bank feed &mdash; eliminate manual reporting</span></li>
-                        <li><span class="qw-num">03</span><span class="qw-text">Contract clause extraction with risk flagging &mdash; cut review time by half</span></li>
-                    </ul>
-                    <div class="score-badge-note">Illustrative example &mdash; not a live reading</div>
-                </div>
-
-                <p class="stage-terms"><strong>Free.</strong> One working session with your team, then your score and your three highest-value gaps come back in writing within five working days. No fee, no commitment, and you keep the report whether or not you go further.</p>
-            </div>
-
-            <!-- STAGE 2 — Blueprint -->
-            <div class="stage-block reveal">
-                <div class="stage-header">
-                    <span class="stage-tag">STAGE 2</span>
-                    <h3>The Blueprint</h3>
-                </div>
-                <p class="stage-body">Your AI Score says where the biggest opportunity is. The Blueprint turns it into something you can act on &mdash; prioritised roadmap, effort estimates, fixed-scope SOW, and a clear picture of what gets built and when.</p>
-                <p class="stage-body"><strong>No generic templates.</strong> Built on your actual score. You approve before we touch a line of code.</p>
-                <p class="stage-terms"><strong>&pound;3,000, fixed.</strong> Not an estimate and not a range &mdash; that is the price. Credited back in full against your build if you go on to Stage 3, so it costs you nothing to find out whether it is worth building.</p>
-            </div>
-
-            <!-- STAGE 3 — Custom Build -->
-            <div class="stage-block reveal">
-                <div class="stage-header">
-                    <span class="stage-tag">STAGE 3</span>
-                    <h3>Custom Build</h3>
-                </div>
-                <p class="stage-body">We design, build, and test your AI solution to spec. Integrated with your existing tools. Your workflows. Your language. Your compliance requirements.</p>
-                <p class="stage-body"><strong>Not a chatbot someone else trained.</strong> AI built specifically for how your business runs.</p>
-            </div>
-
-            <!-- STAGE 4 — Managed & Run -->
-            <div class="stage-block reveal">
-                <div class="stage-header">
-                    <span class="stage-tag">STAGE 4</span>
-                    <h3>Managed &amp; Run</h3>
-                </div>
-                <p class="stage-body">We run it. You use it. Monthly retainer. SLA-backed. Performance reports every month. Continuous improvement as your business evolves.</p>
-                <p class="stage-body"><strong>No handoff</strong> to an internal team you don&rsquo;t have. 30-day cancel notice. No annual lock-in.</p>
-            </div>
-
-            <div class="stage-cta-row reveal">
-                <p class="stage-cta-tagline">&ldquo;Start with your AI Score. Know exactly where you stand before spending a pound on building anything.&rdquo;</p>
-                <div class="stage-cta-buttons">
-                    <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="text-decoration:none;">Get your free AI Score &rarr;</a>
-                </div>
-            </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="gradient-bar"></div>
-
-    <!-- Industries Section -->
-    <section id="industries">
-        <div class="container">
-            <div class="sec-head reveal">
-                <p class="section-eyebrow">Industries We Serve</p>
-                <h2>Built for Regulated, Document-Heavy Work</h2>
-                <p class="section-lede">We focus on UK SMBs where AI delivers the highest measurable impact — sectors with repetitive workflows, compliance requirements, and manual admin overhead.</p>
-            </div>
-
-            <div class="industries-grid">
-                <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg></div>
-                    <h3>Healthcare &amp; Life Sciences</h3>
-                    <p>GP practices, clinics, and private healthcare. Patient triage, referral letters, medical coding, appointment admin.</p>
-                    <ul class="industry-use-cases">
-                        <li>Patient intake &amp; routing</li>
-                        <li>Clinical letter drafting</li>
-                        <li>NHS form automation</li>
-                    </ul>
-                </div>
-
-                <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 7c0-5.333-8-5.333-8 0"/><path d="M10 7v12"/><path d="M6 13h8"/><path d="M6 19h12"/></svg></div>
-                    <h3>Finance &amp; Accountancy</h3>
-                    <p>Accounting practices, bookkeepers, financial advisors. Invoice processing, reconciliation, reporting, client queries.</p>
-                    <ul class="industry-use-cases">
-                        <li>Bookkeeping automation</li>
-                        <li>VAT &amp; HMRC prep</li>
-                        <li>Client portal AI</li>
-                    </ul>
-                </div>
-
-                <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
-                    <h3>Legal &amp; Compliance</h3>
-                    <p>Solicitors, paralegals, compliance teams. Contract review, document drafting, case research, client intake.</p>
-                    <ul class="industry-use-cases">
-                        <li>Contract summarisation</li>
-                        <li>Legal research assistants</li>
-                        <li>Matter intake automation</li>
-                    </ul>
-                </div>
-
-                <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-                    <h3>Retail &amp; eCommerce</h3>
-                    <p>Independent retailers, eCommerce brands, multi-channel sellers. Customer support, inventory queries, returns, product content.</p>
-                    <ul class="industry-use-cases">
-                        <li>24/7 customer service</li>
-                        <li>Product description generation</li>
-                        <li>Order &amp; returns automation</li>
-                    </ul>
-                </div>
-
-                <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                    <h3>HR &amp; Recruitment</h3>
-                    <p>Recruitment agencies, in-house HR teams, talent consultancies. CV screening, candidate matching, onboarding, internal queries.</p>
-                    <ul class="industry-use-cases">
-                        <li>CV parsing &amp; ranking</li>
-                        <li>Candidate outreach</li>
-                        <li>Onboarding co-pilot</li>
-                    </ul>
-                </div>
-
-                <div class="industry-card fade-in">
-                    <div class="industry-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
-                    <h3>Logistics &amp; Operations</h3>
-                    <p>Couriers, freight forwarders, field service operators. Dispatch, routing, customer updates, exception handling.</p>
-                    <ul class="industry-use-cases">
-                        <li>Dispatch &amp; routing AI</li>
-                        <li>Delivery status bots</li>
-                        <li>Exception triage</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="industries-footer reveal">
-                <p>Not on this list? We also work with professional services, property, marketing agencies, and education. <a href="#cta" onclick="openContactModal('score'); return false;" class="inline-link">Ask us about your sector &rarr;</a></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- The AI We Build Section -->
-    <section id="agents">
-        <div class="container">
-            <div class="sec-head reveal">
-                <p class="section-eyebrow">The AI We Build</p>
-                <h2>Specialist AI for Specialist Work</h2>
-                <p class="section-lede">These are the agent patterns we build from. Each one is designed to be trained on your domain, your data and your workflows, then deployed inside the tools you already use. Every engagement is still bespoke. This is what the library looks like today.</p>
-            </div>
-
-            <div class="agents-grid">
-                <div class="agent-card fade-in">
-                    <div class="agent-card-head">
-                        <h3>QuietMind</h3>
-                        <span class="agent-dev-pill">In Development</span>
-                    </div>
-                    <div class="agent-role">Orchestrator</div>
-                    <p class="agent-description">The brain that coordinates your agent team. Routes work, manages dependencies, handles exceptions — the layer that turns individual agents into a workforce.</p>
-                    <p class="agent-deploy">&#8627; Designed as the co-ordinator across every engagement.</p>
-                </div>
-
-                <div class="agent-card fade-in">
-                    <div class="agent-card-head">
-                        <h3>QuietGate</h3>
-                        <span class="agent-ready-pill">Ready</span>
-                    </div>
-                    <div class="agent-role">Gatekeeper</div>
-                    <p class="agent-description">Triages every inbound message — email, WhatsApp, web chat — classifies it, and routes to the right specialist agent (or a human). Nothing slips through.</p>
-                    <p class="agent-deploy">&#8627; Deployed as the front door for customer &amp; internal comms.</p>
-                </div>
-
-                <div class="agent-card fade-in">
-                    <div class="agent-card-head">
-                        <h3>QuietOps</h3>
-                        <span class="agent-ready-pill">Ready</span>
-                    </div>
-                    <div class="agent-role">Operations</div>
-                    <p class="agent-description">Task dispatch, scheduling, follow-ups, and workflow orchestration. Replaces the admin layer that quietly swallows hours every week.</p>
-                    <p class="agent-deploy">&#8627; Designed for dispatch, scheduling, and ops teams.</p>
-                </div>
-
-                <div class="agent-card fade-in">
-                    <div class="agent-card-head">
-                        <h3>QuietSell</h3>
-                        <span class="agent-dev-pill">In Development</span>
-                    </div>
-                    <div class="agent-role">Sales</div>
-                    <p class="agent-description">Lead follow-ups, pipeline updates, CRM hygiene, and first-touch qualification. Keeps your sales team focused on closing, not chasing.</p>
-                    <p class="agent-deploy">&#8627; Designed for sales &amp; business development teams.</p>
-                </div>
-
-                <div class="agent-card fade-in">
-                    <div class="agent-card-head">
-                        <h3>QuietBooks</h3>
-                        <span class="agent-dev-pill">In Development</span>
-                    </div>
-                    <div class="agent-role">Finance</div>
-                    <p class="agent-description">Invoice processing, expense categorisation, reconciliation, and reporting. Quietly keeps the books tidy and the month-end fast.</p>
-                    <p class="agent-deploy">&#8627; Designed for accountancy practices &amp; finance functions.</p>
-                </div>
-
-                <div class="agent-card fade-in">
-                    <div class="agent-card-head">
-                        <h3>QuietCare</h3>
-                        <span class="agent-dev-pill">In Development</span>
-                    </div>
-                    <div class="agent-role">Customer Service</div>
-                    <p class="agent-description">24/7 multi-lingual support with sentiment routing, escalation, and resolution tracking. Real answers, not scripted deflections.</p>
-                    <p class="agent-deploy">&#8627; Designed for retail, healthcare, and service businesses.</p>
-                </div>
-
-                <div class="agent-card fade-in">
-                    <div class="agent-card-head">
-                        <h3>QuietWatch</h3>
-                        <span class="agent-dev-pill">In Development</span>
-                    </div>
-                    <div class="agent-role">Reputation &amp; HR</div>
-                    <p class="agent-description">Brand monitoring, reputation alerts, and HR-side workflows: policy queries, onboarding, internal-help routing.</p>
-                    <p class="agent-deploy">&#8627; Designed for marketing, HR, and compliance teams.</p>
-                </div>
-
-                <div class="agent-card cta-card fade-in">
-                    <h3>Quiet[You]</h3>
-                    <p>Your workflow. Your domain. Your specialist AI — built, deployed, and managed by us.</p>
-                    <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="width:100%;text-decoration:none;text-align:center;">Get your free AI Score &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Illustrative Scenarios Section -->
-    <section id="case-studies-home">
-        <div class="container">
-            <div class="sec-head reveal">
-                <p class="section-eyebrow">Illustrative Scenarios</p>
-                <h2>What a QuietStaff Engagement Looks Like</h2>
-                <p class="section-lede">Three illustrative scenarios across the sectors we serve &mdash; what we would build, how we would measure impact, and how managed AI reduces the need for internal headcount.</p>
-            </div>
-
-            <div class="case-study-grid">
-                <a href="case-studies/healthcare/" class="case-card fade-in">
-                    <div class="case-card-top">
-                        <span class="case-sector">Healthcare</span>
-                        <span class="case-score">Opportunity Gap <strong>High</strong></span>
-                    </div>
-                    <h3>Multi-Site Practice: Patient Admin AI</h3>
-                    <p class="case-summary">A multi-site private healthcare group where reception staff spend over half the day on inbound calls and referral drafting runs to days. We&rsquo;d score their readiness, then build QuietCare for patient intake and QuietOps for referral letter drafting.</p>
-                    <span class="case-cta">Read the scenario &rarr;</span>
-                </a>
-
-                <a href="case-studies/finance/" class="case-card fade-in">
-                    <div class="case-card-top">
-                        <span class="case-sector">Finance &amp; Accountancy</span>
-                        <span class="case-score">Opportunity Gap <strong>High</strong></span>
-                    </div>
-                    <h3>Accountancy Practice: Bookkeeping AI</h3>
-                    <p class="case-summary">A 14-person accountancy practice serving 300+ SMB clients, losing margin to an invoice backlog and a slow onboarding loop. We&rsquo;d build QuietBooks to automate categorisation, reconciliation, and month-end prep.</p>
-                    <span class="case-cta">Read the scenario &rarr;</span>
-                </a>
-
-                <a href="case-studies/logistics/" class="case-card fade-in">
-                    <div class="case-card-top">
-                        <span class="case-sector">Logistics</span>
-                        <span class="case-score">Opportunity Gap <strong>Medium&ndash;High</strong></span>
-                    </div>
-                    <h3>Logistics Operator: Dispatch AI</h3>
-                    <p class="case-summary">A regional logistics firm handling 200+ customer enquiries a day, with dispatch still built by hand each morning. QuietOps would handle dispatch decisions, QuietCare would handle delivery-status queries.</p>
-                    <span class="case-cta">Read the scenario &rarr;</span>
-                </a>
-            </div>
-
-            <!-- Early Phase Partner Offer -->
-            <div class="offer-band reveal">
-            <div class="founding-offer">
-                <div class="founding-offer-badge">Early Phase Partners &middot; Limited Capacity</div>
-                <h3>Early-Phase Partner Pricing</h3>
-                <p>We&rsquo;re onboarding a small number of early-phase partners while we shape the playbook. The AI Score is free for everyone; what a partner gets is a discount on the Blueprint and the build, in exchange for being a reference engagement we can name.</p>
-                <div class="founding-offer-bullets">
-                    <div class="fo-item">&#x2713; Discounted Blueprint and build rates</div>
-                    <div class="fo-item">&#x2713; Reference engagement, agreed in writing first</div>
-                    <div class="fo-item">&#x2713; Direct access to the founding architect</div>
-                    <div class="fo-item">&#x2713; Same free AI Score first, either way</div>
-                </div>
-                <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="text-decoration:none;">Get your free AI Score &rarr;</a>
-                <p class="cta-fineprint">Partner terms are agreed at the Blueprint stage, not before. Start with the Score like everyone else.</p>
-            </div>
-            <div class="offer-art" aria-hidden="true">
-                <picture>
-                    <source type="image/webp"
-                            srcset="/assets/images/accent-480.webp 480w, /assets/images/accent-800.webp 800w"
-                            sizes="(max-width: 899px) 0px, 17rem">
-                    <img src="/assets/images/accent-800.jpg"
-                         srcset="/assets/images/accent-480.jpg 480w, /assets/images/accent-800.jpg 800w"
-                         sizes="(max-width: 899px) 0px, 17rem"
-                         width="800" height="993" alt="" loading="lazy" decoding="async">
-                </picture>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="gradient-bar"></div>
-
-    <!-- Pricing Section (v3 - 3 tiers) -->
-    <section id="pricing">
-        <div class="container">
-            <div class="sec-head reveal">
-                <p class="section-eyebrow">How We Work Together</p>
-                <h2>Free to find out. &pound;3,000 to plan it. Then we build and run it.</h2>
-                <p class="section-lede">Three steps, in order, and you can stop after any of them. The first costs nothing. The second is a fixed &pound;3,000 that comes back off your build. Only the third is a real commitment.</p>
-            </div>
-
-            <div class="pricing-grid-v3">
-                <div class="pricing-card-v3 fade-in">
-                    <div class="pc-tier">Stage 1</div>
-                    <h3>Your AI Score</h3>
-                    <p class="pc-desc">We score your operation on two dimensions and name the three places AI would pay back fastest. One working session; written back within five working days.</p>
-                    <ul class="pc-list">
-                        <li>Automation Score (1&ndash;10)</li>
-                        <li>AI Usage Score (1&ndash;10)</li>
-                        <li>Top 3 opportunities, quantified</li>
-                        <li>Yours to keep either way</li>
-                        <li>No commitment to go further</li>
-                    </ul>
-                    <div class="pc-price">Free</div>
-                    <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-outline" style="width:100%;text-decoration:none;text-align:center;">Get your free AI Score &rarr;</a>
-                </div>
-
-                <div class="pricing-card-v3 featured fade-in">
-                    <div class="pc-badge">STAGE 2 &middot; AFTER YOUR SCORE</div>
-                    <div class="stage-stepper" aria-label="Covers Stage 2">
-                        <span class="stage-step muted">1</span>
-                        <span class="stage-connector"></span>
-                        <span class="stage-step active">2</span>
-                        <span class="stage-connector"></span>
-                        <span class="stage-step muted">3</span>
-                        <span class="stage-connector"></span>
-                        <span class="stage-step muted">4</span>
-                        <span class="stage-step-label">Stage 2</span>
-                    </div>
-                    <h3>The Blueprint</h3>
-                    <p class="pc-desc">A costed, sequenced plan for the work worth doing &mdash; what gets built, in what order, by when, and what it will take. Yours to build with us, in-house, or not at all.</p>
-                    <ul class="pc-list">
-                        <li>Prioritised roadmap, sprint by sprint</li>
-                        <li>Effort estimates and fixed-scope SOW</li>
-                        <li>Integration and data-handling plan</li>
-                        <li>GDPR / DPA position stated up front</li>
-                        <li>Credited back in full against your build</li>
-                    </ul>
-                    <div class="pc-price">&pound;3,000 &middot; fixed</div>
-                    <a href="#cta" onclick="openContactModal('blueprint'); return false;" class="btn btn-primary" style="width:100%;text-decoration:none;text-align:center;">Get your free AI Score &rarr;</a>
-                </div>
-
-                <div class="pricing-card-v3 fade-in">
-                    <div class="pc-tier">Stages 3&ndash;4</div>
-                    <h3>The Programme</h3>
-                    <p class="pc-desc">We build what the Blueprint specified, put it into your stack, and run it on a monthly retainer. Priced from the Blueprint, so you see the number before you commit to it.</p>
-                    <ul class="pc-list">
-                        <li>Custom AI build &amp; deployment</li>
-                        <li>Managed retainer: monitoring, drift, evolution</li>
-                        <li>UK / EU data residency</li>
-                        <li>SSO, SAML, RBAC where you need them</li>
-                        <li>Cyber Essentials: in progress</li>
-                    </ul>
-                    <div class="pc-price">Build + monthly retainer &middot; quoted in the Blueprint</div>
-                    <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-outline" style="width:100%;text-decoration:none;text-align:center;">Get your free AI Score &rarr;</a>
-                </div>
-            </div>
-
-            <p class="pricing-note-v3 reveal">The Score is free and the Blueprint is &pound;3,000 whoever you are. Build and retainer figures are quoted in the Blueprint itself, before you have committed to anything &mdash; fixed-scope, fixed-fee, 30-day cancel notice on the retainer, no annual lock-in.</p>
-        </div>
-    </section>
-
-    <div class="gradient-bar"></div>
-
-    <!-- About Section (v3 - credentialled, no personal details) -->
-    <section id="about">
-        <div class="container">
-            <div class="sec-head reveal">
-                <p class="section-eyebrow">About QuietStaff</p>
-                <h2>Built by Enterprise AI Architects. For UK SMBs.</h2>
-            </div>
-            <p class="about-lead reveal">QuietStaff was founded by a senior engineering leader with two decades of enterprise technology experience and active doctoral research in AI. We&rsquo;re a UK-registered AI consulting firm focused on closing the gap between "AI is interesting" and "AI is running the operation."</p>
-
-            <div class="about-cred-row reveal">
-                <div class="about-cred">
-                    <div class="about-cred-label">Technical Depth</div>
-                    <p>Two decades across enterprise platforms and cloud-native architecture. Multi-model AI. Scaled systems delivered into regulated sectors.</p>
-                </div>
-                <div class="about-cred">
-                    <div class="about-cred-label">Sector Experience</div>
-                    <p>NHS &amp; HealthTech delivery. Financial services operations. Regulated data environments where compliance is non-negotiable.</p>
-                </div>
-                <div class="about-cred">
-                    <div class="about-cred-label">Academic Rigour</div>
-                    <p>Doctoral researcher at EIMT (Switzerland) studying enterprise AI adoption in SMBs &mdash; the exact problem we solve.</p>
-                </div>
-            </div>
-
-            <div class="about-tech-line reveal">Multi-model intelligence. Privacy and data residency are designed in, not bolted on.</div>
-
-            <div class="about-cta-row">
-                <a href="founder/" class="btn btn-outline" style="text-decoration:none;">Meet the Founder &rarr;</a>
-                <a href="https://www.linkedin.com/in/mohan-technical-leadership/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="text-decoration:none;" aria-label="Founder profile on LinkedIn">LinkedIn &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="gradient-bar"></div>
-
-    <div class="gradient-bar"></div>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-        <div class="container">
-            <div class="rail">
-            <div class="sec-head reveal">
-                <p class="section-eyebrow">Before You Ask</p>
-                <h2>The six questions we get asked first</h2>
-                <p class="section-lede">Straight answers, including the uncomfortable one at the bottom.</p>
-            </div>
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>We already use ChatGPT. Isn&rsquo;t that enough?</summary>
-                    <div class="faq-answer">
-                        <p>For drafting, summarising and research &mdash; often yes. If that turns out to be all you need, the Score will say so, and it will have cost you nothing to find out.</p>
-                        <p>What a chat window does not do is sit inside your systems and finish a job unattended: read the inbox, match the invoice, update the record, escalate the exception, log what it did. That is the work we build.</p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>We&rsquo;re a 30-person business. Aren&rsquo;t we too small for this?</summary>
-                    <div class="faq-answer">
-                        <p>Small is the point. Below roughly 200 people you rarely have anyone whose actual job is AI, and hiring one costs more than most of the work is worth.</p>
-                        <p>The first step is sized accordingly: one working session, written back within five working days. If the numbers don&rsquo;t justify a build, the report says so.</p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Where does our data go, and is it used to train models?</summary>
-                    <div class="faq-answer">
-                        <p>Every third party we would put in the path is named on our <a href="sub-processors/">sub-processors page</a> before you sign anything &mdash; not disclosed afterwards.</p>
-                        <p>We build for UK/EU data residency, and the training, retention and deletion position is written into the Blueprint and the Data Processing Agreement before any of your data moves. Our standing commitment to return or delete customer data within 30 days of an engagement ending is in the <a href="privacy/">privacy policy</a>.</p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>What if what you build doesn&rsquo;t work?</summary>
-                    <div class="faq-answer">
-                        <p>That gets settled in the Blueprint, before the build. The Blueprint states what gets built, in what order, and what &ldquo;working&rdquo; means in numbers you agree up front.</p>
-                        <p>The &pound;3,000 is fixed, and the plan is yours whether you build it with us, in-house, or not at all. On the retainer there is a 30-day cancel notice and no annual lock-in.</p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>Does this lock us into you?</summary>
-                    <div class="faq-answer">
-                        <p>No annual contract, and 30 days&rsquo; notice on the retainer. The Blueprint is a document you own &mdash; you can hand it to any other supplier and have them quote against it.</p>
-                        <p>Where we can, we build in your stack, on your accounts, so what we built stays with you if we part ways.</p>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>You have no published client work. Why would we go first?</summary>
-                    <div class="faq-answer">
-                        <p>Correct, and we would rather say it than dress it up. QuietStaff is early. The scenarios on this site are illustrative and labelled as such, and the engineering log is the founder&rsquo;s own work, not client engagements.</p>
-                        <p>What we offer instead of a reference list: a first step that is free, a second step that is a fixed &pound;3,000 and yours to take elsewhere, and a named architect doing the work rather than a delivery team you never meet.</p>
-                    </div>
-                </details>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section (v3) -->
-    <section class="cta-section" id="cta">
-        <div class="container reveal">
-            <h2>Ready to find out what AI can do for your business?</h2>
-            <p class="cta-sub">Start with the free AI Score. One working session, written back within five working days. No cost, no obligation, and the report is yours either way.</p>
-            <div class="cta-buttons">
-                <a href="#cta" onclick="openContactModal('score'); return false;" class="btn btn-primary" style="text-decoration:none;">Get your free AI Score &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    </main>
+    <main id="main-content" class="qs-home"><div class="qs-wrap"><section class="qs-hero"><div><div class="qs-eyebrow">Your AI consulting partner</div><h1>Less busywork.<br>More room to<br><em>build your business.</em></h1><p>Explore where AI could help, starting with the work and tools you already know.</p><a class="qs-button" href="#quietstart">Explore QuietStart <span>↗</span></a><a class="qs-textlink qs-hero-whatsapp" href="https://wa.me/447367108005?text=Hi%20QuietStaff%2C%20I%27d%20like%20to%20enquire%20about%20QuietStart." target="_blank" rel="noopener noreferrer">Or start on WhatsApp ↗</a><p class="qs-fine"><span class="qs-inline-value">£500 value</span> <strong>£99</strong> · One hour · No tie-in</p></div><figure class="qs-art qs-film" aria-label="Silver ribbon sculpture"><video id="heroFilm" muted playsinline loop preload="none" width="1280" height="720" poster="/assets/media/quietstart/light-poster.jpg" aria-label="Slowly moving abstract 3D ribbon sculpture"></video><div class="qs-filmbar"><span>FROM COMPLEXITY TO CLARITY</span><button id="motion" type="button" aria-label="Play hero motion">▶</button></div></figure></section><div class="qs-strip"><div>Built around <strong>your business</strong></div><span>UK small businesses</span><span>Your existing tools</span><span>Human judgement at the centre</span></div></div>
+<section class="qs-explore" id="services"><div class="qs-wrap"><div class="qs-intro"><div><div class="qs-eyebrow">See the possibility</div><h2>Start with a task.<br><em>See a different way.</em></h2></div><p>A familiar workflow makes AI easier to understand. Choose an example to see where assistance could fit.</p></div><div class="qs-tabs" role="group" aria-label="Choose an illustrative workflow"><button aria-pressed="true" data-flow="enquiries">Customer enquiries</button><button aria-pressed="false" data-flow="documents">Document admin</button><button aria-pressed="false" data-flow="followup">Following up</button></div><div class="qs-workflow" aria-live="polite"><div class="qs-worknode"><span class="qs-number">01</span><h3 id="inputTitle">An enquiry arrives</h3><p id="inputText">A customer asks a question by email.</p></div><div class="qs-arrow" aria-hidden="true">→</div><div class="qs-worknode"><span class="qs-number">02</span><h3 id="aiTitle">AI helps prepare</h3><p id="aiText">Relevant information is gathered into a draft response.</p></div><div class="qs-arrow" aria-hidden="true">→</div><div class="qs-worknode"><span class="qs-number">03</span><h3 id="humanTitle">Your team decides</h3><p id="humanText">A person checks the details and sends the reply.</p></div></div><p class="qs-illustrative">Illustrative workflow only. Feasibility depends on your tools, data and review process. Implementation is a separate engagement.</p></div></section>
+<section class="qs-offer qs-wrap" id="pricing"><span id="quietstart" class="qs-anchor"></span><div><div class="qs-eyebrow">QuietStart</div><h2>A conversation.<br>A recommendation.<br><em>A place to begin.</em></h2><p>One hour with our Principal AI Architect to explore what AI could mean for your business.</p><div class="qs-price"><span class="qs-price-reference"><small>Our consultation value</small><s>£500</s></span><span>£99</span></div><p class="qs-value">One conversation. A written recommendation. No obligation to continue.</p><a class="qs-button" href="#contact-quietstart" onclick="openContactModal('quietstart'); return false;">Enquire about QuietStart ↗</a><p class="qs-value" style="margin-top:18px">No tie-in. No obligation to take it further.</p></div><div class="qs-document"><div class="qs-dochead"><strong>QuietStart / Your next steps</strong><span>01—03</span></div><h3>Clarity you can take away.</h3><div class="qs-docrow"><b>01</b><div><strong>Where AI could help</strong><p>Possibilities grounded in your day-to-day work.</p></div></div><div class="qs-docrow"><b>02</b><div><strong>What to explore first</strong><p>A practical starting point and things to consider.</p></div></div><div class="qs-docrow"><b>03</b><div><strong>What could come next</strong><p>Short- and longer-term possibilities.</p></div></div><p class="qs-caption">A concise email summary and recommendation within three working days. </p></div></section>
+<section class="qs-work qs-wrap" id="case-studies-home"><div class="qs-intro"><div><div class="qs-eyebrow">From the founder’s own work</div><h2>Built to understand.<br><em>Designed to be useful.</em></h2></div><p>Engineering examples from our founder’s own projects, separate from QuietStaff client engagements.</p></div><div class="qs-workpair"><a class="qs-workfeature" href="/case-studies/"><span class="qs-smalltag">Commerce prototype</span><h3>Keeping internal pricing<br>behind the scenes.</h3><div class="qs-workdiagram" aria-label="Internal cost data stays separate from the customer quote"><span>Internal costs <b>Private</b></span><i aria-hidden="true">→</i><span>Customer quote <b>Relevant detail only</b></span></div><p>Exploring the separation of internal cost fields from browser-facing customer quotes.</p><span class="qs-textlink">Explore the engineering work ↗</span></a><div class="qs-worklist"><a href="/case-studies/"><span>01 / Agent activity</span><h3>A clearer view of coding sessions.</h3><p>A local dashboard for session activity and reported usage.</p></a><a href="/case-studies/"><span>02 / Project coordination</span><h3>Connecting the bigger picture.</h3><p>An internal registry for reviewing activity across projects.</p></a></div></div><div class="qs-sectors" id="industries"><span id="agents" class="qs-anchor"></span><p>Different businesses. Familiar possibilities.<br><small>Explore a hypothetical scenario:</small></p><a href="/case-studies/healthcare/">Healthcare ↗</a><a href="/case-studies/finance/">Accountancy ↗</a><a href="/case-studies/logistics/">Logistics ↗</a></div></section><section class="qs-choice" id="how"><div class="qs-wrap qs-intro"><div><div class="qs-eyebrow">You choose the next chapter</div><h2>Useful on its own.<br><em>Ready to go further.</em></h2><p>QuietStart is a learning conversation. Further support is there to discuss if you want it.</p></div><div><div class="qs-recommendation">Your recommendation</div><div class="qs-branch"><div><span class="qs-smalltag">Take it with you</span><h3>Explore at your pace.</h3><p>Keep the recommendation. There is no further commitment.</p></div><div><span class="qs-smalltag">Continue together</span><h3>Discuss further support.</h3><p>Consulting, implementation or a managed AI workforce, scoped separately.</p></div></div></div></div></section>
+<section class="qs-about qs-wrap" id="about"><div class="qs-portrait"><img src="/assets/images/founder-480.webp" width="480" height="600" loading="lazy" alt="Mohan Raj Dhanapal, founder of QuietStaff"></div><div><div class="qs-eyebrow">The person behind QuietStaff</div><h2>Technical depth.<br><em>A practical conversation.</em></h2><p>QuietStaff is an AI consulting partner and managed AI workforce provider for UK small businesses.</p><p>Founded by Mohan Raj Dhanapal, our Principal AI Architect, with more than two decades of personal engineering experience.</p><a class="qs-textlink" href="/founder/">Meet the founder ↗</a></div></section><section class="qs-faq qs-wrap" id="faq"><div><div class="qs-eyebrow">Before we talk</div><h2>A few useful<br><em>things to know.</em></h2></div><div><details><summary>Do we need any AI experience?</summary><p>No. Bring a task that takes too much time, the tools you use and your questions. We will guide the discussion in plain language.</p></details><details><summary>How does the appointment work?</summary><p>We arrange a one-hour remote call, primarily on Google Meet, through WhatsApp or email. Payment is due before the appointment. Colleagues from your company are welcome to join.</p></details><details><summary>Will we see a demo or get an automation?</summary><p>We may show relevant examples from existing work or our own setup. A bespoke demo, live build or deployed automation is not included in QuietStart.</p></details><details><summary>What should we share?</summary><p>A description of your workflow is enough to start. Please do not send passwords or sensitive customer, patient or employee information. We can discuss appropriate handling before reviewing business data. See our <a href="/privacy/">Privacy Policy</a>.</p></details></div></section><section class="qs-closing" id="cta"><div class="qs-wrap"><div class="qs-eyebrow">A little clarity goes a long way</div><h2>Bring the questions.<br><em>Let’s find your starting point.</em></h2><a class="qs-button" href="#contact-quietstart" onclick="openContactModal('quietstart'); return false;">Enquire about QuietStart ↗</a><a class="qs-textlink" href="mailto:contact@quietstaff.com">Prefer email? Get in touch ↗</a></div></section></main>
 
     <!-- Footer (v3) -->
     <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-column footer-brand">
                 <h3>QuietStaff</h3>
-                <p class="footer-tagline">AI, Quietly Running Your Operations.</p>
-                <p class="footer-office">Managed AI Workforce for UK SMBs.</p>
+                <p class="footer-tagline">Your AI partner for practical next steps.</p>
+                <p class="footer-office">Managed AI workforce for UK small businesses.</p>
             </div>
             <div class="footer-column">
                 <h3>Services</h3>
-                <a href="#cta" onclick="openContactModal('score'); return false;">Your AI Score</a>
-                <a href="#cta" onclick="openContactModal('build-retainer'); return false;">Custom Build</a>
-                <a href="#cta" onclick="openContactModal('build-retainer'); return false;">Managed &amp; Run</a>
+                <a href="#quietstart">QuietStart</a>
+                <a href="#how">Consulting and implementation</a>
+                <a href="#how">Managed operation</a>
                 <a href="#industries">Industries</a>
             </div>
             <div class="footer-column">
@@ -2021,7 +1332,7 @@ html.still .hero-mesh { opacity: 1 !important; }
                 <a href="founder/">Founder</a>
                 <a href="case-studies/">Work</a>
                 <a href="mailto:contact@quietstaff.com">Contact</a>
-                <a href="https://wa.me/447367108005?text=Hi%20QuietStaff%2C%20I%27d%20like%20to%20talk%20about%20an%20AI%20Score." target="_blank" rel="noopener" data-qs="whatsapp">WhatsApp</a>
+                <a href="https://wa.me/447367108005?text=Hi%20QuietStaff%2C%20I%27d%20like%20to%20enquire%20about%20QuietStart%20%28%C2%A399%29." target="_blank" rel="noopener" data-qs="whatsapp">WhatsApp</a>
                 <a href="https://www.linkedin.com/in/mohan-technical-leadership/" target="_blank" rel="noopener noreferrer" aria-label="Founder profile on LinkedIn">Founder on LinkedIn</a>
             </div>
             <div class="footer-column">
@@ -2034,238 +1345,6 @@ html.still .hero-mesh { opacity: 1 !important; }
     </footer>
 
     <script>
-        /* ═══ Hero orb field ═══════════════════════════════════════════
-           Still a drifting field of dots with proximity lines — rebuilt
-           for depth, retina sharpness and calm:
-             1. devicePixelRatio backing store (was soft on every retina Mac)
-             2. three depth planes: z drives radius, alpha, speed, parallax
-             3. drift cut ~3x; soft off-canvas wrap instead of a hard pop
-             4. near-plane orbs get a radial-gradient glow halo
-             5. density scales with the hero's area, not a fixed 60
-             6. depth-weighted mouse parallax (fine pointers only)
-             7. sized to the hero element via ResizeObserver, not the window
-             8. prefers-reduced-motion: one static frame, then stop
-           The --particle-* token names and the canvas._refreshTheme
-           contract are unchanged.
-           ════════════════════════════════════════════════════════════ */
-        function createHeroCanvas() {
-            var canvas = document.getElementById('hero-canvas');
-            if (!canvas) return;
-            var host = canvas.parentElement;
-            var ctx = canvas.getContext('2d');
-            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-            var still = document.documentElement.classList.contains('still');
-            var fine = window.matchMedia('(hover: hover) and (pointer: fine)');
-
-            var W = 0, H = 0, dpr = 1;
-            var particles = [];
-            var animId = null;
-            var mx = 0, my = 0, tx = 0, ty = 0;
-
-            function getThemeColors() {
-                var s = getComputedStyle(document.documentElement);
-                return {
-                    a: (s.getPropertyValue('--particle-color-a') || 'rgba(129,140,248,0.85)').trim(),
-                    b: (s.getPropertyValue('--particle-color-b') || 'rgba(34,211,238,0.75)').trim(),
-                    line: (s.getPropertyValue('--particle-line') || '129, 140, 248').trim(),
-                    lineOpacity: parseFloat((s.getPropertyValue('--particle-line-opacity') || '0.24').trim()) || 0.24
-                };
-            }
-            var C = getThemeColors();
-            canvas._refreshTheme = function () { C = getThemeColors(); if (isStatic()) draw(); };
-
-            function isStatic() { return reduce.matches || still; }
-
-            function resize() {
-                var r = host.getBoundingClientRect();
-                W = Math.max(1, Math.round(r.width));
-                H = Math.max(1, Math.round(r.height));
-                dpr = Math.min(window.devicePixelRatio || 1, 2);
-                canvas.width = Math.round(W * dpr);
-                canvas.height = Math.round(H * dpr);
-                canvas.style.width = W + 'px';
-                canvas.style.height = H + 'px';
-                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                measureQuiet(r);
-            }
-
-            /* Quiet zones. The CSS mask tapers the field at the hero's edges,
-               but the ruled specification and the ledger sit *inside* it — and
-               an orb drawn on a 14px glyph is unreadable at any alpha. Measure
-               those two blocks and fade the field to nothing across them, with
-               a soft feather so orbs dissolve rather than clip. Re-measured on
-               every resize, so it tracks the stacked layout below 1024 too. */
-            var QUIET_SEL = ['.hero-cards', '.hero-footer'];
-            var QUIET_FEATHER = 64;
-            var quiet = [];
-            function measureQuiet(hostRect) {
-                quiet = [];
-                var hr = hostRect || host.getBoundingClientRect();
-                for (var i = 0; i < QUIET_SEL.length; i++) {
-                    var el = host.querySelector(QUIET_SEL[i]);
-                    if (!el) continue;
-                    var r = el.getBoundingClientRect();
-                    if (!r.width || !r.height) continue;
-                    quiet.push({
-                        x0: r.left - hr.left - 6, y0: r.top - hr.top - 6,
-                        x1: r.right - hr.left + 6, y1: r.bottom - hr.top + 6
-                    });
-                }
-            }
-            function quietAlpha(x, y) {
-                var m = 1;
-                for (var i = 0; i < quiet.length; i++) {
-                    var q = quiet[i];
-                    var dx = Math.max(q.x0 - x, 0, x - q.x1);
-                    var dy = Math.max(q.y0 - y, 0, y - q.y1);
-                    if (dx >= QUIET_FEATHER || dy >= QUIET_FEATHER) continue;
-                    var f = Math.sqrt(dx * dx + dy * dy) / QUIET_FEATHER;
-                    if (f >= 1) continue;
-                    f = f * f * (3 - 2 * f);          // smoothstep
-                    if (f < m) m = f;
-                }
-                return m;
-            }
-
-            function count() {
-                // A phone hero is a tall thin column: the same area density
-                // would land orbs on top of the copy, so thin it out.
-                var div = W < 768 ? 30000 : 17000;
-                return Math.max(18, Math.min(90, Math.round((W * H) / div)));
-            }
-
-            function Orb() { this.reset(); }
-            Orb.prototype.reset = function () {
-                this.z = Math.random();                  // 0 far … 1 near
-                this.x = Math.random() * W;
-                this.y = Math.random() * H;
-                var sp = 0.055 + this.z * 0.155;         // was a flat ~0.5px/frame
-                var ang = Math.random() * Math.PI * 2;
-                this.vx = Math.cos(ang) * sp;
-                this.vy = Math.sin(ang) * sp * 0.72;     // slight horizontal bias
-                this.r = 0.6 + this.z * 2.6;
-                this.alpha = 0.3 + this.z * 0.62;
-                this.useA = Math.random() > 0.45;
-            };
-            Orb.prototype.update = function () {
-                this.x += this.vx; this.y += this.vy;
-                var m = 60;
-                if (this.x > W + m) this.x = -m;
-                if (this.x < -m) this.x = W + m;
-                if (this.y > H + m) this.y = -m;
-                if (this.y < -m) this.y = H + m;
-            };
-            Orb.prototype.px = function () { return this.x + mx * 26 * this.z; };
-            Orb.prototype.py = function () { return this.y + my * 17 * this.z; };
-
-            function init() {
-                particles = [];
-                var n = count();
-                for (var i = 0; i < n; i++) particles.push(new Orb());
-            }
-
-            function rgbaWith(base, a) {
-                // base is "rgba(r,g,b,x)" from the token; re-alpha it.
-                var m = base.match(/rgba?\(([^)]+)\)/);
-                if (!m) return base;
-                var p = m[1].split(',');
-                return 'rgba(' + p[0].trim() + ',' + p[1].trim() + ',' + p[2].trim() + ',' + a.toFixed(3) + ')';
-            }
-
-            function draw() {
-                ctx.clearRect(0, 0, W, H);
-
-                // links — skip the far plane so the field reads as depth, not soup
-                var maxD = Math.min(210, Math.max(130, W * 0.16));
-                for (var i = 0; i < particles.length; i++) {
-                    var pi = particles[i];
-                    if (pi.z < 0.12) continue;
-                    for (var j = i + 1; j < particles.length; j++) {
-                        var pj = particles[j];
-                        if (pj.z < 0.12) continue;
-                        var ax = pi.px(), ay = pi.py(), bx = pj.px(), by = pj.py();
-                        var dx = ax - bx, dy = ay - by;
-                        var d2 = dx * dx + dy * dy;
-                        if (d2 > maxD * maxD) continue;
-                        // a link can span a quiet zone even when both ends are
-                        // clear of it, so sample the midpoint as well
-                        var q = Math.min(
-                            quietAlpha(ax, ay),
-                            quietAlpha(bx, by),
-                            quietAlpha((ax + bx) * 0.5, (ay + by) * 0.5)
-                        );
-                        if (q <= 0.01) continue;
-                        var d = Math.sqrt(d2);
-                        var zw = (pi.z + pj.z) * 0.5;
-                        var a = C.lineOpacity * (1 - d / maxD) * (0.35 + zw * 0.65) * q;
-                        ctx.strokeStyle = 'rgba(' + C.line + ', ' + a.toFixed(3) + ')';
-                        ctx.lineWidth = 0.6;
-                        ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
-                    }
-                }
-
-                // orbs — near plane gets a soft halo
-                for (var k = 0; k < particles.length; k++) {
-                    var p = particles[k];
-                    var base = p.useA ? C.a : C.b;
-                    var X = p.px(), Y = p.py();
-                    var qa = quietAlpha(X, Y);
-                    if (qa <= 0.01) continue;
-                    if (p.z > 0.62) {
-                        var gr = p.r * 6.5;
-                        var g = ctx.createRadialGradient(X, Y, 0, X, Y, gr);
-                        g.addColorStop(0, rgbaWith(base, 0.11 * p.z * qa));
-                        g.addColorStop(1, rgbaWith(base, 0));
-                        ctx.fillStyle = g;
-                        ctx.beginPath(); ctx.arc(X, Y, gr, 0, Math.PI * 2); ctx.fill();
-                    }
-                    ctx.fillStyle = rgbaWith(base, p.alpha * qa);
-                    ctx.beginPath(); ctx.arc(X, Y, p.r, 0, Math.PI * 2); ctx.fill();
-                }
-            }
-
-            function frame() {
-                mx += (tx - mx) * 0.055;
-                my += (ty - my) * 0.055;
-                for (var i = 0; i < particles.length; i++) particles[i].update();
-                draw();
-                animId = requestAnimationFrame(frame);
-            }
-
-            function start() {
-                if (animId !== null) cancelAnimationFrame(animId);
-                if (isStatic()) { draw(); animId = null; return; }
-                animId = requestAnimationFrame(frame);
-            }
-            function stop() { if (animId !== null) { cancelAnimationFrame(animId); animId = null; } }
-
-            resize(); init(); start();
-
-            if ('ResizeObserver' in window) {
-                var rafR = null;
-                new ResizeObserver(function () {
-                    if (rafR) cancelAnimationFrame(rafR);
-                    rafR = requestAnimationFrame(function () { resize(); init(); if (isStatic()) draw(); });
-                }).observe(host);
-            } else {
-                window.addEventListener('resize', function () { resize(); init(); if (isStatic()) draw(); }, { passive: true });
-            }
-
-            if (fine.matches) {
-                host.addEventListener('pointermove', function (e) {
-                    var r = host.getBoundingClientRect();
-                    tx = ((e.clientX - r.left) / r.width) * 2 - 1;
-                    ty = ((e.clientY - r.top) / r.height) * 2 - 1;
-                }, { passive: true });
-                host.addEventListener('pointerleave', function () { tx = 0; ty = 0; }, { passive: true });
-            }
-
-            document.addEventListener('visibilitychange', function () {
-                if (document.hidden) stop(); else start();
-            });
-            if (reduce.addEventListener) reduce.addEventListener('change', start);
-        }
-        // Scroll Event Listeners
         function setupScrollEffects() {
             const nav = document.querySelector('nav');
             const hamburger = document.getElementById('hamburger');
@@ -2288,7 +1367,7 @@ html.still .hero-mesh { opacity: 1 !important; }
                 hamburger.classList.toggle('active', menuOpen);
                 navCenter.classList.toggle('active', menuOpen);
                 // Prevent background scroll when overlay is open
-                document.body.style.overflow = menuOpen ? 'hidden' : '';
+                document.body.style.overflow = (menuOpen || document.getElementById('contactModal')?.classList.contains('active')) ? 'hidden' : '';
                 // Keep the closed mobile overlay out of the tab/AT order without
                 // affecting the desktop nav, which shares this same element.
                 if (window.matchMedia('(max-width: 899px)').matches) {
@@ -2309,6 +1388,16 @@ html.still .hero-mesh { opacity: 1 !important; }
             }
 
             hamburger?.addEventListener('click', () => toggleMenu());
+
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && menuOpen) {
+                    toggleMenu(false);
+                    hamburger.focus();
+                }
+            });
+            // A mobile overlay must not leave desktop navigation inert or the
+            // document scroll-locked after crossing the shared breakpoint.
+            window.matchMedia('(max-width: 899px)').addEventListener('change', () => toggleMenu(false));
 
             // Close menu when any nav link (including mobile CTA) is clicked
             navCenter?.querySelectorAll('a').forEach(link => {
@@ -2374,108 +1463,93 @@ html.still .hero-mesh { opacity: 1 !important; }
 
         function setupContactModal() {
             const overlay = document.getElementById('contactModal');
-            if (!overlay) return;
-            const closeBtn = document.getElementById('modalClose');
-            const contextEl = document.getElementById('modalContext');
-            const inquiryEl = document.getElementById('formInquiry');
-            const formEl = document.getElementById('qsForm');
+            const form = document.getElementById('qsForm');
+            const select = document.getElementById('qs-interest');
+            const error = document.getElementById('formError');
+            const errorMsg = document.getElementById('formErrorMsg');
+            const success = document.getElementById('formSuccess');
             const formDiv = document.getElementById('contactForm');
-            const successDiv = document.getElementById('formSuccess');
-            const errorDiv = document.getElementById('formError');
-            const errorMsgEl = document.getElementById('formErrorMsg');
-            const submitBtn = formEl.querySelector('.form-submit');
-            const selectEl = formEl.querySelector('select[name="interest"]');
-            let currentSubject = 'General Inquiry - QuietStaff';
-
-            const contextMap = {
-                'score': { label: 'Get your free AI Score', subject: 'AI Score Request - QuietStaff', interest: 'AI Readiness Assessment' },
-                'call': { label: 'Schedule a Call', subject: 'Schedule a Call - QuietStaff', interest: 'General' },
-                'general': { label: 'Get in Touch', subject: 'General Inquiry - QuietStaff', interest: 'General' },
-                'assessment': { label: 'AI Readiness Assessment', subject: 'Assessment Inquiry - QuietStaff', interest: 'AI Readiness Assessment' },
-                'blueprint': { label: 'Get your free AI Score', subject: 'Blueprint Enquiry - QuietStaff', interest: 'Blueprint' },
-                'programme': { label: 'Talk About a Programme', subject: 'Programme Enquiry - QuietStaff', interest: 'Programme' },
-                'build-retainer': { label: 'Talk About a Programme', subject: 'Programme Enquiry - QuietStaff', interest: 'Programme' },
-                'enterprise': { label: 'Talk About a Programme', subject: 'Programme Enquiry - QuietStaff', interest: 'Programme' },
-                // Legacy compatibility
-                'demo': { label: 'Get your free AI Score', subject: 'AI Score Request - QuietStaff', interest: 'AI Readiness Assessment' },
-                'diagnostic': { label: 'AI Readiness Assessment', subject: 'Assessment Inquiry - QuietStaff', interest: 'AI Readiness Assessment' },
-                'implementation': { label: 'Talk About a Programme', subject: 'Programme Enquiry - QuietStaff', interest: 'Programme' },
-                'retainer': { label: 'Talk About a Programme', subject: 'Programme Enquiry - QuietStaff', interest: 'Programme' },
-                'custom': { label: 'Talk About a Programme', subject: 'Programme Enquiry - QuietStaff', interest: 'Programme' },
-            };
-
+            const submit = form.querySelector('.form-submit');
+            const localPreview = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+            let returnFocus;
+            let currentSubject;
+            const failure = 'We could not confirm your enquiry was submitted. Please try again, email contact@quietstaff.com or message us on WhatsApp.';
+            function syncInterest() {
+                const quiet = select.value === 'QuietStart';
+                currentSubject = quiet ? 'QuietStart enquiry — QuietStaff' : 'Website enquiry — QuietStaff';
+                document.getElementById('formInquiry').value = select.value;
+                document.getElementById('modalTitle').textContent = quiet ? 'Enquire about QuietStart' : 'Contact QuietStaff';
+                document.getElementById('modalContext').textContent = quiet ? 'A one-hour remote consultation with our Principal AI Architect, followed by a concise written recommendation within three working days. £99 before the appointment. We will agree a time and send payment details by WhatsApp or email. Your enquiry does not book an appointment or take payment.' : 'Tell us what you would like to discuss.';
+                form.querySelectorAll('[data-qs="whatsapp"]').forEach(a => a.href = 'https://wa.me/447367108005?text=' + encodeURIComponent(quiet ? "Hi QuietStaff, I'd like to enquire about QuietStart (£99)." : "Hi QuietStaff, I'd like to discuss AI for my business."));
+                form.querySelectorAll('a[href^="mailto:"]').forEach(a => a.href = 'mailto:contact@quietstaff.com?subject=' + encodeURIComponent(quiet ? 'QuietStart enquiry' : 'QuietStaff enquiry'));
+            }
+            select.addEventListener('change', syncInterest);
             window.openContactModal = function(type) {
-                const ctx = contextMap[type] || contextMap['demo'];
-                currentSubject = ctx.subject;
-                if (contextEl) contextEl.textContent = ctx.label;
-                if (inquiryEl) inquiryEl.value = ctx.interest;
-                if (selectEl) selectEl.value = ctx.interest;
+                returnFocus = document.activeElement;
+                if (window.matchMedia('(max-width: 899px)').matches && returnFocus?.closest('#navCenter')) returnFocus = document.getElementById('hamburger');
+                const consulting = ['programme','build','build-retainer','enterprise','implementation','custom'];
+                select.value = consulting.includes(type) ? 'Consulting and implementation' : type === 'retainer' ? 'Managed operation' : ['general','call'].includes(type) ? 'General' : 'QuietStart';
+                syncInterest();
                 formDiv.style.display = 'block';
-                successDiv.classList.remove('active');
-                if (errorDiv) errorDiv.classList.remove('active');
+                success.classList.remove('active');
+                error.classList.remove('active');
                 overlay.classList.add('active');
                 overlay.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
+                document.getElementById('qs-name').focus();
             };
-
             function closeModal() {
+                if (!overlay.classList.contains('active')) return;
                 overlay.classList.remove('active');
-                overlay.setAttribute('aria-hidden', 'true');
+                overlay.setAttribute('aria-hidden','true');
                 document.body.style.overflow = '';
+                if (returnFocus) returnFocus.focus();
             }
-
-            closeBtn.addEventListener('click', closeModal);
-            overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) closeModal();
-            });
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') closeModal();
-            });
-
-            // Handle form submit — single path, real endpoint, no fake success
-            formEl.addEventListener('submit', function(e) {
-                e.preventDefault();
-                if (errorDiv) errorDiv.classList.remove('active');
-
-                const fd = new FormData(formEl);
-                const payload = {
-                    name: (fd.get('name') || '').toString().trim(),
-                    email: (fd.get('email') || '').toString().trim(),
-                    company: (fd.get('company') || '').toString().trim(),
-                    subject: currentSubject,
-                    message: (fd.get('message') || '').toString().trim(),
-                    source: (fd.get('interest') || '').toString().trim(),
-                    website: (fd.get('_honey') || '').toString().trim()
-                };
-
-                const originalLabel = submitBtn ? submitBtn.textContent : '';
-                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-
-                function showError(msg) {
-                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
-                    if (errorMsgEl) errorMsgEl.textContent = msg;
-                    if (errorDiv) errorDiv.classList.add('active');
+            document.getElementById('modalClose').addEventListener('click',closeModal);
+            overlay.addEventListener('click',e => { if(e.target === overlay) closeModal(); });
+            document.addEventListener('keydown',e => {
+                if (!overlay.classList.contains('active')) return;
+                if(e.key === 'Escape') closeModal();
+                if(e.key === 'Tab') {
+                    const nodes = [...overlay.querySelectorAll('button, input, select, textarea, a[href]')].filter(el => !el.disabled && el.offsetParent !== null);
+                    const first=nodes[0], last=nodes[nodes.length-1];
+                    if(e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                    else if(!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
                 }
-
-                fetch(QS_CONTACT_ENDPOINT, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify(payload)
-                }).then(function(res) {
-                    return res.json().catch(function() { return { ok: res.ok }; })
-                        .then(function(data) { return { res: res, data: data }; });
-                }).then(function(r) {
-                    if (r.res.ok && r.data && r.data.ok) {
-                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
-                        formDiv.style.display = 'none';
-                        successDiv.classList.add('active');
-                        formEl.reset();
-                    } else {
-                        showError((r.data && r.data.error) || 'Something went wrong at our end.');
-                    }
-                }).catch(function() {
-                    showError('We could not reach our server \u2014 check your connection and try again.');
-                });
+            });
+            function openContactHash() {
+                const key = location.hash.slice(1).toLowerCase();
+                const offerKeys = ['contact-quietstart','contact-score','contact-assessment','contact-diagnostic','contact-demo','contact-blueprint','score','assessment','diagnostic','demo','blueprint'];
+                const otherKeys = {'contact-general':'general','contact-build':'build','contact-programme':'programme','contact-retainer':'retainer','contact-custom':'custom','build':'build','programme':'programme','retainer':'retainer','custom':'custom'};
+                if (offerKeys.includes(key)) window.openContactModal('quietstart');
+                else if (otherKeys[key]) window.openContactModal(otherKeys[key]);
+            }
+            window.addEventListener('hashchange', openContactHash);
+            openContactHash();
+            form.addEventListener('submit',async e => {
+                e.preventDefault(); error.classList.remove('active'); syncInterest();
+                function showError(message, field) {
+                    errorMsg.textContent=message; error.classList.add('active');
+                    if(field) document.getElementById(field).focus();
+                }
+                const fd=new FormData(form);
+                const payload={name:String(fd.get('name')||'').trim(),email:String(fd.get('email')||'').trim(),company:String(fd.get('company')||'').trim(),subject:currentSubject,message:String(fd.get('message')||'').trim(),source:select.value,website:String(fd.get('_honey')||'').trim()};
+                if(!payload.name) return showError('Please enter your name.','qs-name');
+                if(!payload.email || !document.getElementById('qs-email').validity.valid) return showError('Please enter a valid email address.','qs-email');
+                if(!payload.message) return showError('Please describe what you would like help with.','qs-message');
+                if(payload.message.length>5000) return showError('Please keep your message within 5,000 characters.','qs-message');
+                if(payload.name.length>200 || payload.company.length>200) return showError('Please keep name and company within 200 characters.');
+                submit.disabled=true;submit.textContent='Sending…';
+                try {
+                    const response=await fetch(localPreview ? '/__preview-contact' : QS_CONTACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+                    const data=await response.json();
+                    if(!response.ok || !data || data.ok !== true) throw new Error('Submission not accepted');
+                    formDiv.style.display='none';
+                    success.querySelector('h3').textContent=localPreview ? 'Preview only — no enquiry sent' : 'Enquiry submitted';
+                    success.querySelector('p').textContent=localPreview ? 'The local form check passed. No appointment is booked and no email or WhatsApp message has been sent.' : 'Thank you. We will reply to discuss your enquiry. No appointment is booked yet. You can also contact us at contact@quietstaff.com.';
+                    success.classList.add('active');success.focus();form.reset();
+                } catch(err) { showError(localPreview ? 'Preview check failed. No enquiry was sent. Please try again.' : failure); }
+                finally {submit.disabled=false;submit.textContent='Send enquiry';}
             });
         }
 
@@ -2488,14 +1562,9 @@ html.still .hero-mesh { opacity: 1 !important; }
                 const next = current === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', next);
                 try { localStorage.setItem('quietstaff-theme', next); } catch (e) {}
-                // Refresh particle canvas colors
-                const canvas = document.getElementById('hero-canvas');
-                if (canvas && typeof canvas._refreshTheme === 'function') {
-                    canvas._refreshTheme();
-                }
                 // Update meta theme-color
                 const meta = document.querySelector('meta[name="theme-color"]');
-                if (meta) meta.setAttribute('content', next === 'light' ? '#ffffff' : '#030710');
+                if (meta) meta.setAttribute('content', next === 'light' ? '#f6f5f0' : '#0b121c');
             });
         }
 
@@ -2543,7 +1612,6 @@ html.still .hero-mesh { opacity: 1 !important; }
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            createHeroCanvas();
             setupScrollEffects();
             setupIntersectionObserver();
             setupStaggerAnimations();
@@ -2555,78 +1623,106 @@ html.still .hero-mesh { opacity: 1 !important; }
     </script>
 
     <!-- ─── Contact Modal ─────────────────────────────────── -->
-    <div class="modal-overlay" id="contactModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-overlay" id="contactModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" aria-hidden="true">
         <div class="modal">
             <button class="modal-close" id="modalClose" aria-label="Close contact form">&times;</button>
 
             <!-- Form -->
             <div id="contactForm">
-                <h3 id="modalTitle">Get in Touch</h3>
-                <div class="modal-context" id="modalContext">Request a Demo</div>
+                <h3 id="modalTitle">Enquire about QuietStart</h3>
+                <div class="modal-context" id="modalContext">A one-hour remote consultation with our Principal AI Architect.</div>
 
                 <form id="qsForm" novalidate>
                     <input type="hidden" name="_honey" id="qs-honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
-                    <input type="hidden" id="formInquiry" value="Demo Request">
+                    <input type="hidden" id="formInquiry" value="QuietStart">
 
                     <div class="form-group">
-                        <label for="qs-name">Full Name *</label>
-                        <input type="text" id="qs-name" name="name" placeholder="John Doe" required autocomplete="name">
+                        <label for="qs-name">Full name *</label>
+                        <input type="text" id="qs-name" name="name" placeholder="Your name" maxlength="200" required autocomplete="name">
                     </div>
 
                     <div class="form-group">
-                        <label for="qs-email">Work Email *</label>
-                        <input type="email" id="qs-email" name="email" placeholder="john@company.com" required autocomplete="email">
+                        <label for="qs-email">Email address *</label>
+                        <input type="email" id="qs-email" name="email" placeholder="you@example.com" required autocomplete="email">
                     </div>
 
                     <div class="form-group">
                         <label for="qs-company">Company</label>
-                        <input type="text" id="qs-company" name="company" placeholder="Company name" autocomplete="organization">
+                        <input type="text" id="qs-company" name="company" placeholder="Your business name" maxlength="200" autocomplete="organization">
                     </div>
 
                     <div class="form-group">
                         <label for="qs-interest">What are you looking for?</label>
-                        <select id="qs-interest" name="interest">
-                            <option value="AI Readiness Assessment">Free AI Score (starting point)</option>
-                            <option value="Blueprint">Blueprint (&pound;3,000 fixed)</option>
-                            <option value="Programme">Programme &mdash; build + managed retainer</option>
-                            <option value="General">General enquiry</option>
-                        </select>
+                        <select id="qs-interest" name="interest"><option value="QuietStart">QuietStart consultation (£99)</option><option value="Consulting and implementation">Further consulting or implementation</option><option value="Managed operation">Managed operation</option><option value="General">General enquiry</option></select>
                     </div>
 
                     <div class="form-group">
-                        <label for="qs-message">Message</label>
-                        <textarea id="qs-message" name="message" placeholder="Tell us about your use case, team size, or any questions..."></textarea>
+                        <label for="qs-message">What would you like help with? *</label>
+                        <textarea id="qs-message" name="message" required maxlength="5000" aria-describedby="messageHelp" placeholder="Describe a workflow, the tools you use, or a question you would like to discuss."></textarea><p class="form-help" id="messageHelp">Please do not include passwords or sensitive customer, patient or employee information. See our <a href="/privacy/">Privacy Policy</a>.</p>
                     </div>
 
-                    <button type="submit" class="form-submit">Send message &rarr;</button>
+                    <button type="submit" class="form-submit">Send enquiry</button>
 
-                    <p class="qs-alt-channel" style="color:var(--text-secondary); font-size:0.88rem; margin-top:0.75rem; text-align:center;">Prefer WhatsApp? <a href="https://wa.me/447367108005?text=Hi%20QuietStaff%2C%20I%27d%20like%20to%20talk%20about%20an%20AI%20Score." target="_blank" rel="noopener" data-qs="whatsapp">Message us</a> &mdash; same human, faster reply.</p>
+                    <p class="qs-alt-channel form-help">Prefer WhatsApp or email? <a href="https://wa.me/447367108005" target="_blank" rel="noopener noreferrer" data-qs="whatsapp">Message us on WhatsApp</a> or email <a href="mailto:contact@quietstaff.com?subject=QuietStart%20enquiry">contact@quietstaff.com</a>.</p>
 
-                    <div class="form-error" id="formError" role="alert" aria-live="assertive">
-                        <strong>That didn&rsquo;t send.</strong>
-                        <span id="formErrorMsg"></span>
-                        Please email us directly at <a href="mailto:contact@quietstaff.com">contact@quietstaff.com</a>, or message us on <a href="https://wa.me/447367108005?text=Hi%20QuietStaff%2C%20I%27d%20like%20to%20talk%20about%20an%20AI%20Score." target="_blank" rel="noopener" data-qs="whatsapp">WhatsApp</a>.
-                    </div>
+                    <div class="form-error" id="formError" role="alert" aria-live="assertive"><span id="formErrorMsg"></span></div>
                 </form>
 
             </div>
 
             <!-- Success state -->
-            <div class="form-success" id="formSuccess">
-                <div class="check-icon">&check;</div>
-                <h3>Message sent</h3>
-                <p style="color:var(--text-secondary); margin-top:0.75rem;">Thanks &mdash; that reached us. You&rsquo;ll get a reply from a human within one working day. If it&rsquo;s urgent, email <a href="mailto:contact@quietstaff.com" style="color:var(--accent-text)">contact@quietstaff.com</a> directly.</p>
-            </div>
-        </div>
+            <div class="form-success" id="formSuccess" tabindex="-1" role="status"><div class="check-icon">&check;</div><h3>Enquiry submitted</h3><p style="color:var(--text-secondary); margin-top:0.75rem;">Thank you. We will reply to discuss your enquiry. No appointment is booked yet. You can also contact us at contact@quietstaff.com.</p></div>
+    </div>
+
     </div>
 
     <!-- ─── WhatsApp floating button ──────────────────────────── -->
     <div class="whatsapp-float" id="whatsappFloat" aria-hidden="true">
-        <a href="https://wa.me/447367108005?text=Hi%20QuietStaff%2C%20I%27d%20like%20to%20talk%20about%20an%20AI%20Score." target="_blank" rel="noopener" data-qs="whatsapp" aria-label="Chat with QuietStaff on WhatsApp">
+        <a href="https://wa.me/447367108005?text=Hi%20QuietStaff%2C%20I%27d%20like%20to%20enquire%20about%20QuietStart%20%28%C2%A399%29." target="_blank" rel="noopener" data-qs="whatsapp" aria-label="Chat with QuietStaff on WhatsApp">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#fff"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.4 1.7 6.3L4 29l7.9-1.6c1.8.9 3.9 1.5 6.1 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.3.9.9-4.2-.3-.4C5.4 17.7 5 16.4 5 15c0-6 4.9-11 11-11s11 5 11 11-4.9 10.8-11 10.8zm5.8-8.2c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
         </a>
         <button type="button" class="whatsapp-float-dismiss" id="whatsappFloatDismiss" aria-label="Dismiss WhatsApp button">&times;</button>
     </div>
 
+<script>
+(function () {
+  const flows = {
+    enquiries: ['An enquiry arrives','A customer asks a question by email.','AI helps prepare','Relevant information is gathered into a draft response.','Your team decides','A person checks the details and sends the reply.'],
+    documents: ['A document arrives','An invoice or form needs information checked.','AI helps organise','Key fields are extracted for review, with gaps flagged.','Your team checks','A person confirms the details before updating records.'],
+    followup: ['A conversation ends','Notes contain questions, decisions and next steps.','AI helps draft','A follow-up message is prepared from the notes.','Your team sends','A person checks the commitments and approves the message.']
+  };
+  document.querySelectorAll('[data-flow]').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('[data-flow]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    ['inputTitle','inputText','aiTitle','aiText','humanTitle','humanText'].forEach((id, i) => document.getElementById(id).textContent = flows[button.dataset.flow][i]);
+  }));
+  const film = document.getElementById('heroFilm'), motion = document.getElementById('motion');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let userPaused = reduced.matches || document.documentElement.classList.contains('still');
+  let failed = false;
+  function reflectMotion() {
+    motion.disabled = failed;
+    motion.textContent = failed ? '–' : film.paused ? '▶' : 'Ⅱ';
+    motion.setAttribute('aria-label', failed ? 'Hero motion unavailable' : film.paused ? 'Play hero motion' : 'Pause hero motion');
+  }
+  function playFilm() {
+    if (!film.getAttribute('src')) film.src = '/assets/media/quietstart/light-web.mp4';
+    film.play().catch(reflectMotion);
+  }
+  motion.addEventListener('click', () => {
+    if (film.paused) { userPaused = false; playFilm(); }
+    else { userPaused = true; film.pause(); }
+  });
+  film.addEventListener('play', reflectMotion);
+  film.addEventListener('pause', reflectMotion);
+  film.addEventListener('error', () => { failed = true; reflectMotion(); });
+  reduced.addEventListener('change', e => { if (e.matches) { userPaused = true; film.pause(); } });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) film.pause();
+    else if (!userPaused) playFilm();
+  });
+  reflectMotion();
+  if (!userPaused) playFilm();
+})();
+</script>
 </body>
 </html>

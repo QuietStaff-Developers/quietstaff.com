@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logistics Scenario (Illustrative) — QuietStaff</title>
-{% include head-meta.html title="Logistics Scenario — Dispatch and Delivery AI" desc="An illustrative logistics scenario: where AI would handle dispatch decisions and delivery-status queries for a regional operator, and how the payback would be measured." path="case-studies/logistics/" type="article" %}
-<script>(function(){try{var s=localStorage.getItem('quietstaff-theme');document.documentElement.setAttribute('data-theme',s==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})()</script>
+<title>Logistics operations — hypothetical AI scenario — QuietStaff</title>
+{% include head-meta.html title="Logistics operations — hypothetical AI scenario" desc="An imagined logistics workflow exploring delivery enquiries, dispatch preparation and human review. Not a client result." path="case-studies/logistics/" type="article" %}
+<script>(function(){try{var q=new URLSearchParams(location.search).get('theme');var s=(q==='light'||q==='dark')?q:localStorage.getItem('quietstaff-theme');document.documentElement.setAttribute('data-theme',s==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})()</script>
 <!-- Self-hosted fonts (was Google Fonts CDN). PECR / UK GDPR clean — no third-party transfers on first byte. -->
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <link rel="stylesheet" href="/assets/css/case-study.css">
@@ -104,7 +104,7 @@ body{background:var(--desk);}
 </style>
     <link rel="stylesheet" href="/assets/css/shared.css">
 </head>
-<body>
+<body class="qs-editorial qs-scenario">
 <a href="#main" class="skip-link">Skip to content</a>
 <nav id="nav" role="navigation" aria-label="Primary">
   <div class="nav-logo">
@@ -141,83 +141,38 @@ body{background:var(--desk);}
     </a>
   </div>
   <ul class="nav-links">
-    <li><a href="../../#services">Services</a></li>
-    <li><a href="../../#how">How We Work</a></li>
-    <li><a href="../../#industries">Industries</a></li>
-    <li><a href="../">Work</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#how">How we work</a></li>
+    <li><a href="/#industries">Industries</a></li>
+    <li><a href="/case-studies/">Work</a></li>
+    <li><a href="/#about">About</a></li>
   </ul>
   <div class="nav-right">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9788;</button>
-    <a href="../../#cta" class="nav-cta">Get your free AI Score &rarr;</a>
+    <a href="/#contact-quietstart" class="nav-cta">Enquire about QuietStart &rarr;</a>
   </div>
 </nav>
 <main id="main" role="main">
 <div class="hero" style="max-width:800px;margin:0 auto;padding:130px 24px 20px;">
-  <a href="../" class="back-link">&larr; All Work</a>
-  <div class="sector-badge">Logistics &amp; Operations</div>
-  <h1>Scaling Customer Operations <span>Without Adding Headcount</span></h1>
+<a href="../" class="back-link">&larr; All Work</a>
+<div class="sector-badge">Logistics and operations · Hypothetical scenario</div>
+<h1>Exploring delivery enquiries and dispatch preparation</h1>
+<p>This is an imagined example, not a QuietStaff client engagement. It describes possible approaches, not a delivered system or measured result.</p>
 </div>
-
 <div class="content">
-
-  <div class="section">
-    <h2>The Situation</h2>
-    <p>Picture a fast-growing regional logistics firm handling 200+ customer enquiries a day across email and phone &mdash; shipment status checks, delivery window changes, damage claims, and account queries. Two customer service staff are overwhelmed, and response times have slipped to six or eight hours.</p>
-    <p>The MD wants to expand the team but cannot justify the headcount cost at current margins. Meanwhile the operations team spends 90 minutes every morning manually building the dispatch schedule, pulling from three separate spreadsheets and a fragmented order management system. This is a composite of patterns we see in the sector, not a client.</p>
-  </div>
-
-  <div class="score-block">
-    <div class="score-title">QuietStaff AI Score&trade; — Illustrative Pre-Engagement Assessment</div>
-    <div class="score-row">
-      <span class="score-label">Automation Usage</span>
-      <div class="score-bars">
-        <div class="bar filled"></div><div class="bar filled"></div>
-        <div class="bar filled"></div><div class="bar filled"></div>
-        <div class="bar filled"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div>
-      </div>
-      <span class="score-val">5 / 10</span>
-    </div>
-    <div class="score-row">
-      <span class="score-label">AI Usage</span>
-      <div class="score-bars">
-        <div class="bar filled"></div><div class="bar filled"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div>
-      </div>
-      <span class="score-val">2 / 10</span>
-    </div>
-    <div class="gap-badge">
-      <span class="gap-label">AI Opportunity Gap:</span>
-      <span class="gap-value">MEDIUM&ndash;HIGH</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>What We&rsquo;d Build</h2>
-    <div class="agents-grid">
-      <div class="agent-item">
-        <div class="agent-name">QuietCare</div>
-        <div class="agent-desc">Would be deployed across email and web chat — handling shipment status enquiries with live tracking integration, delivery window change requests, and standard account queries autonomously. Escalation rules would be configured for damage claims and complaints, which would route immediately to the human team with full context attached.</div>
-      </div>
-      <div class="agent-item">
-        <div class="agent-name">QuietOps</div>
-        <div class="agent-desc">Would be deployed for daily dispatch scheduling — ingesting data from all three source systems, generating an optimised schedule based on delivery priorities and route constraints, and surfacing exceptions for the operations lead to approve. The 90-minute morning task would become a 12-minute review. No changes to driver-facing tools.</div>
-      </div>
-    </div>
-    <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">Would integrate with their order management system and tracking API. Driver-facing tooling would be unchanged — the entire layer of AI operation would be invisible to end customers, who would simply get faster, more consistent responses.</p>
-  </div>
-
-  <div class="cta-section">
-    <h3>What Would Your Score Look Like?</h3>
-    <p>Get a QuietStaff AI Score for your organisation. We map your automation and AI usage, identify the highest-value gaps, and show you what&rsquo;s possible.</p>
-    <a href="../../#cta" class="cta-btn">Get your free AI Score &rarr;</a>
-  </div>
-
+<section class="section"><h2>The situation</h2>
+<p>Imagine a regional operator whose staff answer repeated delivery-status enquiries while preparing dispatch information from several sources. Incomplete records and last-minute changes need experienced judgement.</p></section>
+<section class="score-block section"><h2>What to explore</h2>
+<p>We would examine the reliability of shipment data, the requests staff receive and the constraints that shape dispatch decisions. The aim would be to identify a manageable first workflow to test.</p></section>
+<section class="section"><h2>Possible workflows</h2>
+<div class="agents-grid"><div class="agent-item"><div class="agent-name">Delivery enquiries</div><div class="agent-desc">Prepare responses using approved tracking information, routing missing information, complaints and damage claims to staff.</div></div>
+<div class="agent-item"><div class="agent-name">Dispatch preparation</div><div class="agent-desc">Bring relevant records together into a draft for the operations lead to review against route, capacity and delivery constraints.</div></div>
+<div class="agent-item"><div class="agent-name">Exception handling</div><div class="agent-desc">Highlight conflicts and incomplete records so the team can decide what happens next.</div></div>
+</div></section>
+<section class="section"><h2>What would need to be tested</h2>
+<p>Compare response accuracy, preparation time, exception handling and review effort with the existing process. Validate data freshness, integration access and operational constraints before deciding whether to build. Savings, headcount reductions and unchanged tooling are not assumed.</p></section>
+<section class="cta-section"><h3>Explore your own starting point.</h3><p>Start with QuietStart: one hour with our Principal AI Architect and a concise written recommendation within three working days after the call. £99, with no obligation to continue.</p><a href="/#contact-quietstart" class="cta-btn">Enquire about QuietStart &rarr;</a></section>
 </div>
-
 </main>
 <footer>
   <p style="margin-top:8px;"><a href="../../">Home</a> &nbsp;&middot;&nbsp; <a href="../">Work</a></p>
