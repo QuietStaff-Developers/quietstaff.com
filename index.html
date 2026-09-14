@@ -18,8 +18,8 @@
             var theme;
             try {
                 var saved = localStorage.getItem('quietstaff-theme');
-                theme = saved === 'dark' ? 'dark' : 'light';
-            } catch (e) { theme = 'light'; }
+                theme = saved === 'light' ? 'light' : 'dark';
+            } catch (e) { theme = 'dark'; }
             var q = new URLSearchParams(location.search);
             var forced = q.get('theme');
             if (forced === 'light' || forced === 'dark') theme = forced;

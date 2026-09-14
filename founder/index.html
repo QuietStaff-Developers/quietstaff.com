@@ -15,10 +15,10 @@
             try {
                 var forced = new URLSearchParams(location.search).get('theme');
                 var saved = (forced === 'light' || forced === 'dark') ? forced : localStorage.getItem('quietstaff-theme');
-                var theme = saved === 'dark' ? 'dark' : 'light';
+                var theme = saved === 'light' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', theme);
             } catch (e) {
-                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.setAttribute('data-theme', 'dark');
             }
             document.documentElement.className += ' js';
         })();
