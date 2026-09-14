@@ -176,7 +176,8 @@
     position: relative; grid-column: 2; grid-row: 1; right: auto; bottom: auto;
     width: 100%; max-width: 470px; justify-self: end;
     mask-image: none; -webkit-mask-image: none;
-    border-radius: 48% 48% 6% 6%; overflow: hidden; background: var(--bg-secondary);
+    border-radius: 24px 100px 24px 72px; overflow: hidden; background: var(--bg-secondary);
+    box-shadow: 12px 12px 0 var(--bg-secondary);
     will-change: auto;
 }
 .qs-founder .portrait img { transform: none !important; }
@@ -232,4 +233,8 @@ html.js .qs-editorial .hero-copy > *,
 html.js .qs-editorial .portrait,
 html.js .qs-editorial .portrait img {
     opacity: 1; transform: none; animation: none; transition: none;
+}
+
+@media (max-width: 760px) {
+    .qs-founder .portrait { border-radius: 20px 80px 20px 60px; }
 }
