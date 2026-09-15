@@ -161,3 +161,20 @@
  #main-content.qs-home .qs-branch p {font-size:13px}
  #main-content.qs-home .qs-portrait {max-width:300px;border-radius:20px 80px 20px 60px}
 }
+
+/* OpenAI Select Partner — homepage badge + supporting copy.
+   No card/border/fill may touch the badge image (brand rule: clear space
+   equal to half the blossom-mark height on every side). Badge is served
+   as supplied, no CSS filters in either theme. */
+#main-content.qs-home .qs-partner {display:flex;align-items:center;gap:40px;padding:36px 0 44px;border-top:1px solid var(--line)}
+#main-content.qs-home .qs-partner-badge-link {flex:0 0 auto;display:block;padding:24px;line-height:0}
+#main-content.qs-home .qs-partner-badge-img {display:block;width:220px;height:auto;aspect-ratio:375/177}
+#main-content.qs-home .qs-partner-copy {flex:1 1 auto;min-width:0}
+#main-content.qs-home .qs-partner-lead {margin-bottom:10px}
+#main-content.qs-home .qs-partner-copy p {margin:0 0 10px;font-size:15px}
+#main-content.qs-home .qs-partner-copy p:last-child {margin-bottom:0}
+@media (max-width: 767px) {
+  #main-content.qs-home .qs-partner {flex-direction:column;align-items:flex-start;gap:12px;padding:28px 0 32px}
+  #main-content.qs-home .qs-partner-badge-link {padding:12px 12px 12px 0}
+  #main-content.qs-home .qs-partner-badge-img {width:180px}
+}
