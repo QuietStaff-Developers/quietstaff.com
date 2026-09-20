@@ -2211,7 +2211,8 @@ form .button {
 
 /* Review 06: a five-second flowing diagram with dimensional surfaces. */
 .agent-illustration { position: relative; overflow: hidden; border-radius: 24px; background: radial-gradient(ellipse at 95% 0%, #84c9aa20, transparent 65%), var(--surface); box-shadow: 0 28px 65px -42px #183c3260, inset 0 1px 0 #ffffff38; }
-.flow-motion-toggle { flex: 0 0 auto; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 20px; padding: 6px 10px; font: inherit; font-size: .62rem; cursor: pointer; }
+.flow-motion-toggle { flex: 0 0 auto; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 50%; width: 32px; height: 32px; padding: 9px; font: inherit; cursor: pointer; }
+.flow-motion-toggle svg { display: block; width: 12px; height: 12px; }
 .flow-motion-toggle:hover { color: var(--text); border-color: var(--accent); }
 .agent-scene { gap: 28px; perspective: 900px; }
 .scene-card { border-radius: 13px; padding-block: 17px; box-shadow: 0 9px 18px -12px #173c3260, inset 0 1px 0 #ffffff35; }

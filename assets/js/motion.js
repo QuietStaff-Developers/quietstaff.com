@@ -17,7 +17,8 @@
     if (state.controls.hidden !== !allowed) state.controls.hidden = !allowed;
     state.button.setAttribute('aria-pressed', String(state.paused));
     state.button.setAttribute('aria-label', `${state.paused ? 'Resume' : 'Pause'} ${state.label} motion`);
-    state.button.innerHTML = `<svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">${state.paused ? '<path d="M3 1.5 10 6l-7 4.5Z"/>' : '<path d="M2 1h3v10H2zM7 1h3v10H7z"/>'}</svg><span>${state.paused ? 'Resume motion' : 'Pause motion'}</span>`;
+    state.button.title = state.button.getAttribute('aria-label');
+    state.button.innerHTML = `<svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">${state.paused ? '<path d="M3 1.5 10 6l-7 4.5Z"/>' : '<path d="M2 1h3v10H2zM7 1h3v10H7z"/>'}</svg>`;
   };
   document.querySelectorAll('.module-flow, .workflow, .research-illustration').forEach((element, index) => {
     const research = element.classList.contains('research-illustration');

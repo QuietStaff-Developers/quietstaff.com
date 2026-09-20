@@ -21,16 +21,17 @@
   pointer-events: none;
 }
 .diagram-motion-controls { display: flex; justify-content: flex-end; margin: -9px 0 20px; }
-.research-illustration > .diagram-motion-controls { margin: 20px 0 0; justify-content: center; }
+.research-illustration > .diagram-motion-controls { margin: 20px 0 0; justify-content: flex-end; }
 .diagram-motion-controls[hidden] { display: none; }
 .diagram-motion-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  min-height: 34px;
-  padding: 7px 12px;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 9px;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 50%;
   background: transparent;
   color: var(--muted);
   font: inherit;

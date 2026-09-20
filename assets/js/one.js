@@ -10,7 +10,10 @@ if (flowFigure && flowToggle) {
     flowFigure.classList.toggle('motion-paused', paused);
     flowToggle.hidden = motionPreference.matches;
     flowToggle.setAttribute('aria-pressed', String(paused));
-    flowToggle.textContent = paused ? 'Play motion' : 'Pause motion';
+    const label = `${paused ? 'Resume' : 'Pause'} opening diagram motion`;
+    flowToggle.setAttribute('aria-label', label);
+    flowToggle.title = label;
+    flowToggle.innerHTML = `<svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">${paused ? '<path d="M3 1.5 10 6l-7 4.5Z"/>' : '<path d="M2 1h3v10H2zM7 1h3v10H7z"/>'}</svg>`;
   }
   flowToggle.addEventListener('click', () => { paused = !paused; updateFlowMotion(); });
   motionPreference.addEventListener('change', () => { paused = motionPreference.matches; updateFlowMotion(); });
@@ -30,15 +33,6 @@ themeToggle?.addEventListener("click", () => {
   try {
     localStorage.setItem("quietstaff-theme", theme);
   } catch {}
-  updateThemeLabel();
-});
-const mediaTheme = matchMedia("(prefers-color-scheme: dark)");
-mediaTheme.addEventListener("change", (event) => {
-  try {
-    if (localStorage.getItem("quietstaff-theme")) return;
-  } catch {}
-  if (new URLSearchParams(location.search).has("theme")) return;
-  root.dataset.theme = event.matches ? "dark" : "light";
   updateThemeLabel();
 });
 const menuButton = document.querySelector(".menu-toggle");
