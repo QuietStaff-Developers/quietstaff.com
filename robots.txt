@@ -1,5 +1,3 @@
-# https://quietstaff.co.uk/robots.txt
 User-agent: *
 Allow: /
-
 Sitemap: https://quietstaff.co.uk/sitemap.xml

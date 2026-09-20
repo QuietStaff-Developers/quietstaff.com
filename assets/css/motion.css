@@ -1,0 +1,159 @@
+/* Explanatory motion: text and the original brand mark remain still. */
+.core-brand-emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 116px;
+  height: 116px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: 0 14px 28px -22px #163e3d66, inset 0 1px 0 #ffffff30;
+}
+.core-brand-emblem img { display: block; width: 84px; height: 76px; object-fit: contain; }
+.core-brand-emblem::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 1px solid var(--accent);
+  border-radius: inherit;
+  opacity: .16;
+  pointer-events: none;
+}
+.diagram-motion-controls { display: flex; justify-content: flex-end; margin: -9px 0 20px; }
+.research-illustration > .diagram-motion-controls { margin: 20px 0 0; justify-content: center; }
+.diagram-motion-controls[hidden] { display: none; }
+.diagram-motion-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: .62rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.diagram-motion-toggle:hover { border-color: var(--accent); color: var(--ink); }
+.diagram-motion-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.diagram-motion-toggle svg { width: 11px; height: 11px; flex: 0 0 11px; }
+.diagram-motion { --diagram-play-state: paused; --diagram-duration: 6s; }
+.diagram-motion.diagram-is-running { --diagram-play-state: running; }
+.diagram-motion > li { position: relative; }
+.diagram-motion .diagram-track {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 0;
+  height: 2px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 2px;
+}
+.diagram-track::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--accent);
+  opacity: 0;
+}
+.flow-ai .diagram-track::after { background: #bddfbd; }
+.diagram-motion-enabled .diagram-track::after {
+  animation: diagram-step-trace var(--diagram-duration) ease-in-out infinite;
+  animation-delay: var(--diagram-delay, 0s);
+  animation-play-state: var(--diagram-play-state);
+}
+.diagram-motion :is(.flow-marker, .step-number) { position: relative; }
+.diagram-motion :is(.flow-marker, .step-number)::before {
+  content: "";
+  position: absolute;
+  inset: -6px -4px;
+  border-radius: 12px;
+  border: 1px solid currentColor;
+  opacity: 0;
+  pointer-events: none;
+}
+.diagram-motion-enabled :is(.flow-marker, .step-number)::before {
+  animation: diagram-checkpoint var(--diagram-duration) ease-in-out infinite;
+  animation-delay: var(--diagram-delay, 0s);
+  animation-play-state: var(--diagram-play-state);
+}
+.research-illustration .research-bridge { position: relative; min-height: 28px; line-height: 28px; }
+.research-bridge::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  top: 1px;
+  bottom: 1px;
+  left: calc(50% - 14px);
+  background: var(--line);
+}
+.research-bridge::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 16px);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+}
+.research-illustration.diagram-motion-enabled .research-bridge::after {
+  animation: diagram-research-packet var(--diagram-duration) ease-in-out infinite;
+  animation-delay: var(--diagram-delay, 0s);
+  animation-play-state: var(--diagram-play-state);
+}
+.research-illustration.diagram-motion-enabled .core-brand-emblem::after {
+  animation: diagram-core-receive var(--diagram-duration) ease-in-out infinite;
+  animation-play-state: var(--diagram-play-state);
+}
+.research-illustration .evaluation-row > span { position: relative; }
+.research-illustration .evaluation-row .diagram-track { left: 6px; right: 6px; }
+@keyframes diagram-step-trace {
+  0% { opacity: 0; transform: scaleX(0); }
+  3% { opacity: .7; transform: scaleX(.05); }
+  17% { opacity: .7; transform: scaleX(1); }
+  24%, 100% { opacity: 0; transform: scaleX(1); }
+}
+@keyframes diagram-checkpoint {
+  0%, 25%, 100% { opacity: 0; }
+  6%, 16% { opacity: .4; }
+}
+@keyframes diagram-research-packet {
+  0% { opacity: 0; transform: translateY(0); }
+  3% { opacity: .8; }
+  16% { opacity: .8; transform: translateY(22px); }
+  19%, 100% { opacity: 0; transform: translateY(22px); }
+}
+@keyframes diagram-core-receive {
+  0%, 17%, 53%, 100% { opacity: .16; transform: scale(1); }
+  30%, 38% { opacity: .48; transform: scale(1.025); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .diagram-motion *, .diagram-motion *::before, .diagram-motion *::after { animation: none !important; }
+  .diagram-motion-controls { display: none; }
+  .core-brand-emblem::after { opacity: .16; transform: none; }
+}
+
+/* Follow the module cards' existing clockwise connector route. */
+.module-flow .diagram-connector { position: absolute; right: -24px; top: calc(50% - 10px); width: 22px; height: 4px; pointer-events: none; }
+.module-flow .diagram-connector::after { content: ""; position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); opacity: 0; }
+.module-flow > li:nth-child(2) .diagram-connector { left: calc(50% + 10px); right: auto; top: auto; bottom: -22px; width: 4px; height: 20px; }
+.module-flow > li:nth-child(3) .diagram-connector { right: auto; left: -24px; }
+.module-flow.diagram-motion-enabled .diagram-connector::after { animation: diagram-link-right var(--diagram-duration) ease-in-out infinite; animation-delay: var(--diagram-delay); animation-play-state: var(--diagram-play-state); }
+.module-flow.diagram-motion-enabled > li:nth-child(2) .diagram-connector::after { animation-name: diagram-link-down; }
+.module-flow.diagram-motion-enabled > li:nth-child(3) .diagram-connector::after { animation-name: diagram-link-left; }
+@keyframes diagram-link-right { 0% { opacity: 0; transform: translateX(0); } 2% { opacity: .8; } 9% { opacity: .8; transform: translateX(18px); } 12%, 100% { opacity: 0; transform: translateX(18px); } }
+@keyframes diagram-link-down { 0% { opacity: 0; transform: translateY(0); } 2% { opacity: .8; } 9% { opacity: .8; transform: translateY(17px); } 12%, 100% { opacity: 0; transform: translateY(17px); } }
+@keyframes diagram-link-left { 0% { opacity: 0; transform: translateX(18px); } 2% { opacity: .8; } 9% { opacity: .8; transform: translateX(0); } 12%, 100% { opacity: 0; transform: translateX(0); } }
