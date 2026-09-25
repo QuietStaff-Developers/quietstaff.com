@@ -10,7 +10,7 @@
     image  absolute URL of the social card; defaults to the site-wide og-image.jpg
 {%- endcomment -%}
 {%- assign _type = include.type | default: "website" -%}
-{%- assign _img = include.image | default: "https://quietstaff.co.uk/assets/images/og-image.jpg" -%}
+{%- assign _img = include.image | default: "https://quietstaff.co.uk/assets/images/quietstaff-social.jpg" -%}
     <meta name="description" content="{{ include.desc }}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="author" content="QuietStaff">
@@ -23,7 +23,7 @@
     <meta property="og:image" content="{{ _img }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="QuietStaff — Managed AI Workforce for UK SMBs">
+    <meta property="og:image:alt" content="Quiet Staff — Put AI to work. For your business.">
     <meta property="og:locale" content="en_GB">
     <meta property="og:site_name" content="QuietStaff">
 
@@ -31,7 +31,7 @@
     <meta name="twitter:title" content="{{ include.title }} — QuietStaff">
     <meta name="twitter:description" content="{{ include.desc }}">
     <meta name="twitter:image" content="{{ _img }}">
-    <meta name="twitter:image:alt" content="QuietStaff — Managed AI Workforce for UK SMBs">
+    <meta name="twitter:image:alt" content="Quiet Staff — Put AI to work. For your business.">
 
     <link rel="icon" type="image/svg+xml" href="/brand/logo-package/svg/quietstaff-favicon.svg">
     <meta name="theme-color" content="#030710">
