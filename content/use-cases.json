@@ -1,0 +1,196 @@
+{
+  "useCases": [
+    {
+      "id": "document-routing",
+      "title": "Document intake and routing",
+      "category": "Documents",
+      "problem": "Staff manually sort emailed forms, invoices, and attachments.",
+      "approach": "Classify documents and route draft records for review.",
+      "example": "A finance team checks extracted invoice details before entry.",
+      "review": "Staff approve uncertain fields and protect customer records.",
+      "measure": "Track handling time, corrections, and routing exceptions."
+    },
+    {
+      "id": "customer-queries",
+      "title": "Customer query triage",
+      "category": "Customers",
+      "problem": "Repeated questions delay replies to complex customer needs.",
+      "approach": "Group queries and suggest replies from approved information.",
+      "example": "Staff review draft answers about delivery or returns.",
+      "review": "Staff own complaints, data requests, and uncertain cases.",
+      "measure": "Track response time, corrections, and unresolved queries."
+    },
+    {
+      "id": "booking-reminders",
+      "title": "Booking reminders and rescheduling",
+      "category": "Customers",
+      "problem": "Staff manually remind clients and refill cancelled slots.",
+      "approach": "Prepare reminders and rescheduling steps from approved rules.",
+      "example": "A clinic directs patients to its booking channel.",
+      "review": "Check consent, wording, access, and contact preferences.",
+      "measure": "Track staff time, failures, and rescheduled appointments."
+    },
+    {
+      "id": "lead-records",
+      "title": "Lead and customer record completion",
+      "category": "Customers",
+      "problem": "Staff copy enquiry details across incomplete customer records.",
+      "approach": "Suggest updates from authorised sources for staff review.",
+      "example": "Review a draft record from an enquiry form.",
+      "review": "Retain source links; approve records before outreach.",
+      "measure": "Track completeness, duplicates, corrections, and preparation time."
+    },
+    {
+      "id": "price-review",
+      "title": "Price-change review support",
+      "category": "Operations",
+      "problem": "Price updates are scattered across notices and spreadsheets.",
+      "approach": "Collect permitted changes and flag them for review.",
+      "example": "A manager checks supplier updates before changing prices.",
+      "review": "Managers decide; suggestions never change prices automatically.",
+      "measure": "Track review time, corrections, and accepted suggestions."
+    },
+    {
+      "id": "invoice-processing",
+      "title": "Invoice processing support",
+      "category": "Documents",
+      "problem": "Staff read invoices, match records, and retype details.",
+      "approach": "Extract fields and suggest matches; flag exceptions.",
+      "example": "An administrator checks a draft against its purchase order.",
+      "review": "Authorised staff retain approval and payment decisions.",
+      "measure": "Track processing time, corrections, matches, and exceptions."
+    },
+    {
+      "id": "management-reporting",
+      "title": "Management reporting preparation",
+      "category": "Operations",
+      "problem": "Managers gather figures and reconcile separate tools manually.",
+      "approach": "Show approved data, source, refresh time, and draft narrative.",
+      "example": "An operations lead reviews work and exception dashboards.",
+      "review": "Owners verify definitions, totals, access, and context.",
+      "measure": "Track report time, freshness, reconciliation, and corrections."
+    },
+    {
+      "id": "supplier-orders",
+      "title": "Supplier order administration",
+      "category": "Operations",
+      "problem": "Staff copy order details and chase confirmations manually.",
+      "approach": "Prepare draft orders and flag missing supplier replies.",
+      "example": "A coordinator checks an event order before sending.",
+      "review": "Buyers approve terms; connections depend on available access.",
+      "measure": "Track preparation time, delays, corrections, and open requests."
+    },
+    {
+      "id": "stock-planning",
+      "title": "Stock and demand review",
+      "category": "Operations",
+      "problem": "Staff manually compare stock, sales, and lead times.",
+      "approach": "Display agreed signals and prepare reorder suggestions.",
+      "example": "An owner checks low-stock items before ordering.",
+      "review": "Owners decide, accounting for seasonality and data gaps.",
+      "measure": "Track review time, discrepancies, urgent orders, and decisions."
+    },
+    {
+      "id": "staff-scheduling",
+      "title": "Staff schedule preparation",
+      "category": "People",
+      "problem": "Managers reconcile availability and coverage across messages.",
+      "approach": "Summarise availability and flag possible shift gaps.",
+      "example": "A manager reviews a draft rota and conflicts.",
+      "review": "Managers decide, checking rules, fairness, and preferences.",
+      "measure": "Track rota time, uncovered shifts, changes, and corrections."
+    },
+    {
+      "id": "contract-review",
+      "title": "Contract review preparation",
+      "category": "Documents",
+      "problem": "Reviewers locate key terms and compare internal requirements.",
+      "approach": "Extract selected clauses into an approved comparison checklist.",
+      "example": "A manager checks renewal dates and obligations with an adviser.",
+      "review": "Qualified people verify text and make legal decisions.",
+      "measure": "Track preparation time, missed fields, corrections."
+    },
+    {
+      "id": "compliance-records",
+      "title": "Compliance evidence organisation",
+      "category": "Documents",
+      "problem": "Teams search for current policies and supporting records.",
+      "approach": "Index approved documents with sources, dates, and review checklist.",
+      "example": "A manager checks policies due for internal review.",
+      "review": "Owners confirm requirements; this does not certify compliance.",
+      "measure": "Track evidence search time, missing and stale records."
+    },
+    {
+      "id": "people-onboarding",
+      "title": "New-starter administration",
+      "category": "People",
+      "problem": "People teams coordinate forms, access, and introductions manually.",
+      "approach": "Show approved onboarding tasks, owners, and completion status.",
+      "example": "A coordinator checks equipment, induction, and forms.",
+      "review": "People staff control sensitive data and employment decisions.",
+      "measure": "Track completion time, overdue tasks, and missing items."
+    },
+    {
+      "id": "knowledge-assistant",
+      "title": "Internal knowledge search",
+      "category": "People",
+      "problem": "Staff search folders or ask colleagues for procedures.",
+      "approach": "Search approved sources and link answers to documents.",
+      "example": "A colleague opens the cited returns procedure before replying.",
+      "review": "Restrict sources; route unanswered or conflicting questions.",
+      "measure": "Track search time, source clicks, and reported corrections."
+    },
+    {
+      "id": "clinical-draft-notes",
+      "title": "Clinician-reviewed draft documentation",
+      "category": "Documents",
+      "problem": "Clinicians spend time preparing routine draft documentation.",
+      "approach": "Prepare drafts from recorded information for clinician review.",
+      "example": "A clinician edits an administrative letter before signing.",
+      "review": "Clinicians check drafts; no diagnosis or treatment advice.",
+      "measure": "Track editing time, omissions, corrections, and rejected drafts."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "accountancy-document-chasing",
+      "title": "Document collection in an accountancy practice",
+      "sector": "Accountancy",
+      "before": "Staff repeatedly request missing client records.",
+      "after": "Shared tracking; staff approve drafted reminders.",
+      "inputs": "Agree documents, contacts, owners, and access.",
+      "review": "Staff approve messages and resolve exceptions.",
+      "measure": "Track time, responses, corrections, and open requests."
+    },
+    {
+      "id": "conveyancing-status-updates",
+      "title": "Status updates for conveyancing matters",
+      "sector": "Legal services",
+      "before": "Staff answer repeat enquiries across matter records.",
+      "after": "Summarise milestones into staff-reviewed updates.",
+      "inputs": "Agree milestones, access, sharing rules, and owners.",
+      "review": "Legal staff verify facts before sending updates.",
+      "measure": "Track preparation time, repeat enquiries, and corrections."
+    },
+    {
+      "id": "healthcare-administrative-recall",
+      "title": "Administrative recall coordination",
+      "sector": "Healthcare administration",
+      "before": "Staff reconcile administrative lists across systems.",
+      "after": "Review one list and prepare approved invitations.",
+      "inputs": "Agree cohort, wording, access, preferences, escalation.",
+      "review": "Administrative only; clinicians own clinical decisions.",
+      "measure": "Track reconciliation, invitation status, handling, exceptions."
+    },
+    {
+      "id": "events-invoice-administration",
+      "title": "Event close-out and invoice administration",
+      "sector": "Small business operations",
+      "before": "Event close-out details span inboxes and spreadsheets.",
+      "after": "Shared checklist prepares invoice requests for review.",
+      "inputs": "Agree records, sign-off, invoice fields, and owners.",
+      "review": "Staff verify details before invoice creation.",
+      "measure": "Track timing, missing details, corrections, open tasks."
+    }
+  ]
+}
