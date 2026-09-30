@@ -223,6 +223,12 @@ figcaption {
 .text-link span {
   font-size: 1.15rem;
 }
+.link-pair {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 32px;
+}
 .skip-link {
   position: fixed;
   top: -90px;
