@@ -1,0 +1,413 @@
+/* QuietDesk product page. Loaded after one.css and motion.css.
+   Every selector starts with .qdp-. Site tokens only (--bg --surface --ink --muted --line --accent --button).
+   Four type roles: Label 0.85rem/500, Body 1rem/400, Heading 1.4rem/400, Display clamp(2.6rem, 4.35vw, 4.4rem)/400.
+   Weights 400 and 500 only. Spacing in multiples of 4. */
+
+/* ---- Type roles: bring site rules that use other sizes onto the four roles ---- */
+.qdp-page .page-hero h1 {
+  font-size: clamp(2.6rem, 4.35vw, 4.4rem);
+  letter-spacing: -0.065em;
+  line-height: 1.06;
+  font-weight: 400;
+}
+.qdp-page .closing h2 {
+  font-size: clamp(2.6rem, 4.35vw, 4.4rem);
+  letter-spacing: -0.065em;
+  line-height: 1.06;
+}
+.qdp-page .lead {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.qdp-page .eyebrow,
+.qdp-page .section-label {
+  font-size: 0.85rem;
+}
+.qdp-page .editorial > div {
+  min-width: 0;
+}
+
+/* ---- Label role helpers ---- */
+.qdp-tag,
+.qdp-badge,
+.qdp-badge-plain,
+.qdp-pill {
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+.qdp-page .qdp-note,
+.qdp-page .qdp-hint {
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: normal;
+}
+.qdp-page .qdp-actions + .qdp-note {
+  margin-top: 24px;
+}
+.qdp-page #qdp-demo-emergency {
+  font-size: 1rem;
+  color: var(--ink);
+  margin-top: 16px;
+}
+
+/* ---- Hero actions ---- */
+.qdp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+/* ---- Touch targets ---- */
+.qdp-page .button {
+  min-height: 44px;
+}
+.qdp-page .text-link {
+  padding-block: 12px;
+  min-height: 44px;
+}
+.qdp-page .footer-links a,
+.qdp-page .footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* ---- 01 How it works ---- */
+.qdp-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0;
+  padding: 0 0 0 24px;
+}
+.qdp-steps li {
+  min-width: 0;
+}
+.qdp-steps h3 {
+  margin-bottom: 8px;
+}
+.qdp-page .qdp-steps p {
+  margin: 0;
+}
+
+/* ---- 02 Features ---- */
+.qdp-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+.qdp-block,
+.qdp-plan {
+  min-width: 0;
+  max-width: 100%;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.qdp-block h3 {
+  margin-bottom: 8px;
+}
+.qdp-tag {
+  display: inline-block;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.qdp-page .qdp-block .qdp-tag {
+  color: var(--ink);
+}
+.qdp-list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+}
+.qdp-list li {
+  position: relative;
+  padding: 0 0 0 24px;
+}
+.qdp-block .qdp-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.9;
+}
+.qdp-block .qdp-list[data-features="launch"] li::before {
+  content: "\2713";
+}
+.qdp-block .qdp-list[data-features="coming"] li::before {
+  content: "\2013";
+}
+
+/* ---- 04 Prices ---- */
+.qdp-plans {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+.qdp-plan {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.qdp-plan h3,
+.qdp-page .qdp-plan p {
+  margin: 0;
+}
+.qdp-badge-plain {
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.qdp-page .qdp-plan .qdp-price {
+  font-size: clamp(2.6rem, 4.35vw, 4.4rem);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 1.06;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: -12px;
+}
+.qdp-page .qdp-plan .qdp-caption {
+  color: var(--muted);
+}
+.qdp-plan .qdp-list {
+  margin: 0;
+}
+.qdp-plan .qdp-list li {
+  padding-left: 0;
+}
+.qdp-plan .button {
+  justify-content: center;
+}
+.qdp-legal {
+  margin-top: 24px;
+}
+.qdp-legal-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.qdp-legal-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-transform: none;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+
+/* ---- Pending copy (unfinished legal and claim wording; must be obvious in review) ---- */
+.qdp-page .pending-copy,
+.qdp-page .editorial .pending-copy {
+  border: 1px dashed var(--ink);
+  padding: 16px;
+  background: var(--surface);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-block: 24px;
+}
+
+/* ---- 03 Demo frame ---- */
+.qdp-frame {
+  --qdp-paper: #F5F2EB;
+  --qdp-ink: #1A1D1B;
+  --qdp-muted: #565B57;
+  --qdp-pine: #1F4D3F;
+  --qdp-white: #FFFFFF;
+  --qdp-badge: #B7D4BD;
+  --qd-mount-inset-top: 88px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 480px;
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--qdp-paper);
+  color: var(--qdp-ink);
+}
+.qdp-page .qdp-frame .qdp-frame-bar {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  background: var(--qdp-white);
+  border-bottom: 1px solid var(--line);
+}
+.qdp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--qdp-muted);
+}
+.qdp-pill {
+  margin-left: 8px;
+  padding: 0 8px;
+  color: var(--qdp-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.qdp-page .qdp-frame .qdp-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  margin: 0;
+  padding: 16px;
+  background: var(--qdp-ink);
+  color: var(--qdp-paper);
+  font-size: 1rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.qdp-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid var(--qdp-badge);
+  border-radius: 4px;
+  color: var(--qdp-badge);
+  border-color: var(--qdp-badge);
+}
+.qdp-frame-site {
+  padding: 24px 16px;
+}
+.qdp-page .qdp-frame .qdp-frame-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin: 0;
+}
+.qdp-page .qdp-frame .qdp-wordmark {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  color: var(--qdp-pine);
+}
+.qdp-page .qdp-frame .qdp-frame-nav {
+  display: none;
+  gap: 24px;
+  color: var(--qdp-muted);
+  font-size: 1rem;
+}
+.qdp-page .qdp-frame .qdp-frame-hero {
+  margin: 32px 0 0;
+  font-size: 1.4rem;
+  letter-spacing: -0.035em;
+  color: var(--qdp-ink);
+}
+.qdp-page .qdp-frame .qdp-frame-call {
+  margin: 16px 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--qdp-pine);
+}
+.qdp-page .qdp-frame #demo-fallback,
+.qdp-page .qdp-frame noscript p {
+  margin: 0;
+  padding: 16px;
+  font-size: 1rem;
+  color: var(--qdp-ink);
+}
+.qdp-page .qdp-hint {
+  margin-top: 24px;
+}
+
+/* [hidden] must hide #demo-fallback until quietdesk.js reveals it */
+.qdp-page [hidden] {
+  display: none !important;
+}
+
+/* ---- Breakpoints ---- */
+@media (max-width: 620px) {
+  .qdp-page .section {
+    padding-block: 64px;
+  }
+  .qdp-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .qdp-actions .text-link {
+    align-self: flex-start;
+  }
+  .qdp-page .closing {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 480px) {
+  .qdp-page .qdp-frame .qdp-frame-bar {
+    display: flex;
+  }
+  .qdp-page .qdp-frame .qdp-frame-nav {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .qdp-block,
+  .qdp-plan {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 899px) {
+  .qdp-plan .button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .qdp-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .qdp-features {
+    grid-template-columns: 1.4fr 1fr;
+  }
+  .qdp-plans {
+    grid-template-columns: 1fr 1fr;
+  }
+  .qdp-frame {
+    min-height: 640px;
+  }
+  .qdp-page .qdp-hint {
+    display: none;
+  }
+}
+
+/* ---- Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .qdp-page .button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
