@@ -1,0 +1,70 @@
+// Additive build: the delivery-partner page reuses the current site chrome, like build-consulting.mjs.
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const arrow='<span aria-hidden="true">↗</span>';
+const services=[
+ ['01','Warehouse AI','AI apps over a data warehouse','An assistant that answers approved business questions from the client’s own warehouse. Metrics are defined first, results are traceable, access is controlled and answers are tested against known figures.','A scoped pilot on one dataset and a short list of agreed questions.'],
+ ['02','Protected data','PII redaction and validation on incoming data','A boundary that detects and redacts personal data, validates what arrives and holds exceptions and uncertain matches for review before data moves on to the warehouse or an AI model. Redaction is tested on sample data and the acceptable error rate is agreed with you at scoping.','One incoming feed, with a working redaction and validation step.'],
+ ['03','Data engineering','Data engineering and production readiness','Pipelines, orchestration (Airflow) and warehouse ingestion, plus the work that takes an existing pipeline, RAG app or prototype to production: evaluation, monitoring, deployment and operating notes.','A production-readiness review of one existing build, with a prioritised fix list.']
+];
+const steps=[
+ ['01 / Scope','Paid scoping.','A few days, fixed scope. We agree the problem, data access and what a pilot should prove.'],
+ ['02 / Pilot','Milestone pilot.','Two to three weeks, paid per milestone. A working piece in the client’s environment for you to review.'],
+ ['03 / Build','Follow-on build and support.','If the pilot earns it, we continue into a fuller build and agreed support.']
+];
+// Partner-terms wording: Harvey (England & Wales), 19 Oct 2026. A summary, not an offer.
+const terms=[
+ '<strong>You keep the client and the relationship.</strong> We work as your subcontractor; client interfaces and commercial terms are agreed with you before work starts.',
+ '<strong>We do not approach your clients to offer them our services directly.</strong> The exact scope and period are set out in the agreement.',
+ '<strong>Confidentiality first.</strong> We sign a mutual confidentiality agreement before you share client or project detail with us.',
+ '<strong>Ownership.</strong> Bespoke deliverables pass to you or your client on payment, as agreed. We keep pre-existing tools and reusable components, licensed for use with the deliverables.',
+ '<strong>Data protection.</strong> Personal data is handled under a DPA, with Quiet Staff as processor or sub-processor. Where India delivery involves a restricted transfer, the UK IDTA or Addendum applies.',
+ '<strong>In writing.</strong> All of this is confirmed in a written agreement, signed before work starts.'
+];
+const termsNote='This page summarises how Quiet Staff (QuietStaff Ltd, company 17171308) usually works with delivery partners. It is not an offer or a contract, and it creates no obligation. Only a written agreement signed by both parties does, and that agreement governs.';
+const handover=[
+ ['The client problem','In your words.'],
+ ['The data and systems involved','Sources, warehouse, cloud and tooling.'],
+ ['What has been tried so far','Including anything that did not work.'],
+ ['The result and the timing','What the client wants, and by when.'],
+ ['Who owns the client relationship','And who we would speak to day to day.'],
+ ['Delivery and data access','Whether India-based delivery and the access needed are acceptable.']
+];
+const faqs=[
+ ['Where does the data sit, and does India-based delivery matter?','Delivery is from India with agreed UK overlap hours. Where possible we work inside your repo, cloud accounts and tooling, so access stays under your control. A data processing agreement is available.'],
+ ['Who talks to the client?','You decide. Under your name, you lead the client relationship and we work in the background, with our role disclosed as your data protection contract requires. Co-branded, we can join client calls. Either way, you own the relationship.'],
+ ['Who owns the IP?','Client interfaces, commercial terms, project IP and reusable components are agreed in writing before work starts. The partner terms above summarise the usual position; the signed agreement governs.'],
+ ['What size of work do you take on?','Bounded pieces first: scoping, then a pilot of two to three weeks. Larger builds follow only if the pilot earns them.'],
+ ['Do you compete with us?','We build for you, not around you. What we agree on approaching your clients, and for how long, is set out in the written agreement.']
+];
+const main=`<main id="main" class="consulting-page partners-page">
+<section class="consulting-hero shell"><div><p class="eyebrow">Quiet Staff / Delivery partners</p><h1>Your client, your name.<br><em>Our delivery.</em></h1><p class="lead">Quiet Staff builds AI applications and data engineering for UK consultancies, studios and agencies, under your name. You keep the client and the relationship. We start with a small, paid scoping piece, so you can judge the work before committing to more.</p><div class="consulting-actions"><a class="button" href="#partner-contact">Discuss a client project ${arrow}</a><a class="text-link" href="#how-we-work">See how we work together <span aria-hidden="true">↓</span></a></div><p class="consulting-caption">For data and BI consultancies, software studios, fractional-CTO practices and automation agencies.</p></div><aside class="consulting-map" aria-label="How a partner engagement runs"><div class="map-heading"><span class="eyebrow">From your client to delivery</span><span aria-hidden="true">✳</span></div><p class="map-question">“Our client wants AI<br>on their data.”</p><ol><li><span>01</span><div><strong>You send the outline</strong><small>Problem · data · timing</small></div></li><li><span>02</span><div><strong>Paid scoping</strong><small>A few days · fixed scope</small></div></li><li><span>03</span><div><strong>Milestone pilot</strong><small>Under your name or co-branded</small></div></li></ol><p class="map-note">You keep the client.<br>We do the build.</p></aside></section>
+<div class="consulting-strip shell"><span>Founder: 21 years in technology delivery</span><span>Can work in your repo, cloud and tooling</span><span>Paid scoping before any larger commitment</span></div>
+<div class="partner-programmes shell" aria-label="Partner programmes"><span class="partner-programmes-label">Partner programmes</span><ul><li><a href="/partners/openai/">QuietStaff is an OpenAI Select Partner</a></li><li>Claude Partner Network member</li><li>NVIDIA Inception member</li></ul></div>
+<section class="section shell" id="deliver"><div class="consulting-section-heading"><p class="section-label"><span>01</span>What we deliver for partners</p><h2>What we deliver<br><em>for partners.</em></h2></div><div class="consulting-services">${services.map(([n,k,t,d,o])=>`<article><span class="note-number">${n} / ${k}</span><h3>${t}</h3><p>${d}</p><div class="consulting-output"><span>Example first piece</span><p>${o}</p></div></article>`).join('')}</div></section>
+<section class="section shell consulting-engagement" id="how-we-work"><div class="consulting-section-heading"><p class="section-label"><span>02</span>How we work together</p><h2>Start small.<br><em>Grow on evidence.</em></h2></div><div class="consulting-steps">${steps.map(([n,t,d])=>`<article><span class="note-number">${n}</span><h3>${t}</h3><p>${d}</p></article>`).join('')}</div><div class="partner-options"><article><span class="note-number">Option A</span><h3>Under your name.</h3><p>We work as part of your team. The client sees your brand and your people in front. Our role as processor or sub-processor, and the delivery location, are disclosed to your client as your data protection contract requires.</p></article><article><span class="note-number">Option B</span><h3>Co-branded.</h3><p>We are introduced by name where that helps the client, and you still lead the relationship.</p></article></div><div class="partner-terms" id="partner-terms"><h3>Agreed before work starts</h3><ul>${terms.map(t=>`<li>${t}</li>`).join('')}</ul><p class="consulting-caption">${termsNote}</p></div></section>
+<section class="section shell" id="handover"><div class="consulting-section-heading"><p class="section-label"><span>03</span>How to hand work over</p><h2>Send the outline.<br><em>We’ll reply with a proposal.</em></h2></div><ol class="partner-handover">${handover.map(([t,d])=>`<li><strong>${t}</strong>${d}</li>`).join('')}</ol><p class="partner-next">A short outline is enough. We reply with a proposal for the paid scoping, for you to review. If it isn’t a fit, we’ll say so plainly.</p></section>
+<section class="shell consulting-founder"><img src="/assets/images/founder-800.webp" alt="Raj, founder of Quiet Staff" width="800" height="1000" loading="lazy"><div><p class="eyebrow">Your delivery lead</p><h2>Meet Raj.<br><em>He leads the work.</em></h2><p>Mohan Raj Dhanapal is Quiet Staff’s Founder &amp; Principal AI Architect, with 21 years in technology delivery. His experience covers:</p><ul class="partner-skills"><li><strong>Data platforms and orchestration</strong> for overnight processing at volume.</li><li><strong>Protected data ingestion:</strong> PII redaction, validation and holding data for review.</li><li><strong>Multi-source pipelines</strong> into a data warehouse.</li><li><strong>An AI engine</strong> that answers business questions from a warehouse in defined analytical formats.</li></ul><p>Delivery is from India with agreed UK overlap hours. Raj leads the technical work directly, with a delivery team sized to the engagement. Quiet Staff is a Claude Partner Network member.</p><p>Quiet Staff is new, and we have no UK client list to show you yet. That is why we start with a small, paid piece you can judge for yourself.</p><a class="text-link" href="/founder/">More about Raj ${arrow}</a></div></section>
+<section class="faq shell section"><div><p class="section-label"><span>04</span>Partner questions</p><h2>Before you<br><em>hand anything over.</em></h2></div><div class="faq-list">${faqs.map(([q,a],i)=>`<details id="partner-question-${i+1}"><summary>${q}<span aria-hidden="true">＋</span></summary><p>${a}</p></details>`).join('')}</div></section>
+<section class="contact section shell" id="partner-contact"><div class="contact-intro"><p class="section-label"><span>05</span>Let’s talk about the client</p><h2>Tell us about<br>the client.<br><em>We’ll shape the next step.</em></h2><p>A short outline is enough. We will reply with a proposal for the paid scoping.</p><p class="contact-note">Prefer email?</p><a class="text-link" href="mailto:contact@quietstaff.com?subject=Delivery%20partner%20enquiry">contact@quietstaff.com ${arrow}</a></div><div class="contact-form-wrap"><p class="preview-note" hidden>Local preview · This form is a simulation. No email will be sent.</p><form id="contact-form" action="#partner-contact" method="get"><div class="form-row"><label>Your name <span>(required)</span><input name="name" autocomplete="name" required maxlength="200"></label><label>Work email <span>(required)</span><input name="email" type="email" autocomplete="email" required maxlength="254"></label></div><label>Firm name <span>(optional)</span><input name="company" autocomplete="organization" maxlength="200"></label><input type="hidden" name="subject" value="Delivery partner enquiry"><label>Message <span>(required)</span><textarea name="message" rows="5" required maxlength="5000" placeholder="The client problem, the data and systems involved, the result they want and the timing."></textarea></label><div class="honey" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div><p class="form-privacy">Please leave out passwords and confidential client data. We use your details only to reply. <a href="/privacy/">Read our privacy policy.</a></p><button class="button" type="submit" disabled>Send the outline ${arrow}</button><p id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></p><noscript><p>Please <a href="mailto:contact@quietstaff.com?subject=Delivery%20partner%20enquiry">email contact@quietstaff.com</a>. The form needs JavaScript to send.</p></noscript></form></div></section>
+</main>`;
+let html=readFileSync(path.join(root,'index.html'),'utf8');
+html=html.replace(/<main\b[\s\S]*?<\/main>/,main);
+const title='AI and data delivery for UK partners | Quiet Staff';
+const description='Quiet Staff builds AI apps over data warehouses, protected data ingestion and production data engineering, under your name. Paid scoping first.';
+const url='https://quietstaff.co.uk/partners/delivery/';
+html=html.replace(/<title>.*?<\/title>/,`<title>${title}</title>`)
+.replace(/(<meta name="description" content=")[^"]*/,`$1${description}`)
+.replace(/(<meta property="og:title" content=")[^"]*/,`$1${title}`)
+.replace(/(<meta property="og:description" content=")[^"]*/,`$1${description}`)
+.replace(/(<meta property="og:url" content=")[^"]*/,`$1${url}`)
+.replace(/(<link rel="canonical" href=")[^"]*/,`$1${url}`)
+.replace('</head>','<meta name="robots" content="noindex, follow"><link rel="stylesheet" href="/assets/css/consulting.css?v=20260930-01"><link rel="stylesheet" href="/assets/css/partners.css?v=20261019-02"></head>');
+// On this route only, header contact actions lead to the partner enquiry.
+html=html.replaceAll('href="/#contact-quietstart"','href="#partner-contact"');
+if(html.includes('<main id="main" class="consulting-page partners-page">')===false) throw new Error('main not replaced');
+mkdirSync(path.join(root,'partners/delivery'),{recursive:true});
+writeFileSync(path.join(root,'partners/delivery/index.html'),html);
+console.log('Built /partners/delivery/; existing routes and sitemap unchanged.');
