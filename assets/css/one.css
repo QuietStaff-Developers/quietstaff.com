@@ -2322,7 +2322,7 @@ form .button {
 .other-ways-cards .link-pair { margin-top: 18px; }
 .founder-teaser .link-pair .text-link { margin-top: 0; }
 .founder-teaser .link-pair { margin-top: 22px; }
-.contact-routes { font-size: .8rem; color: var(--muted); margin-top: 22px; }
+.contact-intro .contact-routes { font-size: .8rem; color: var(--muted); margin-top: 22px; }
 @media (max-width: 620px) {
   .other-ways-cards { grid-template-columns: 1fr; gap: 12px; }
   .other-ways-cards article { padding: 22px; }
