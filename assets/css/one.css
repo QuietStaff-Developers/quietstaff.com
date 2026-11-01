@@ -110,6 +110,7 @@ strong { font-weight: 600; }
   padding: 6px 0; border-bottom: 1px solid transparent;
 }
 .main-nav > a:hover { color: var(--accent); }
+.main-nav > .nav-menu-cta { display: none; }
 .main-nav > a[aria-current="page"] { border-bottom-color: var(--accent); color: var(--accent); }
 .header-controls { display: flex; align-items: center; gap: 12px; }
 .nav-contact {
@@ -663,3 +664,10 @@ html[data-theme="dark"] .form-status.error { color: #ffb6a5; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Review fixes 2026-11-01: one-row header on phones (CTA moves into the menu); contact form beside the intro. */
+@media (max-width: 480px) {
+  .header-controls .nav-contact { display: none; }
+  .main-nav > .nav-menu-cta { display: inline-flex; gap: 8px; color: var(--accent); font-weight: 600; }
+}
+.contact-compact .contact-form-wrap { padding-top: 0; }
