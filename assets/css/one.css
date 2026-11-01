@@ -2307,3 +2307,24 @@ form .button {
   .founder-notes h3 { font-size: 1.5rem; margin-top: 14px; }
   .founder-practice { padding-block: 20px 35px; }
 }
+
+/* Site revamp 2026-11-01: Lane B routes (hero line, homepage section 05, contact line). */
+.hero-route { margin-top: 22px; font-size: .78rem; color: var(--muted); }
+.hero-route a, .contact-routes a { color: var(--ink); text-underline-offset: 3px; white-space: nowrap; }
+.other-ways .section-heading { margin-bottom: 36px; }
+.other-ways-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.other-ways-cards article { display: flex; flex-direction: column; border-top: 2px solid var(--accent); background: var(--surface); padding: 30px; }
+.other-ways-cards .eyebrow { font-size: .62rem; }
+.other-ways-cards h3 { font-size: 1.55rem; margin: 16px 0 14px; line-height: 1.15; letter-spacing: -.035em; }
+.other-ways-cards article > p:not(.eyebrow) { color: var(--muted); font-size: .9rem; }
+.other-ways-cards .other-ways-proof { font-size: .74rem; border-top: 1px solid var(--line); padding-top: 14px; margin-top: auto; }
+.other-ways-cards article > p:nth-of-type(2) { margin-bottom: 22px; }
+.other-ways-cards .link-pair { margin-top: 18px; }
+.founder-teaser .link-pair .text-link { margin-top: 0; }
+.founder-teaser .link-pair { margin-top: 22px; }
+.contact-routes { font-size: .8rem; color: var(--muted); margin-top: 22px; }
+@media (max-width: 620px) {
+  .other-ways-cards { grid-template-columns: 1fr; gap: 12px; }
+  .other-ways-cards article { padding: 22px; }
+  .other-ways-cards h3 { font-size: 1.35rem; }
+}
