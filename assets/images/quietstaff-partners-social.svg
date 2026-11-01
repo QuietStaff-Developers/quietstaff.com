@@ -1,26 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="'Helvetica Neue',Arial,sans-serif">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#070d17"/><stop offset="1" stop-color="#0d1828"/></linearGradient>
-    <linearGradient id="qs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset=".5" stop-color="#60a5fa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <g fill="none" stroke="#1e2f47" stroke-width="2"><path d="M820 150 L1060 150 M820 150 L895 330 M1060 150 L1135 330 M895 330 L1135 330"/></g>
-  <g fill="none" stroke="url(#qs)" stroke-width="3.5" stroke-linecap="round"><path d="M820 150 L940 240 L1060 150 M940 240 L1015 240 L1135 330 M895 330 L940 240"/></g>
-  <g stroke="url(#qs)" stroke-width="4.5" fill="#0b1626">
-    <path d="M820 128 l19 11 v22 l-19 11 l-19 -11 v-22 z"/><path d="M1060 128 l19 11 v22 l-19 11 l-19 -11 v-22 z"/>
-    <path d="M895 308 l19 11 v22 l-19 11 l-19 -11 v-22 z"/><path d="M1135 308 l19 11 v22 l-19 11 l-19 -11 v-22 z"/>
-    <path d="M940 213 l24 14 v28 l-24 14 l-24 -14 v-28 z" fill="#101f36"/><path d="M1015 222 l15 9 v18 l-15 9 l-15 -9 v-18 z"/>
-  </g>
-  <g transform="translate(80,92)"><path d="M28 6 L48 17.5 L48 40.5 L28 52 L8 40.5 L8 17.5 Z" fill="none" stroke="url(#qs)" stroke-width="4.5" stroke-linejoin="round"/><text x="66" y="38" fill="#eaf2f5" font-size="30" font-weight="700">Quiet Staff</text></g>
-  <text x="80" y="268" fill="#eaf2f5" font-size="66" font-weight="700" letter-spacing="-1.5">Your client, your name.</text>
-  <text x="80" y="346" fill="#a7c4b5" font-size="66" font-weight="700" letter-spacing="-1.5">Our delivery.</text>
-  <g font-size="24" font-weight="700" fill="#b9c6d1">
-    <rect x="80" y="400" width="92" height="44" rx="22" fill="#0d1d33" stroke="#22406a"/><text x="101" y="430">Build</text>
-    <rect x="184" y="400" width="130" height="44" rx="22" fill="#0d1d33" stroke="#22406a"/><text x="205" y="430">Integrate</text>
-    <rect x="326" y="400" width="136" height="44" rx="22" fill="#0d1d33" stroke="#22406a"/><text x="347" y="430">Automate</text>
-    <rect x="474" y="400" width="64" height="44" rx="22" fill="#0d1d33" stroke="#22406a"/><text x="495" y="430">AI</text>
-    <rect x="550" y="400" width="86" height="44" rx="22" fill="#0d1d33" stroke="#22406a"/><text x="571" y="430">Data</text>
-  </g>
-  <text x="80" y="540" fill="#8fa3b5" font-size="24" font-weight="500">Technical partner for UK agencies, consultancies and businesses</text>
-  <text x="80" y="574" fill="#6f8496" font-size="20" font-weight="500">QuietStaff Ltd · Registered in England and Wales · Company 17171308</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630" width="1200" height="630" font-family="'Plus Jakarta Sans','Helvetica Neue',Arial,sans-serif">
+  <style>@font-face{font-family:'Plus Jakarta Sans';font-weight:700;src:url('../fonts/plus-jakarta-sans-700-latin.woff2') format('woff2')}@font-face{font-family:'Plus Jakarta Sans';font-weight:600;src:url('../fonts/plus-jakarta-sans-600-latin.woff2') format('woff2')}@font-face{font-family:'Plus Jakarta Sans';font-weight:400;src:url('../fonts/plus-jakarta-sans-400-latin.woff2') format('woff2')}</style>
+  <defs><radialGradient id="glow" cx="0.85" cy="1.1" r="0.8"><stop offset="0" stop-color="#a9d6c0" stop-opacity="0.22"/><stop offset="1" stop-color="#a9d6c0" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="630" fill="#0f1b1e"/><rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="80" y="80" width="8" height="40" rx="2" fill="#a9d6c0"/>
+  <text x="104" y="110" font-size="28" font-weight="700" fill="#f2f0e8" letter-spacing="-1">QuietStaff</text>
+  <text x="80" y="190" font-size="20" font-weight="600" fill="#a9d6c0" letter-spacing="3">TECHNICAL PARTNER FOR UK AGENCIES</text>
+  <text x="80" y="276" font-size="66" font-weight="700" fill="#f2f0e8" letter-spacing="-2">Your client, your name.</text><text x="80" y="354" font-size="66" font-weight="700" fill="#f2f0e8" letter-spacing="-2">Our delivery.</text>
+  <text x="80" y="422" font-size="24" fill="#b8c3bf">Build, integrate, automate, AI and data work, under your name if you prefer.</text>
+  <line x1="80" y1="546" x2="1120" y2="546" stroke="#2b3a3b"/>
+  <text x="80" y="586" font-size="18" fill="#b8c3bf">QuietStaff Ltd · Registered in England and Wales · Paid scoping before any larger commitment</text>
+  <text x="1120" y="586" font-size="18" font-weight="600" fill="#f2f0e8" text-anchor="end">quietstaff.co.uk</text>
+  
 </svg>
