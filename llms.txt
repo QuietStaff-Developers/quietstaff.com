@@ -1,0 +1,30 @@
+# QuietStaff
+
+> QuietStaff Ltd is a UK company (registered in England and Wales, company no. 17171308) building AI agents for UK agencies and owner-led businesses. Its agents prepare the work and the client's people approve it. Senior consulting and delivery sit behind the product.
+
+Contact: contact@quietstaff.com · Book a call: https://cal.com/quietstaff/intro
+
+## Product
+
+- [Quiet Staff One](https://quietstaff.co.uk/one/): AI agents for enquiries, content, knowledge and connected work, approved by your team. Built and supported with you by QuietStaff.
+- [QuietDesk](https://quietstaff.co.uk/quietdesk/): answers enquiries for heating and plumbing firms, offers visit slots you confirm and drafts quotes you approve.
+- [QuietStart](https://quietstaff.co.uk/quietstart/): a conversation about one business workflow: what happens today, where it gets stuck and a useful next step.
+- [FAQs](https://quietstaff.co.uk/faq/): getting started with Quiet Staff One, pricing, existing tools and human review.
+
+## Consulting and partners
+
+- [Fractional CTO and engineering teams](https://quietstaff.co.uk/consulting/): a senior technical lead for an agreed part of each week, or a dedicated engineering team run end to end.
+- [Technical partner for UK agencies](https://quietstaff.co.uk/partners/delivery/): build, integrate, automate, AI and data work for UK agencies and consultancies, under your name if you prefer.
+- [OpenAI Select Partner](https://quietstaff.co.uk/partners/openai/): QuietStaff is an OpenAI Select Partner.
+
+## Company
+
+- [About QuietStaff](https://quietstaff.co.uk/about/): who we are and who leads the work.
+- [Practical AI use cases](https://quietstaff.co.uk/use-cases/): illustrative workflows and a fictional dashboard demonstration.
+
+## Optional
+
+- [Privacy policy](https://quietstaff.co.uk/privacy/)
+- [Data Processing Agreement](https://quietstaff.co.uk/dpa/)
+- [Sub-processors](https://quietstaff.co.uk/sub-processors/)
+- [Terms and refund policy](https://quietstaff.co.uk/terms/)

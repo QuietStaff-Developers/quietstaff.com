@@ -15,13 +15,14 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'scripts', '_includes']);
-const SKIP_FILES = new Set(['partners/index.html']);
+const SKIP_FILES = new Set(['partners/index.html', 'founder/index.html', 'case-studies/index.html', 'case-studies/finance/index.html', 'case-studies/logistics/index.html', 'case-studies/healthcare/index.html']);
 const PAGE_ONLY_NAV = new Set(['partners/delivery/index.html']);
 const CURRENT = [
   ['quietdesk/', 'href="/quietdesk/"'],
   ['consulting/', 'href="/consulting/"'],
   ['partners/', 'href="/partners/delivery/"'],
-  ['founder/', 'href="/founder/"'],
+  ['about/', 'href="/about/"'],
+  ['one/', 'href="/one/"'],
 ];
 
 function slice(html, open, close, rel) {

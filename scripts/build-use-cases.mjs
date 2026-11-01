@@ -1,3 +1,8 @@
+// RETIRED (2026-11-02): it used index.html as its page template, and the visual-first rebuild
+// (branch ai-first-site) changed that head, so a run would silently rewrite the three use-case
+// pages (dead agent-scene.js tag, motion.css/motion.js dropped). use-cases/*/index.html are now
+// hand-maintained; content/use-cases.json no longer feeds them. Edit the pages directly.
+throw new Error('build-use-cases.mjs is retired: edit use-cases/*/index.html directly (see header).');
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -6,7 +11,7 @@ const data=JSON.parse(readFileSync(path.join(root,'content/use-cases.json'),'utf
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=readFileSync(path.join(root,'index.html'),'utf8');
 function page(route,title,description,body,js=''){
- let html=base.replace(/<main\b[\s\S]*?<\/main>/,`<main id="main" class="uc-page"><div class="shell"><nav class="uc-nav" aria-label="Use case pages"><a href="/consulting/">Consulting</a><a href="/use-cases/">Use cases</a><a href="/use-cases/examples/">Example situations</a><a href="/use-cases/dashboard/">Dashboard demo</a></nav>${body}<section class="uc-cta"><p class="eyebrow">A useful next step</p><h2>Bring the gap.<br><em>Let’s connect the work.</em></h2><p>Tell Mohan what you do today, which tools you use and what you would like to work better. We assess access and feasibility, then agree the scope, fees and responsibilities before paid work begins.</p><a class="button" href="mailto:contact@quietstaff.com?subject=Workflow%20enquiry">Discuss your workflow ↗</a><p class="uc-small">Please leave out confidential records, passwords and sensitive personal information.</p></section></div></main>`);
+ let html=base.replace(/<main\b[\s\S]*?<\/main>/,`<main id="main" class="uc-page"><div class="shell"><nav class="uc-nav" aria-label="Use case pages"><a href="/consulting/">Consulting</a><a href="/use-cases/">Use cases</a><a href="/use-cases/examples/">Example situations</a><a href="/use-cases/dashboard/">Dashboard demo</a></nav>${body}<section class="uc-cta"><p class="eyebrow">A useful next step</p><h2>Bring the gap.<br><em>Let’s connect the work.</em></h2><p>Tell us what you do today, which tools you use and what you would like to work better. We assess access and feasibility, then agree the scope, fees and responsibilities before paid work begins.</p><a class="button" href="mailto:contact@quietstaff.com?subject=Workflow%20enquiry">Discuss your workflow ↗</a><p class="uc-small">Please leave out confidential records, passwords and sensitive personal information.</p></section></div></main>`);
  for(const [pattern,value] of [[/<title>.*?<\/title>/,`<title>${title} | Quiet Staff</title>`],[/(<meta name="description" content=")[^"]*/,`$1${description}`],[/(<meta property="og:title" content=")[^"]*/,`$1${title} | Quiet Staff`],[/(<meta property="og:description" content=")[^"]*/,`$1${description}`],[/(<meta property="og:url" content=")[^"]*/,`$1https://quietstaff.co.uk/${route}/`],[/(<link rel="canonical" href=")[^"]*/,`$1https://quietstaff.co.uk/${route}/`]])html=html.replace(pattern,value);
  html=html.replace('</head>','<link rel="stylesheet" href="/assets/css/use-cases.css?v=20260930-1">'+(js?`<script src="${js}" defer></script>`:'')+'</head>');
  mkdirSync(path.join(root,route),{recursive:true});writeFileSync(path.join(root,route,'index.html'),html);
