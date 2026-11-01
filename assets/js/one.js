@@ -62,7 +62,7 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".site-header")) closeMenu();
 });
-matchMedia("(min-width: 621px)").addEventListener("change", () => closeMenu());
+matchMedia("(min-width: 901px)").addEventListener("change", () => closeMenu());
 const tabList = document.querySelector(".module-tabs");
 const tabs = [...document.querySelectorAll(".module-tab")];
 const overview = document.querySelector("#one-overview");
